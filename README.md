@@ -1,7 +1,7 @@
 
 **Snippets** provides completions for languages and frameworks
 
-![](https://raw.githubusercontent.com/besya/snippets.novaextension/main/Images/extension/example.gif)
+![Example](https://raw.githubusercontent.com/besya/snippets.novaextension/refs/heads/main/Images/extension/example.gif)
 
 - C
 - C++
@@ -37,6 +37,6 @@
 To configure global preferences, open **Extensions → Extension Library...** then select snippets's **Settings** tab.
 From the **Settings** tab you can enable or disable snippets.
 
-![](https://raw.githubusercontent.com/besya/snippets.novaextension/main/Images/extension/settings.png)
+![Settings](https://raw.githubusercontent.com/besya/snippets.novaextension/refs/heads/main/Images/extension/settings.png)
 
 
