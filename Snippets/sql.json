@@ -1,0 +1,192 @@
+[
+    {
+        "name": "Createt",
+        "trigger": "createt",
+        "content": "CREATE TABLE ${1:tableName} (\n\t${2:attribute(s)}\n);"
+    },
+    {
+        "name": "Createti",
+        "trigger": "createti",
+        "content": "CREATE TABLE IF NOT EXISTS ${1:tableName} (\n\t${2:attribute(s)}\n);"
+    },
+    {
+        "name": "Created",
+        "trigger": "created",
+        "content": "CREATE DATABASE ${1:name};"
+    },
+    {
+        "name": "Createdi",
+        "trigger": "createdi",
+        "content": "CREATE DATABASE IF NOT EXISTS ${1:name};"
+    },
+    {
+        "name": "Insert",
+        "trigger": "insert",
+        "content": "INSERT INTO ${1:tableName} (\n\t${2:attribute(s)}\n) VALUES ( ${3:values} )"
+    },
+    {
+        "name": "Dropt",
+        "trigger": "dropt",
+        "content": "DROP TABLE ${1:tableName};"
+    },
+    {
+        "name": "Dropd",
+        "trigger": "dropd",
+        "content": "DROP DATABASE ${1:dbName};"
+    },
+    {
+        "name": "Dropti",
+        "trigger": "dropti",
+        "content": "DROP TABLE IF EXISTS ${1:tableName};"
+    },
+    {
+        "name": "Dropdi",
+        "trigger": "dropdi",
+        "content": "DROP DATABASE IF EXISTS ${1:dbName};"
+    },
+    {
+        "name": "Showt",
+        "trigger": "showt",
+        "content": "SHOW TABLES;"
+    },
+    {
+        "name": "Showd",
+        "trigger": "showd",
+        "content": "SHOW DATABASES;"
+    },
+    {
+        "name": "Select",
+        "trigger": "select",
+        "content": "SELECT ${1:attribute(s)} FROM ${2:tableName};"
+    },
+    {
+        "name": "Selectd",
+        "trigger": "selectd",
+        "content": "SELECT DISTINCT ${1:attribute(s)}\n\tFROM ${2:tableName};"
+    },
+    {
+        "name": "Selectw",
+        "trigger": "selectw",
+        "content": "SELECT ${1:attribute(s)}\n\tFROM ${2:tableName}\n\tWHERE ${3:condition};"
+    },
+    {
+        "name": "Selector",
+        "trigger": "selector",
+        "content": "SELECT ${1:attribute(s)}\n\tFROM ${2:tableName}\n\tORDER BY ${3:attribute(s)} ${4:ASC|DESC};"
+    },
+    {
+        "name": "Updatet",
+        "trigger": "updatet",
+        "content": "UPDATE ${1:tableName}\n\tSET ${2:attribute(s)}\n\tWHERE ${3:condition};"
+    },
+    {
+        "name": "Delete",
+        "trigger": "delete",
+        "content": "DELETE FROM ${1:tableName}\n\tWHERE ${3:condition};"
+    },
+    {
+        "name": "Altert",
+        "trigger": "altert",
+        "content": "ALTER TABLE ${1:tableName}\n\t ${2:intructions};"
+    },
+    {
+        "name": "Alterad",
+        "trigger": "alterad",
+        "content": "ALTER TABLE ${1:tableName}\n\tADD COLUMN ${2:col_name};"
+    },
+    {
+        "name": "Alteraf",
+        "trigger": "alteraf",
+        "content": "ALTER TABLE ${1:tableName}\n\tADD COLUMN ${2:col_name}\n\tAFTER ${5:col_name};"
+    },
+    {
+        "name": "Alterdb",
+        "trigger": "alterdb",
+        "content": "ALTER DATABASE ${1:dbName}\n\tCHARACTER SET ${2:charset}\n\tCOLLATE ${3:utf8_unicode_ci};"
+    },
+    {
+        "name": "Ijoin",
+        "trigger": "ijoin",
+        "content": "SELECT ${1:attribute(s)}\n\tFROM ${2:tableName}\n\tINNER JOIN ${3:tableName2}\n\tON ${4:match};"
+    },
+    {
+        "name": "Rjoin",
+        "trigger": "rjoin",
+        "content": "SELECT ${1:attribute(s)}\n\tFROM ${2:tableName}\n\tRIGHT JOIN ${3:tableName2}\n\tON ${4:match};"
+    },
+    {
+        "name": "Ljoin",
+        "trigger": "ljoin",
+        "content": "SELECT ${1:attribute(s)}\n\tFROM ${2:tableName}\n\tLEFT JOIN ${3:tableName2}\n\tON ${4:match};"
+    },
+    {
+        "name": "Fjoin",
+        "trigger": "fjoin",
+        "content": "SELECT ${1:attribute(s)}\n\tFROM ${2:tableName}\n\tFULL JOIN OUTER ${3:tableName2}\n\tON ${4:match}\n\tWHERE ${5:condition};"
+    },
+    {
+        "name": "Union",
+        "trigger": "union",
+        "content": "SELECT ${1:attribute(s)} FROM ${2:tableName}\nUNION\nSELECT ${3:attribute(s)} FROM ${4:tableName2};"
+    },
+    {
+        "name": "Uniona",
+        "trigger": "uniona",
+        "content": "SELECT ${1:attribute(s)} FROM ${2:tableName}\nUNION ALL\nSELECT ${3:attribute(s)} FROM ${4:tableName2};"
+    },
+    {
+        "name": "Groupb",
+        "trigger": "groupb",
+        "content": "SELECT ${1:attribute(s)}\n\tFROM ${2:tableName}\n\tGROUP BY ${3:attribute(s)};"
+    },
+    {
+        "name": "Bakupd",
+        "trigger": "bakupd",
+        "content": "BACKUP DATABASE ${1:dbName}\n\tTO DISK ${2:filepath};"
+    },
+    {
+        "name": "Bakupdw",
+        "trigger": "bakupdw",
+        "content": "BACKUP DATABASE ${1:dbName}\n\tTO DISK ${2:filepath}\n\tWITH ${3:DIFERENTIAL};"
+    },
+    {
+        "name": "Primaryk",
+        "trigger": "primaryk",
+        "content": "PRIMARY KEY(${1:attribute})"
+    },
+    {
+        "name": "Primarykc",
+        "trigger": "primarykc",
+        "content": "CONSTRAINT ${1:attribute} PRIMARY KEY(${2:attribute(s)})"
+    },
+    {
+        "name": "Foreignk",
+        "trigger": "foreignk",
+        "content": "FOREIGN KEY(${1:attribute}) REFERENCES ${2:tableName}(${3:attribute})"
+    },
+    {
+        "name": "Foreignkc",
+        "trigger": "foreignkc",
+        "content": "CONSTRAINT ${1:attribute} FOREIGN KEY (${2:attribute(s)})\n\tREFERENCES ${3:tableName}(${4:attribute})"
+    },
+    {
+        "name": "Check",
+        "trigger": "check",
+        "content": "CHECK ( ${1:condition} )"
+    },
+    {
+        "name": "Creteuser",
+        "trigger": "createuser",
+        "content": "CREATE USER '${1:username}'@'${2:localhost}' IDENTIFIED BY '${3:password}';"
+    },
+    {
+        "name": "Deleteuser",
+        "trigger": "deleteuser",
+        "content": "DELETE FROM mysql.user WHERE user = '${1:userName}';"
+    },
+    {
+        "name": "Grantuser",
+        "trigger": "grantuser",
+        "content": "GRANT ALL PRIVILEGES ON ${1:db}.${2:tb} TO '${3:user_name}'@'${4:localhost}';"
+    }
+]

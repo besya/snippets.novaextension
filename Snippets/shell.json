@@ -1,0 +1,67 @@
+[
+    {
+        "name": "Echo",
+        "trigger": "echo",
+        "content": "echo \"${1:message}\""
+    },
+    {
+        "name": "Read",
+        "trigger": "read",
+        "content": "read -r ${1:VAR}"
+    },
+    {
+        "name": "If",
+        "trigger": "if",
+        "content": "if [[ ${1:condition} ]]; then\n\t${2}\nfi"
+    },
+    {
+        "name": "Elseif",
+        "trigger": "elseif",
+        "content": "elif [[ ${1:condition} ]]; then\n\t${2}"
+    },
+    {
+        "name": "Else",
+        "trigger": "else",
+        "content": "else\n\t${1:command}"
+    },
+    {
+        "name": "For_In",
+        "trigger": "for_in",
+        "content": "for ${1:VAR} in ${2:LIST}\ndo\n\techo \"\\$${1:VAR}\"\ndone\n"
+    },
+    {
+        "name": "For_I",
+        "trigger": "for_i",
+        "content": "for ((${1:i} = 0; ${1:i} < ${2:10}; ${1:i}++)); do\n\techo \"\\$${1:i}\"\ndone\n"
+    },
+    {
+        "name": "While",
+        "trigger": "while",
+        "content": "while [[ ${1:condition} ]]; do\n\t${2}\ndone\n"
+    },
+    {
+        "name": "Until",
+        "trigger": "until",
+        "content": "until [[ ${1:condition} ]]; do\n\t${2}\ndone\n"
+    },
+    {
+        "name": "Function",
+        "trigger": "function",
+        "content": "${1:name} ()\n{\n\t${2}\n}"
+    },
+    {
+        "name": "Case",
+        "trigger": "case",
+        "content": "case \"\\$${1:VAR}\" in\n\t${2:1}) echo 1\n\t;;\n\t${3:2|3}) echo 2 or 3\n\t;;\n\t*) echo default\n\t;;\nesac\n"
+    },
+    {
+        "name": "Break",
+        "trigger": "break",
+        "content": "break ${1}"
+    },
+    {
+        "name": "Expr",
+        "trigger": "expr",
+        "content": "expr ${1:1 + 1}"
+    }
+]

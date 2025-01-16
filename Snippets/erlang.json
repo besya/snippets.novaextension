@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Module",
+        "trigger": "mod",
+        "content": "-module(${1:module})."
+    },
+    {
+        "name": "Include",
+        "trigger": "inc",
+        "content": "-include(\"${1:hrl_name}.hrl\")."
+    },
+    {
+        "name": "Define",
+        "trigger": "def",
+        "content": "-define(${1:def_name}, ${2:def_value})."
+    },
+    {
+        "name": "Export",
+        "trigger": "exp",
+        "content": "-export([\n         ${1}\n        ])."
+    },
+    {
+        "name": "If",
+        "trigger": "if",
+        "content": "if ${1:Cond} ->\n       ${2:todo};\n   true ->\n       ${3:todo}\nend$4"
+    },
+    {
+        "name": "Case",
+        "trigger": "case",
+        "content": "case ${1:Expr} of\n    ${2:Cond} ->\n        ${3:todo};\n    _ ->\n        ${4:todo}\nend$5"
+    },
+    {
+        "name": "Receive",
+        "trigger": "rec",
+        "content": "receive\n    ${1:pattern} ->\n        ${2:todo}\nend$3"
+    }
+]

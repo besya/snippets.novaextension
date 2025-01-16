@@ -1,0 +1,102 @@
+[
+    {
+        "name": "Print",
+        "trigger": "print",
+        "content": "print(\"$1\")\n$2"
+    },
+    {
+        "name": "Print Value",
+        "trigger": "printv",
+        "content": "print(\"\\($1)\")\n$2"
+    },
+    {
+        "name": "While",
+        "trigger": "while",
+        "content": "while ${1:condition} {\n\t$2\n}"
+    },
+    {
+        "name": "Repeat-While",
+        "trigger": "repeat",
+        "content": "repeat {\n\t$2\n} while ${1:condition}"
+    },
+    {
+        "name": "For",
+        "trigger": "for",
+        "content": "for ${1:item} in ${2:collection} {\n\t$3\n}"
+    },
+    {
+        "name": "If",
+        "trigger": "if",
+        "content": "if ${1:condition} {\n\t$2\n}"
+    },
+    {
+        "name": "Else If",
+        "trigger": "elif",
+        "content": "else if ${1:condition} {\n\t$2\n}"
+    },
+    {
+        "name": "Else",
+        "trigger": "else",
+        "content": "else {\n\t$1\n}"
+    },
+    {
+        "name": "If Let",
+        "trigger": "iflet",
+        "content": "if let ${1:value} = ${2:optional} {\n\t$3\n}"
+    },
+    {
+        "name": "Guard",
+        "trigger": "guard",
+        "content": "guard ${1:condition} else {\n\t$2\n}"
+    },
+    {
+        "name": "Guard Let",
+        "trigger": "guardlet",
+        "content": "guard let ${1:value} = ${2:optional} else {\n\t$3\n}"
+    },
+    {
+        "name": "Switch",
+        "trigger": "switch",
+        "content": "switch ${1:value} {\ncase ${2:pattern}:\n\t$3\ndefault:\n\t\n}"
+    },
+    {
+        "name": "Do",
+        "trigger": "do",
+        "content": "do {\n\t$3\n} catch ${1:error} {\n\t$2\n}"
+    },
+    {
+        "name": "Func",
+        "trigger": "func",
+        "content": "func ${1:name}(${2:parameters}) -> ${3:Type} {\n\t$4\n}"
+    },
+    {
+        "name": "Struct",
+        "trigger": "struct",
+        "content": "struct ${1:Name} {\n\n\t$2\n}"
+    },
+    {
+        "name": "Enum",
+        "trigger": "enum",
+        "content": "enum ${1:Name} {\n\n\tcase $2\n}"
+    },
+    {
+        "name": "Class",
+        "trigger": "class",
+        "content": "class ${1:Name} {\n\n\t$2\n}"
+    },
+    {
+        "name": "Protocol",
+        "trigger": "protocol",
+        "content": "protocol ${1:Name} {\n\n\t$2\n}"
+    },
+    {
+        "name": "Extension",
+        "trigger": "extension",
+        "content": "extension ${1:Type} {\n\n\t$2\n}"
+    },
+    {
+        "name": "Swiftui-View",
+        "trigger": "view",
+        "content": "struct ${1:Name}: View {\n\n\tvar body: some View {\n\t\t$2\n\t}\n}"
+    }
+]

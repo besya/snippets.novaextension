@@ -1,0 +1,1047 @@
+[
+    {
+        "name": "Setimmediate",
+        "trigger": "sim",
+        "content": "setImmediate(() => {\n\t${1}\n})"
+    },
+    {
+        "name": "Await",
+        "trigger": "a",
+        "content": "await ${1}"
+    },
+    {
+        "name": "Await Promise.All",
+        "trigger": "apa",
+        "content": "await Promise.all(${1:value})"
+    },
+    {
+        "name": "Await Promise.All With Destructuring",
+        "trigger": "apad",
+        "content": "const [${2}] = await Promise.all(${1:value})"
+    },
+    {
+        "name": "Await Promise.All Map",
+        "trigger": "apm",
+        "content": "await Promise.all(${1:array}.map(async (${2:value}) => {\n\t${3}\n}))"
+    },
+    {
+        "name": "Await Sleep",
+        "trigger": "ast",
+        "content": "await new Promise((r) => setTimeout(r, ${1}))"
+    },
+    {
+        "name": "Node Callback",
+        "trigger": "cb",
+        "content": "function (err, ${1:value}) {\n\tif (err) throw err\n\t${2}\n}"
+    },
+    {
+        "name": "Process.Env",
+        "trigger": "pe",
+        "content": "process.env"
+    },
+    {
+        "name": "Promise.All",
+        "trigger": "pa",
+        "content": "Promise.all(${1:value})"
+    },
+    {
+        "name": "Promise.Resolve",
+        "trigger": "prs",
+        "content": "Promise.resolve(${1:value})"
+    },
+    {
+        "name": "Promise.Reject",
+        "trigger": "prj",
+        "content": "Promise.reject(${1:value})"
+    },
+    {
+        "name": "Promise",
+        "trigger": "p",
+        "content": "Promise"
+    },
+    {
+        "name": "New Promise",
+        "trigger": "np",
+        "content": "new Promise((resolve, reject) => {\n\t${1}\n})"
+    },
+    {
+        "name": "Promise.Then",
+        "trigger": "pt",
+        "content": "${1:promise}.then((${2:value}) => {\n\t${3}\n})"
+    },
+    {
+        "name": "Promise.Catch",
+        "trigger": "pc",
+        "content": "${1:promise}.catch(error => {\n\t${2}\n})"
+    },
+    {
+        "name": "Describe",
+        "trigger": "desc",
+        "content": "describe('${1:description}', () => {\n\t${2}\n})"
+    },
+    {
+        "name": "Describe Top Level",
+        "trigger": "dt",
+        "content": "describe('${TM_FILENAME_BASE}', () => {\n\t${1}\n})"
+    },
+    {
+        "name": "It Asynchronous",
+        "trigger": "it",
+        "content": "it('${1:description}', async () => {\n\t${2}\n})"
+    },
+    {
+        "name": "It.Todo",
+        "trigger": "itt",
+        "content": "it.todo('${1:description}')"
+    },
+    {
+        "name": "It With A Callback",
+        "trigger": "itd",
+        "content": "it('${1:description}', (done) => {\n\t${2}\n})"
+    },
+    {
+        "name": "It Synchronous",
+        "trigger": "its",
+        "content": "it('${1:description}', () => {\n\t${2}\n})"
+    },
+    {
+        "name": "Before",
+        "trigger": "bf",
+        "content": "before(async () => {\n\t${1}\n})"
+    },
+    {
+        "name": "Beforeall",
+        "trigger": "ba",
+        "content": "beforeAll(async () => {\n\t${1}\n})"
+    },
+    {
+        "name": "Beforeeach",
+        "trigger": "bfe",
+        "content": "beforeEach(async () => {\n\t${1}\n})"
+    },
+    {
+        "name": "After",
+        "trigger": "aft",
+        "content": "after(() => {\n\t${1}\n})"
+    },
+    {
+        "name": "Aftereach",
+        "trigger": "afe",
+        "content": "afterEach(() => {\n\t${1}\n})"
+    },
+    {
+        "name": "Require",
+        "trigger": "rq",
+        "content": "require('${1:module}')"
+    },
+    {
+        "name": "Const Module = Require('Module')",
+        "trigger": "cr",
+        "content": "const ${1:module} = require('${1:module}')"
+    },
+    {
+        "name": "Exports.Member",
+        "trigger": "em",
+        "content": "exports.${1:member} = ${2:value}"
+    },
+    {
+        "name": "Module.Exports",
+        "trigger": "me",
+        "content": "module.exports = ${1:name}"
+    },
+    {
+        "name": "Module As Class",
+        "trigger": "mec",
+        "content": "class ${1:name} {\n\tconstructor (${2:arguments}) {\n\t\t${3}\n\t}\n}\n\nmodule.exports = ${1:name}\n"
+    },
+    {
+        "name": "Event Handler",
+        "trigger": "on",
+        "content": "${1:emitter}.on('${2:event}', (${3:arguments}) => {\n\t${4}\n})"
+    },
+    {
+        "name": "Dom Event Cancel Default And Propagation",
+        "trigger": "evc",
+        "content": "ev.preventDefault()\nev.stopPropagation()\nreturn false"
+    },
+    {
+        "name": "Addeventlistener",
+        "trigger": "ae",
+        "content": "${1:document}.addEventListener('${2:event}', ${3:ev} => {\n\t${4}\n})"
+    },
+    {
+        "name": "Removeeventlistener",
+        "trigger": "rel",
+        "content": "${1:document}.removeEventListener('${2:event}', ${3:listener})"
+    },
+    {
+        "name": "Getelementbyid",
+        "trigger": "gi",
+        "content": "${1:document}.getElementById('${2:id}')"
+    },
+    {
+        "name": "Getelementsbyclassname",
+        "trigger": "gc",
+        "content": "Array.from(${1:document}.getElementsByClassName('${2:class}'))"
+    },
+    {
+        "name": "Getelementsbytagname",
+        "trigger": "gt",
+        "content": "Array.from(${1:document}.getElementsByTagName('${2:tag}'))"
+    },
+    {
+        "name": "Queryselector",
+        "trigger": "qs",
+        "content": "${1:document}.querySelector('${2:selector}')"
+    },
+    {
+        "name": "Queryselectorall",
+        "trigger": "qsa",
+        "content": "Array.from(${1:document}.querySelectorAll('${2:selector}'))"
+    },
+    {
+        "name": "Createdocumentfragment",
+        "trigger": "cdf",
+        "content": "${1:document}.createDocumentFragment(${2:elem})"
+    },
+    {
+        "name": "Createelement",
+        "trigger": "cel",
+        "content": "${1:document}.createElement(${2:elem})"
+    },
+    {
+        "name": "Classlist.Add",
+        "trigger": "hecla",
+        "content": "${1:el}.classList.add('${2:class}')"
+    },
+    {
+        "name": "Classlist.Remove",
+        "trigger": "heclr",
+        "content": "${1:el}.classList.remove('${2:class}')"
+    },
+    {
+        "name": "Classlist.Toggle",
+        "trigger": "hect",
+        "content": "${1:el}.classList.toggle('${2:class}')"
+    },
+    {
+        "name": "Getattribute",
+        "trigger": "hega",
+        "content": "${1:el}.getAttribute('${2:attr}')"
+    },
+    {
+        "name": "Removeattribute",
+        "trigger": "hera",
+        "content": "${1:el}.removeAttribute('${2:attr}')"
+    },
+    {
+        "name": "Setattribute",
+        "trigger": "hesa",
+        "content": "${1:el}.setAttribute('${2:attr}', ${3:value})"
+    },
+    {
+        "name": "Appendchild",
+        "trigger": "heac",
+        "content": "${1:el}.appendChild(${2:elem})"
+    },
+    {
+        "name": "Removechild",
+        "trigger": "herc",
+        "content": "${1:el}.removeChild(${2:elem})"
+    },
+    {
+        "name": "Foreach Loop",
+        "trigger": "fe",
+        "content": "${1:iterable}.forEach((${2:item}) => {\n\t${3}\n})"
+    },
+    {
+        "name": "Map",
+        "trigger": "map",
+        "content": "${1:iterable}.map((${2:item}) => {\n\t${3}\n})"
+    },
+    {
+        "name": "Reduce",
+        "trigger": "reduce",
+        "content": "${1:iterable}.reduce((${2:previous}, ${3:current}) => {\n\t${5}\n}${4:, initial})"
+    },
+    {
+        "name": "Filter",
+        "trigger": "filter",
+        "content": "${1:iterable}.filter((${2:item}) => {\n\t${3}\n})"
+    },
+    {
+        "name": "Find",
+        "trigger": "find",
+        "content": "${1:iterable}.find((${2:item}) => {\n\t${3}\n})"
+    },
+    {
+        "name": "Every",
+        "trigger": "every",
+        "content": "${1:iterable}.every((${2:item}) => {\n\t${3}\n})"
+    },
+    {
+        "name": "Some",
+        "trigger": "some",
+        "content": "${1:iterable}.some((${2:item}) => {\n\t${3}\n})"
+    },
+    {
+        "name": "Var Statement",
+        "trigger": "v",
+        "content": "var ${1:name}"
+    },
+    {
+        "name": "Var Assignment",
+        "trigger": "va",
+        "content": "var ${1:name} = ${2:value}"
+    },
+    {
+        "name": "Let Statement",
+        "trigger": "l",
+        "content": "let ${1:name}"
+    },
+    {
+        "name": "Const Statement",
+        "trigger": "c",
+        "content": "const ${1:name}"
+    },
+    {
+        "name": "Const Statement From Destructuring",
+        "trigger": "cd",
+        "content": "const { ${2:prop} } = ${1:value}"
+    },
+    {
+        "name": "Const Statement From Array Destructuring",
+        "trigger": "cad",
+        "content": "const [ ${2:prop} ] = ${1:value}"
+    },
+    {
+        "name": "Const Assignment Awaited",
+        "trigger": "ca",
+        "content": "const ${1:name} = await ${2:value}"
+    },
+    {
+        "name": "Const Destructuring Assignment Awaited",
+        "trigger": "cda",
+        "content": "const { ${1:name} } = await ${2:value}"
+    },
+    {
+        "name": "Const Arrow Function Assignment",
+        "trigger": "cf",
+        "content": "const ${1:name} = (${2:arguments}) => {\n\treturn ${3}\n}"
+    },
+    {
+        "name": "Let Assignment Awaited",
+        "trigger": "la",
+        "content": "let ${1:name} = await ${2:value}"
+    },
+    {
+        "name": "Const Assignment Yielded",
+        "trigger": "cy",
+        "content": "const ${1:name} = yield ${2:value}"
+    },
+    {
+        "name": "Let Assignment Yielded",
+        "trigger": "ly",
+        "content": "let ${1:name} = yield ${2:value}"
+    },
+    {
+        "name": "Const Object",
+        "trigger": "co",
+        "content": "const ${1:name} = {\n\t${2}\n}"
+    },
+    {
+        "name": "Const Array",
+        "trigger": "car",
+        "content": "const ${1:name} = [\n\t${2}\n]"
+    },
+    {
+        "name": "Generate Array Of Integers Starting With 1",
+        "trigger": "gari",
+        "content": "Array.from({ length: ${1:length} }, (v, k) => k + 1)"
+    },
+    {
+        "name": "Generate Array Of Integers Starting With 0",
+        "trigger": "gari0",
+        "content": "[...Array(${1:length}).keys()]"
+    },
+    {
+        "name": "Class",
+        "trigger": "cs",
+        "content": "class ${1:name} {\n\tconstructor (${2:arguments}) {\n\t\t${3}\n\t}\n}"
+    },
+    {
+        "name": "Class Extends",
+        "trigger": "csx",
+        "content": "class ${1:name} extends ${2:base} {\n\tconstructor (${3:arguments}) {\n\t\tsuper(${3:arguments})\n\t\t${4}\n\t}\n}"
+    },
+    {
+        "name": "Module Export",
+        "trigger": "e",
+        "content": "export ${1:member}"
+    },
+    {
+        "name": "Module Export Const",
+        "trigger": "ec",
+        "content": "export const ${1:member} = ${2:value}"
+    },
+    {
+        "name": "Export Named Function",
+        "trigger": "ef",
+        "content": "export function ${1:member} (${2:arguments}) {\n\t${3}\n}"
+    },
+    {
+        "name": "Module Default Export",
+        "trigger": "ed",
+        "content": "export default ${1:member}"
+    },
+    {
+        "name": "Module Default Export Function",
+        "trigger": "edf",
+        "content": "export default function ${1:name} (${2:arguments}) {\n\t${3}\n}"
+    },
+    {
+        "name": "Import Module",
+        "trigger": "im",
+        "content": "import ${2:*} from '${1:module}'"
+    },
+    {
+        "name": "Import Module As",
+        "trigger": "ia",
+        "content": "import ${2:*} as ${3:name} from '${1:module}'"
+    },
+    {
+        "name": "Import Module Destructured",
+        "trigger": "id",
+        "content": "import {$2} from '${1:module}'"
+    },
+    {
+        "name": "Typeof",
+        "trigger": "to",
+        "content": "typeof ${1:source} === '${2:undefined}'"
+    },
+    {
+        "name": "This",
+        "trigger": "t",
+        "content": "this."
+    },
+    {
+        "name": "Instanceof",
+        "trigger": "iof",
+        "content": "${1:source} instanceof ${2:Object}"
+    },
+    {
+        "name": "Let And If Statement",
+        "trigger": "lif",
+        "content": "let ${3} \n if (${2:condition}) {\n\t${1}\n}"
+    },
+    {
+        "name": "Else Statement",
+        "trigger": "el",
+        "content": "else {\n\t${1}\n}"
+    },
+    {
+        "name": "Else If Statement",
+        "trigger": "ei",
+        "content": "else if (${1:condition}) {\n\t${2}\n}"
+    },
+    {
+        "name": "While Iteration Decrementing",
+        "trigger": "wid",
+        "content": "let ${1:array}Index = ${1:array}.length\nwhile (${1:array}Index--) {\n\t${2}\n}"
+    },
+    {
+        "name": "Throw New Error",
+        "trigger": "tn",
+        "content": "throw new ${1:error}"
+    },
+    {
+        "name": "Try/Catch",
+        "trigger": "tc",
+        "content": "try {\n\t${2}\n} catch (${1:err}) {\n\t\n}"
+    },
+    {
+        "name": "Try/Finally",
+        "trigger": "tf",
+        "content": "try {\n\t${1}\n} finally {\n\t\n}"
+    },
+    {
+        "name": "Try/Catch/Finally",
+        "trigger": "tcf",
+        "content": "try {\n\t${2}\n} catch (${1:err}) {\n\t\n} finally {\n\t\n}"
+    },
+    {
+        "name": "Anonymous Function",
+        "trigger": "fan",
+        "content": "function (${1:arguments}) {${2}}"
+    },
+    {
+        "name": "Named Function",
+        "trigger": "fn",
+        "content": "function ${1:name} (${2:arguments}) {\n\t${3}\n}"
+    },
+    {
+        "name": "Async Function",
+        "trigger": "asf",
+        "content": "async function (${1:arguments}) {\n\t${2}\n}"
+    },
+    {
+        "name": "Async Arrow Function",
+        "trigger": "aa",
+        "content": "async (${1:arguments}) => {\n\t${2}\n}"
+    },
+    {
+        "name": "Immediately-Invoked Function Expression",
+        "trigger": "iife",
+        "content": ";(function (${1:arguments}) {\n\t${3}\n})(${2})"
+    },
+    {
+        "name": "Async Immediately-Invoked Function Expression",
+        "trigger": "aiife",
+        "content": ";(async (${1:arguments}) => {\n\t${3}\n})(${2})"
+    },
+    {
+        "name": "Arrow Function",
+        "trigger": "af",
+        "content": "(${1:arguments}) => ${2:statement}"
+    },
+    {
+        "name": "Arrow Function With Destructuring",
+        "trigger": "fd",
+        "content": "({${1:arguments}}) => ${2:statement}"
+    },
+    {
+        "name": "Arrow Function With Destructuring Returning Destructured",
+        "trigger": "fdr",
+        "content": "({${1:arguments}}) => ${1:arguments}"
+    },
+    {
+        "name": "Arrow Function With Body",
+        "trigger": "f",
+        "content": "(${1:arguments}) => {\n\t${2}\n}"
+    },
+    {
+        "name": "Arrow Function With Return",
+        "trigger": "fr",
+        "content": "(${1:arguments}) => {\n\treturn ${2}\n}"
+    },
+    {
+        "name": "Generator Function",
+        "trigger": "gf",
+        "content": "function* (${1:arguments}) {\n\t${2}\n}"
+    },
+    {
+        "name": "Named Generator",
+        "trigger": "gfn",
+        "content": "function* ${1:name}(${2:arguments}) {\n\t${3}\n}"
+    },
+    {
+        "name": "Console.Log",
+        "trigger": "cl",
+        "content": "console.log(${1})"
+    },
+    {
+        "name": "Console.Log With Log",
+        "trigger": "log",
+        "content": "console.log(${1})"
+    },
+    {
+        "name": "Console.Log A Variable",
+        "trigger": "cv",
+        "content": "console.log('${1}:', ${1})"
+    },
+    {
+        "name": "Console.Error",
+        "trigger": "ce",
+        "content": "console.error(${1})"
+    },
+    {
+        "name": "Console.Warn",
+        "trigger": "cw",
+        "content": "console.warn(${1})"
+    },
+    {
+        "name": "Console.Dir",
+        "trigger": "cod",
+        "content": "console.dir('${1}:', ${1})"
+    },
+    {
+        "name": "Constructor",
+        "trigger": "cn",
+        "content": "constructor () {\n\t${1}\n}"
+    },
+    {
+        "name": "Use Strict",
+        "trigger": "uss",
+        "content": "'use strict'"
+    },
+    {
+        "name": "Json.Stringify()",
+        "trigger": "js",
+        "content": "JSON.stringify($1)"
+    },
+    {
+        "name": "Json.Parse()",
+        "trigger": "jp",
+        "content": "JSON.parse($1)"
+    },
+    {
+        "name": "Method",
+        "trigger": "m",
+        "content": "${1:method} (${2:arguments}) {\n\t${3}\n}"
+    },
+    {
+        "name": "Getter",
+        "trigger": "get",
+        "content": "get ${1:property} () {\n\t${2}\n}"
+    },
+    {
+        "name": "Setter",
+        "trigger": "set",
+        "content": "set ${1:property} (${2:value}) {\n\t${3}\n}"
+    },
+    {
+        "name": "Getter + Setter",
+        "trigger": "gs",
+        "content": "get ${1:property} () {\n\t${3}\n}\nset ${1:property} (${2:value}) {\n\t\n}"
+    },
+    {
+        "name": "Prototype Method",
+        "trigger": "proto",
+        "content": "${1:Class}.prototype.${2:method} = function (${3:arguments}) {\n\t${4}\n}"
+    },
+    {
+        "name": "Object.Assign",
+        "trigger": "oa",
+        "content": "Object.assign(${1:dest}, ${2:source})"
+    },
+    {
+        "name": "Object.Create",
+        "trigger": "oc",
+        "content": "Object.create(${1:obj})"
+    },
+    {
+        "name": "Object.Getownpropertydescriptor",
+        "trigger": "og",
+        "content": "Object.getOwnPropertyDescriptor(${1:obj}, '${2:prop}')"
+    },
+    {
+        "name": "Ternary",
+        "trigger": "te",
+        "content": "${1:cond} ? ${2:true} : ${3:false}"
+    },
+    {
+        "name": "Ternary Assignment",
+        "trigger": "ta",
+        "content": "const ${4} = ${1:cond} ? ${2:true} : ${3:false}"
+    },
+    {
+        "name": "Object.Defineproperty",
+        "trigger": "od",
+        "content": "Object.defineProperty(${1:dest}, '${2:prop}', {\n\t${3}\n})"
+    },
+    {
+        "name": "Object.Keys",
+        "trigger": "ok",
+        "content": "Object.keys(${1:obj})"
+    },
+    {
+        "name": "Object.Values",
+        "trigger": "ov",
+        "content": "Object.values(${1:obj})"
+    },
+    {
+        "name": "Object.Entries",
+        "trigger": "oe",
+        "content": "Object.entries(${1:obj})"
+    },
+    {
+        "name": "Return",
+        "trigger": "r",
+        "content": "return ${1}"
+    },
+    {
+        "name": "Return Arrow Function",
+        "trigger": "rf",
+        "content": "return (${1:arguments}) => ${2:statement}"
+    },
+    {
+        "name": "Yield",
+        "trigger": "y",
+        "content": "yield ${1}"
+    },
+    {
+        "name": "Return This",
+        "trigger": "rt",
+        "content": "return ${1:this}"
+    },
+    {
+        "name": "Return Null",
+        "trigger": "rn",
+        "content": "return null"
+    },
+    {
+        "name": "Return New Object",
+        "trigger": "ro",
+        "content": "return {\n\t${1}\n}"
+    },
+    {
+        "name": "Return New Array",
+        "trigger": "ra",
+        "content": "return [\n\t${1}\n]"
+    },
+    {
+        "name": "Return Promise",
+        "trigger": "rp",
+        "content": "return new Promise((resolve, reject) => {\n\t${1}\n})"
+    },
+    {
+        "name": "Wrap Selection In Arrow Function",
+        "trigger": "wrap selection in arrow function",
+        "content": "() => {\n\t{$TM_SELECTED_TEXT}\n}"
+    },
+    {
+        "name": "Wrap Selection In Async Arrow Function",
+        "trigger": "wrap selection in async arrow function",
+        "content": "async () => {\n\t{$TM_SELECTED_TEXT}\n}"
+    },
+    {
+        "name": "Define Module",
+        "trigger": "define",
+        "content": "define([\n\t'require',\n\t'${1:dependency}'\n], function(require, ${2:factory}) {\n\t'use strict';\n\t$3\n});"
+    },
+    {
+        "name": "For Loop",
+        "trigger": "for",
+        "content": "for (let ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {\n\tconst ${3:element} = ${2:array}[${1:index}];\n\t$4\n}"
+    },
+    {
+        "name": "For-Each Loop",
+        "trigger": "foreach",
+        "content": "${1:array}.forEach(${2:element} => {\n\t$3\n});"
+    },
+    {
+        "name": "For-In Loop",
+        "trigger": "forin",
+        "content": "for (const ${1:key} in ${2:object}) {\n\tif (${2:object}.hasOwnProperty(${1:key})) {\n\t\tconst ${3:element} = ${2:object}[${1:key}];\n\t\t$4\n\t}\n}"
+    },
+    {
+        "name": "For-Of Loop",
+        "trigger": "forof",
+        "content": "for (const ${1:iterator} of ${2:object}) {\n\t$3\n}"
+    },
+    {
+        "name": "For-Await-Of Loop",
+        "trigger": "forawaitof",
+        "content": "for await (const ${1:iterator} of ${2:object}) {\n\t$3\n}"
+    },
+    {
+        "name": "Function Statement",
+        "trigger": "function",
+        "content": "function ${1:name}(${2:params}) {\n\t$3\n}"
+    },
+    {
+        "name": "If Statement",
+        "trigger": "if",
+        "content": "if (${1:condition}) {\n\t$2\n}"
+    },
+    {
+        "name": "If-Else Statement",
+        "trigger": "ifelse",
+        "content": "if (${1:condition}) {\n\t$2\n} else {\n\t$3\n}"
+    },
+    {
+        "name": "New Statement",
+        "trigger": "new",
+        "content": "const ${1:name} = new ${2:type}(${3:arguments});$4"
+    },
+    {
+        "name": "Switch Statement",
+        "trigger": "switch",
+        "content": "switch (${1:key}) {\n\tcase ${2:value}:\n\t\t$3\n\t\tbreak;\n\n\tdefault:\n\t\tbreak;\n}"
+    },
+    {
+        "name": "While Statement",
+        "trigger": "while",
+        "content": "while (${1:condition}) {\n\t$2\n}"
+    },
+    {
+        "name": "Do-While Statement",
+        "trigger": "dowhile",
+        "content": "do {\n\t$2\n} while (${1:condition});"
+    },
+    {
+        "name": "Try-Catch Statement",
+        "trigger": "trycatch",
+        "content": "try {\n\t$2\n} catch (${1:error}) {\n\t\n}"
+    },
+    {
+        "name": "Set Timeout Function",
+        "trigger": "settimeout",
+        "content": "setTimeout(() => {\n\t$2\n}, ${1:timeout});"
+    },
+    {
+        "name": "Set Interval Function",
+        "trigger": "setinterval",
+        "content": "setInterval(() => {\n\t$2\n}, ${1:interval});"
+    },
+    {
+        "name": "Import External Module.",
+        "trigger": "import statement",
+        "content": "import { $2 } from \"${1:module}\";"
+    },
+    {
+        "name": "Region Start",
+        "trigger": "#region",
+        "content": "//#region $1"
+    },
+    {
+        "name": "Region End",
+        "trigger": "#endregion",
+        "content": "//#endregion"
+    },
+    {
+        "name": "Log Warning To Console",
+        "trigger": "warn",
+        "content": "console.warn($1);\n$2"
+    },
+    {
+        "name": "Log Error To Console",
+        "trigger": "error",
+        "content": "console.error($1);\n$2"
+    },
+    {
+        "name": "Concat",
+        "trigger": "concat",
+        "content": "concat($1);\n$2"
+    },
+    {
+        "name": "Endswith",
+        "trigger": "endsWith",
+        "content": "endsWith($1);\n$2"
+    },
+    {
+        "name": "Fromcharcode",
+        "trigger": "fromCharCode",
+        "content": "fromCharCode($1);\n$2"
+    },
+    {
+        "name": "Includes",
+        "trigger": "includes",
+        "content": "includes($1);\n$2"
+    },
+    {
+        "name": "Indexof",
+        "trigger": "indexOf",
+        "content": "indexOf($1);\n$2"
+    },
+    {
+        "name": "Lastindexof",
+        "trigger": "lastIndexOf",
+        "content": "lastIndexOf($1);\n$2"
+    },
+    {
+        "name": "Localecompare",
+        "trigger": "localeCompare",
+        "content": "localeCompare($1);\n$2"
+    },
+    {
+        "name": "Match",
+        "trigger": "match",
+        "content": "match($1);\n$2"
+    },
+    {
+        "name": "Matchall",
+        "trigger": "matchAll",
+        "content": "matchAll($1);\n$2"
+    },
+    {
+        "name": "Normalize",
+        "trigger": "normalize",
+        "content": "normalize($1);\n$2"
+    },
+    {
+        "name": "Repeat",
+        "trigger": "repeat",
+        "content": "repeat($1);\n$2"
+    },
+    {
+        "name": "Replace",
+        "trigger": "replace",
+        "content": "replace($1, $2);\n$3"
+    },
+    {
+        "name": "Replaceall",
+        "trigger": "replaceAll",
+        "content": "replaceAll($1, $2);\n$3"
+    },
+    {
+        "name": "Search",
+        "trigger": "search",
+        "content": "search($1);\n$2"
+    },
+    {
+        "name": "Slice",
+        "trigger": "slice",
+        "content": "slice($1);\n$2"
+    },
+    {
+        "name": "Split",
+        "trigger": "split",
+        "content": "split($1);\n$2"
+    },
+    {
+        "name": "Startswith",
+        "trigger": "startsWith",
+        "content": "startsWith($1);\n$2"
+    },
+    {
+        "name": "Substring",
+        "trigger": "substring",
+        "content": "substring($1);\n$2"
+    },
+    {
+        "name": "Tolocalelowercase",
+        "trigger": "toLocaleLowerCase",
+        "content": "toLocaleLowerCase($1);\n$2"
+    },
+    {
+        "name": "Tolocaleuppercase",
+        "trigger": "toLocaleUpperCase",
+        "content": "toLocaleUpperCase($1);\n$2"
+    },
+    {
+        "name": "Tolowercase",
+        "trigger": "toLowerCase",
+        "content": "toLowerCase()"
+    },
+    {
+        "name": "Tostring",
+        "trigger": "toString",
+        "content": "toString()"
+    },
+    {
+        "name": "Touppercase",
+        "trigger": "toUpperCase",
+        "content": "toUpperCase()"
+    },
+    {
+        "name": "Valueof",
+        "trigger": "valueOf",
+        "content": "valueOf()"
+    },
+    {
+        "name": "Isfinite",
+        "trigger": "isFinite",
+        "content": "isFinite($1);\n$2"
+    },
+    {
+        "name": "Parsefloat",
+        "trigger": "parseFloat",
+        "content": "parseFloat($1);\n$2"
+    },
+    {
+        "name": "Isnan",
+        "trigger": "isNaN",
+        "content": "isNaN($1);\n$2"
+    },
+    {
+        "name": "Parseint",
+        "trigger": "parseInt",
+        "content": "parseInt($1);\n$2"
+    },
+    {
+        "name": "Tofixed",
+        "trigger": "toFixed",
+        "content": "toFixed($1);\n$2"
+    },
+    {
+        "name": "Tolocalestring",
+        "trigger": "toLocaleString",
+        "content": "toLocaleString($1);\n$2"
+    },
+    {
+        "name": "Apply",
+        "trigger": "apply",
+        "content": "apply($1);\n$2"
+    },
+    {
+        "name": "Bind",
+        "trigger": "bind",
+        "content": "bind($1);\n$2"
+    },
+    {
+        "name": "Call",
+        "trigger": "call",
+        "content": "call($1);\n$2"
+    },
+    {
+        "name": "Defineproperties",
+        "trigger": "defineProperties",
+        "content": "defineProperties($1, $2);\n$3"
+    },
+    {
+        "name": "Entries",
+        "trigger": "entries",
+        "content": "entries($1);\n$2"
+    },
+    {
+        "name": "Values",
+        "trigger": "values",
+        "content": "values($1);\n$2"
+    },
+    {
+        "name": "Focus",
+        "trigger": "focus",
+        "content": "focus()"
+    },
+    {
+        "name": "Blur",
+        "trigger": "blur",
+        "content": "blur()"
+    },
+    {
+        "name": "Innertext",
+        "trigger": "innerText",
+        "content": "innerText"
+    },
+    {
+        "name": "Push",
+        "trigger": "push",
+        "content": "push($1);\n$2"
+    },
+    {
+        "name": "Reverse",
+        "trigger": "reverse",
+        "content": "reverse();\n$1"
+    },
+    {
+        "name": "Sort",
+        "trigger": "sort",
+        "content": "sort($1);\n$2"
+    },
+    {
+        "name": "Splice",
+        "trigger": "splice",
+        "content": "splice($1);\n$2"
+    },
+    {
+        "name": "Tojson",
+        "trigger": "toJSON",
+        "content": "toJSON();\n$1"
+    },
+    {
+        "name": "Todatestring",
+        "trigger": "toDateString",
+        "content": "toDateString();\n$1"
+    },
+    {
+        "name": "Settime",
+        "trigger": "setTime",
+        "content": "setTime($1);\n$2"
+    },
+    {
+        "name": "Setdate",
+        "trigger": "setDate",
+        "content": "setDate($1);\n$2"
+    }
+]

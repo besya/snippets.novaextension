@@ -1,0 +1,197 @@
+[
+    {
+        "name": "Before Action",
+        "trigger": "ba",
+        "content": "before_action :${1:method}"
+    },
+    {
+        "name": "Before Validation",
+        "trigger": "bv",
+        "content": "before_validation :${1:method}"
+    },
+    {
+        "name": "Before Create",
+        "trigger": "bc",
+        "content": "before_create :${1:method}"
+    },
+    {
+        "name": "Before Update",
+        "trigger": "bu",
+        "content": "before_update :${1:method}"
+    },
+    {
+        "name": "Before Save",
+        "trigger": "bs",
+        "content": "before_save :${1:method}"
+    },
+    {
+        "name": "Before Destroy",
+        "trigger": "bd",
+        "content": "before_destroy :${1:method}"
+    },
+    {
+        "name": "After Create",
+        "trigger": "ac",
+        "content": "after_create :${1:method}"
+    },
+    {
+        "name": "After Validation",
+        "trigger": "av",
+        "content": "after_validation :${1:method}"
+    },
+    {
+        "name": " Update",
+        "trigger": "au",
+        "content": "after_update :${1:method}"
+    },
+    {
+        "name": " Save",
+        "trigger": "as",
+        "content": "after_save :${1:method}"
+    },
+    {
+        "name": " Destroy",
+        "trigger": "ad",
+        "content": "after_destroy :${1:method}"
+    },
+    {
+        "name": "Belongs To",
+        "trigger": "bt",
+        "content": "belongs_to :${1:association}"
+    },
+    {
+        "name": "Belongs To Polymorphic",
+        "trigger": "btp",
+        "content": "belongs_to :${1:association}, polymorphic: true"
+    },
+    {
+        "name": "Create Action",
+        "trigger": "create",
+        "content": "def create\n\t@${1:model_class_name} = ${2:ModelClassName}.new($1_params)\n\trespond_to do |format|\n\t\tif @$1.save\n\t\t\tformat.html { redirect_to @$1, notice: '$2 created' }\n\t\telse\n\t\t\tformat.html { render :new, status: :unprocessable_entity }\n\t\tend\n\tend\nend"
+    },
+    {
+        "name": "Destroy Action",
+        "trigger": "destroy",
+        "content": "def destroy\n\t@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])\n\t@$1.destroy!\n\tredirect_to $1s_path, notice: '$2 removed'\nend"
+    },
+    {
+        "name": "Edit Action",
+        "trigger": "edit",
+        "content": "def edit\n\t@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])\nend"
+    },
+    {
+        "name": "Index Action",
+        "trigger": "index",
+        "content": "def index\n\t@${1:model_class_name} = ${2:ModelClassName}.all\nend"
+    },
+    {
+        "name": "New Action",
+        "trigger": "new",
+        "content": "def new\n\t@${1:model_class_name} = ${2:ModelClassName}.new\nend"
+    },
+    {
+        "name": "Show Action",
+        "trigger": "show",
+        "content": "def show\n\t@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])\nend"
+    },
+    {
+        "name": "Update Action",
+        "trigger": "update",
+        "content": "def update\n\t@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])\n\trespond_to do |format|\n\t\tif @$1.update($1_params)\n\t\t\tformat.html { redirect_to @$1, notice: '$2 updated' }\n\t\telse\n\t\t\tformat.html { render :edit, status: :unprocessable_entity }\n\t\tend\n\tend\nend"
+    },
+    {
+        "name": "Model Params",
+        "trigger": "params",
+        "content": "def ${1:model_class_name}_params\n\tparams.require(:$1).permit(${2:attributes})\nend"
+    },
+    {
+        "name": "Getting Params",
+        "trigger": "pa",
+        "content": "params[:${1:id}]"
+    },
+    {
+        "name": "Delegate To",
+        "trigger": "dt",
+        "content": "delegate: :${1:method}, to: :${2:object}"
+    },
+    {
+        "name": "Delegate To With Prefix",
+        "trigger": "dtp",
+        "content": "delegate: :${1:method}, to: :${2:object}, prefix: :${3:prefix}, allow_nil: ${4:allow_nil}"
+    },
+    {
+        "name": "Scope",
+        "trigger": "scope",
+        "content": "scope :${1:name}, -> { where(${2:field}: ${3:value}) }"
+    },
+    {
+        "name": "Validate Presence",
+        "trigger": "vp",
+        "content": "validates :${1:attribute}, presence: true"
+    },
+    {
+        "name": "Validate Uniqueness",
+        "trigger": "vu",
+        "content": "validates :${1:attribute}, uniqueness: true"
+    },
+    {
+        "name": "Migration Add Column",
+        "trigger": "mac",
+        "content": "add_column :${1:table_name}, :${2:column_name}, :${3:data_type}"
+    },
+    {
+        "name": "Migration Add Index",
+        "trigger": "mai",
+        "content": "add_index :${1:table_name}, :${2:column_name}"
+    },
+    {
+        "name": "Migration Remove Column",
+        "trigger": "mrc",
+        "content": "remove_column :${1:table_name}, :${2:column_name}"
+    },
+    {
+        "name": "Migration Rename Column",
+        "trigger": "mrnc",
+        "content": "rename_column :${1:table_name}, :${2:old_column_name}, :${3:new_column_name}"
+    },
+    {
+        "name": "Migration Change Column",
+        "trigger": "mcc",
+        "content": "change_column :${1:table_name}, :${2:old_column_name}, :${3:data_type}"
+    },
+    {
+        "name": "Has Many Dependent",
+        "trigger": "hmd",
+        "content": "has_many :${1:object}, dependent: :${2:destroy}"
+    },
+    {
+        "name": "Has Many",
+        "trigger": "hm",
+        "content": "has_many :${1:object}"
+    },
+    {
+        "name": "Has Many Through",
+        "trigger": "hmt",
+        "content": "has_many :${1:object}, through: :${2:object}"
+    },
+    {
+        "name": "Has One",
+        "trigger": "ho",
+        "content": "has_one :${1:object}"
+    },
+    {
+        "name": "Has One Dependent",
+        "trigger": "hod",
+        "content": "has_one :${1:object}, dependent: :${2:destroy}"
+    },
+    {
+        "name": "Save And Open Screenshot",
+        "trigger": "saos",
+        "content": "save_and_open_screenshot${1}"
+    },
+    {
+        "name": "Save And Open Page",
+        "trigger": "saop",
+        "content": "save_and_open_page${1}"
+    }
+]

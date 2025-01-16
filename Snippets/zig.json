@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Import",
+        "trigger": "import",
+        "content": "const ${1} = @import(\"${1}\")"
+    },
+    {
+        "name": "Cimport",
+        "trigger": "cimport",
+        "content": "const c = @cImport({\n    @cDefine(\"${1}\")\n});"
+    },
+    {
+        "name": "Buildexe",
+        "trigger": "bExe",
+        "content": "const exe = b.addExecutable(.{\n    .name = \"${1}\",\n    .root_source_file = b.path(\"${2:path}\"),\n    .target = target,\n    .optimize = optimize,\n});\nb.installArtifact(exe);"
+    }
+]

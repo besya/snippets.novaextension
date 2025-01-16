@@ -1,0 +1,337 @@
+[
+    {
+        "name": "Exception Block",
+        "trigger": "begin",
+        "content": "begin\n\t$1\nrescue ${2:StandardError} => ${3:exception}\n\t$4\nend"
+    },
+    {
+        "name": "Exception Block With Ensure",
+        "trigger": "begin ensure",
+        "content": "begin\n\t$1\nrescue ${2:StandardError} => ${3:exception}\n\t$4\nensure\n\t$5\nend"
+    },
+    {
+        "name": "Exception Block With Else And Ensure",
+        "trigger": "begin else",
+        "content": "begin\n\t$1\nrescue ${2:StandardError} => ${3:exception}\n\t$4\nelse\n\t$5\nensure\n\t$6\nend"
+    },
+    {
+        "name": "Class Definition With Initialize",
+        "trigger": "class init",
+        "content": "class ${1:ClassName}\n\tdef initialize(${2:args})\n\t\t$3\n\tend\nend"
+    },
+    {
+        "name": "Class Definition",
+        "trigger": "class",
+        "content": "class ${1:ClassName}\n\t$2\nend"
+    },
+    {
+        "name": "For Loop",
+        "trigger": "for",
+        "content": "for ${1:value} in ${2:enumerable} do\n\t$3\nend"
+    },
+    {
+        "name": "If",
+        "trigger": "if",
+        "content": "if ${1:test}\n\t$2\nend"
+    },
+    {
+        "name": "If Else",
+        "trigger": "ife",
+        "content": "if ${1:test}\n\t$2\nelse\n\t$3\nend"
+    },
+    {
+        "name": "If Elsif",
+        "trigger": "ifei",
+        "content": "if ${1:test}\n\t$2\nelsif ${3:test}\n\t$4\nend"
+    },
+    {
+        "name": "If Elsif Else",
+        "trigger": "ifee",
+        "content": "if ${1:test}\n\t$2\nelsif ${3:test}\n\t$4\nelse\n\t$5\nend"
+    },
+    {
+        "name": "Case",
+        "trigger": "case",
+        "content": "case ${1:test}\nwhen $2\n\t$3\nwhen $4\n\t$5\nelse\n\t$6\nend"
+    },
+    {
+        "name": "Forever Loop",
+        "trigger": "loop",
+        "content": "loop do\n\t$1\nend"
+    },
+    {
+        "name": "Module Definition",
+        "trigger": "module",
+        "content": "module ${1:ModuleName}\n\t$2\nend"
+    },
+    {
+        "name": "Unless",
+        "trigger": "unless",
+        "content": "unless ${1:test}\n\t$2\nend"
+    },
+    {
+        "name": "Until Loop",
+        "trigger": "until",
+        "content": "until ${1:test}\n\t$2\nend"
+    },
+    {
+        "name": "While Loop",
+        "trigger": "while",
+        "content": "while ${1:test}\n\t$2\nend"
+    },
+    {
+        "name": "Method Definition",
+        "trigger": "def",
+        "content": "def ${1:method_name}\n\t$2\nend"
+    },
+    {
+        "name": "Class Method Definition",
+        "trigger": "defs",
+        "content": "def self.${1:method_name}\n\t$2\nend"
+    },
+    {
+        "name": "Initialize Method Definition",
+        "trigger": "definit",
+        "content": "def initialize(${1:args})\n\t$2\nend"
+    },
+    {
+        "name": "Method_Missing Definition",
+        "trigger": "defmm",
+        "content": "def method_missing(meth, *args, &blk)\n\t$1\nend"
+    },
+    {
+        "name": "Delegator Definition",
+        "trigger": "defd",
+        "content": "def_delegator :${1:@del_obj}, :${2:del_meth}, :${3:new_name}"
+    },
+    {
+        "name": "Alias Method Definition",
+        "trigger": "am",
+        "content": "alias_method :${1:new_name}, :${2:old_name}"
+    },
+    {
+        "name": "Rake Task",
+        "trigger": "rake",
+        "content": "namespace :${1} do\n\tdesc \"${2}\"\n\ttask ${3}: :environment do\n\t\t${4}\n\tend\nend"
+    },
+    {
+        "name": "Insert Do \u2026 End Block",
+        "trigger": "do",
+        "content": "do\n\t$1\nend"
+    },
+    {
+        "name": "Insert Do |Variable| \u2026 End Block",
+        "trigger": "dop",
+        "content": "do |${1:variable}|\n\t$2\nend"
+    },
+    {
+        "name": "Insert Curly Braces Block",
+        "trigger": "{p",
+        "content": "{ ${1:|${2:variable}| }$3 "
+    },
+    {
+        "name": "Insert Curly Braces Block",
+        "trigger": "{P",
+        "content": "{ ${1:|${2:variable}| }$3 "
+    },
+    {
+        "name": "Insert Inline Block With Variable",
+        "trigger": "b",
+        "content": "{ |${1:variable}| $2 }"
+    },
+    {
+        "name": "Insert Encoding Comment",
+        "trigger": "enc",
+        "content": "# encoding: utf-8$1"
+    },
+    {
+        "name": "Insert Frozen Literal String",
+        "trigger": "frozen",
+        "content": "# frozen_string_literal: true\n\n\n"
+    },
+    {
+        "name": "Insert Require",
+        "trigger": "req",
+        "content": "require '${1}'$2"
+    },
+    {
+        "name": "Insert Require_Relative",
+        "trigger": "reqr",
+        "content": "require_relative '${1}'$2"
+    },
+    {
+        "name": "Insert Attr_Reader",
+        "trigger": "r",
+        "content": "attr_reader :${1:attr_names}"
+    },
+    {
+        "name": "Insert Attr_Writer",
+        "trigger": "w",
+        "content": "attr_writer :${1:attr_names}"
+    },
+    {
+        "name": "Insert Attr_Accessor",
+        "trigger": "rw",
+        "content": "attr_accessor :${1:attr_names}"
+    },
+    {
+        "name": "Insert Inctance Variable Cache",
+        "trigger": "ivc",
+        "content": "@${1:variable_name} ||= ${2:cached_value}"
+    },
+    {
+        "name": "Insert Each With Inline Block",
+        "trigger": "ea",
+        "content": "each { |${1:e}| $2 }"
+    },
+    {
+        "name": "Insert Each With Multiline Block",
+        "trigger": "ead",
+        "content": "each do |${1:e}|\n\t$2\nend"
+    },
+    {
+        "name": "Insert Each With Index Inline Block",
+        "trigger": "eawi",
+        "content": "each_with_index { |${1:e}, ${2:i}| $3 }"
+    },
+    {
+        "name": "Insert Each With Index Multiline Block",
+        "trigger": "eawid",
+        "content": "each_with_index do |${1:e}, ${2:i}|\n\t$3\nend"
+    },
+    {
+        "name": "Insert Reduce Inline Block",
+        "trigger": "red",
+        "content": "reduce(${1:init}) { |${2:mem}, ${3:var}| $4 }"
+    },
+    {
+        "name": "Insert Reduce Multiline Block",
+        "trigger": "redd",
+        "content": "reduce(${1:init}) do |${2:mem}, ${3:var}|\n\t$4\nend"
+    },
+    {
+        "name": "Insert Map Inline Block",
+        "trigger": "map",
+        "content": "map { |${1:e}| $2 }"
+    },
+    {
+        "name": "Insert Map Multiline Block",
+        "trigger": "mapd",
+        "content": "map do |${1:e}|\n\t$2\nend"
+    },
+    {
+        "name": "Insert Lambda Arrow",
+        "trigger": "->",
+        "content": "-> { $1 }"
+    },
+    {
+        "name": "Insert Lambda Arrow With Arguments",
+        "trigger": "->a",
+        "content": "->(${1:args}) { $2 }"
+    },
+    {
+        "name": "Insert Key: Value",
+        "trigger": ":",
+        "content": "${1:key}: ${2:value}"
+    },
+    {
+        "name": "Insert Byebug Call",
+        "trigger": "bye",
+        "content": "require 'byebug'; byebug"
+    },
+    {
+        "name": "Insert Debug Call",
+        "trigger": "debug",
+        "content": "require 'debug'; debugger"
+    },
+    {
+        "name": "Insert Pry Call",
+        "trigger": "pry",
+        "content": "require 'pry'; binding.pry"
+    },
+    {
+        "name": "Insert Irb Call",
+        "trigger": "irb",
+        "content": "binding.irb"
+    },
+    {
+        "name": "Insert Break Call",
+        "trigger": "break",
+        "content": "binding.break"
+    },
+    {
+        "name": "Insert Rspec.Describe Class",
+        "trigger": "rdesc",
+        "content": "RSpec.describe ${1:described_class} do\n\t$2\nend"
+    },
+    {
+        "name": "Insert Describe Class",
+        "trigger": "desc",
+        "content": "describe ${1:described_class} do\n\t$2\nend"
+    },
+    {
+        "name": "Insert Describe Block",
+        "trigger": "descm",
+        "content": "describe '${1:#method}' do\n\t${2:pending 'Not implemented'}\nend"
+    },
+    {
+        "name": "Insert Context Block",
+        "trigger": "cont",
+        "content": "context '${1:message}' do\n\t$2\nend"
+    },
+    {
+        "name": "Insert Before Block",
+        "trigger": "bef",
+        "content": "before :${1:each} do\n\t$2\nend"
+    },
+    {
+        "name": "Insert Let",
+        "trigger": "let",
+        "content": "let(:${1:object}) { $2 }"
+    },
+    {
+        "name": "Insert Let!",
+        "trigger": "let!",
+        "content": "let!(:${1:object}) { $2 }"
+    },
+    {
+        "name": "Insert Subject Definition",
+        "trigger": "subj",
+        "content": "subject(:${1:name}) { $2 }"
+    },
+    {
+        "name": "Insert Expect",
+        "trigger": "exp",
+        "content": "expect(${1:object}).to ${2}"
+    },
+    {
+        "name": "Insert Expect With Block",
+        "trigger": "expb",
+        "content": "expect { ${1:object} }.to ${2}"
+    },
+    {
+        "name": "Insert Expect With Raise_Error",
+        "trigger": "experr",
+        "content": "expect { ${1:object} }.to raise_error ${2:StandardError}"
+    },
+    {
+        "name": "Insert Allow",
+        "trigger": "allow",
+        "content": "allow(${1:object}).to $2"
+    },
+    {
+        "name": "Insert Shared_Examples",
+        "trigger": "shared",
+        "content": "shared_examples '${1:shared examples name}'"
+    },
+    {
+        "name": "Insert It_Behaves_Like",
+        "trigger": "ibl",
+        "content": "it_behaves_like '${1:shared examples name}'"
+    },
+    {
+        "name": "Insert It Block",
+        "trigger": "it",
+        "content": "it '${1:spec_name}' do\n\t$2\nend"
+    }
+]

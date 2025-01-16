@@ -1,0 +1,182 @@
+[
+    {
+        "name": "Defmodule",
+        "trigger": "defmo",
+        "content": "defmodule ${1:module} do\n  $2\nend"
+    },
+    {
+        "name": "Def",
+        "trigger": "def",
+        "content": "def ${1:name}() do\n  $2\nend"
+    },
+    {
+        "name": "Defp",
+        "trigger": "defp",
+        "content": "defp ${1:name}() do\n  $2\nend"
+    },
+    {
+        "name": "Df",
+        "trigger": "df",
+        "content": "def ${1:name}(), do: $2"
+    },
+    {
+        "name": "Dfw",
+        "trigger": "dfw",
+        "content": "def ${1:name}(${2:args}) when ${3:guard}, do: $4"
+    },
+    {
+        "name": "Io.Puts",
+        "trigger": "put",
+        "content": "IO.puts($1)"
+    },
+    {
+        "name": "Io.Inspect",
+        "trigger": "ins",
+        "content": "IO.inspect($1)"
+    },
+    {
+        "name": "Io.Inspect With Label",
+        "trigger": "insl",
+        "content": "IO.inspect($1, label: \"$2\")"
+    },
+    {
+        "name": "If .. Do .. End",
+        "trigger": "if",
+        "content": "if ${1:condition} do\n  $2\nend"
+    },
+    {
+        "name": "If .. Do:",
+        "trigger": "if:",
+        "content": "if ${1:condition}, do: $2"
+    },
+    {
+        "name": "If .. Do .. Else .. End",
+        "trigger": "ife",
+        "content": "if ${1:condition} do\n  $2\nelse\n  $3\nend"
+    },
+    {
+        "name": "If .. Do: .. Else:",
+        "trigger": "ife:",
+        "content": "if ${1:condition}, do: $2, else: $3"
+    },
+    {
+        "name": "Cond",
+        "trigger": "cond",
+        "content": "cond do\n  $1 -> \n  $2\nend"
+    },
+    {
+        "name": "Case",
+        "trigger": "case",
+        "content": "case $1 do\n  $2 -> \n    $3\nend"
+    },
+    {
+        "name": "For",
+        "trigger": "for",
+        "content": "for ${1:item} <- ${2:items} do\n  $3\nend"
+    },
+    {
+        "name": "Def + Doc",
+        "trigger": "defd",
+        "content": "@doc \"\"\"\n${1:doc}\n\"\"\"\ndef ${2:name} do\n  $3\nend"
+    },
+    {
+        "name": "Def + Spec",
+        "trigger": "defs",
+        "content": "@spec ${1:name}(${2:args}) :: ${3:no_return}\ndef $1{4:args} do\n  $4\nend"
+    },
+    {
+        "name": "Def + Doc + Spec",
+        "trigger": "defsd",
+        "content": "@doc \"\"\"\n${1:doc}\n\"\"\"\n@spec ${2:name}(${3:args}) :: ${4:no_return}\ndef $2{5:args} do\n  $5\nend"
+    },
+    {
+        "name": "Do",
+        "trigger": "do",
+        "content": "do\n  $1\nend"
+    },
+    {
+        "name": "Doc",
+        "trigger": "doc",
+        "content": "@doc \"\"\"\n$1\n\"\"\""
+    },
+    {
+        "name": "Doc S",
+        "trigger": "docs",
+        "content": "@doc ~S\"\"\"\n$1\n\"\"\""
+    },
+    {
+        "name": "Doc False",
+        "trigger": "docf",
+        "content": "@doc false"
+    },
+    {
+        "name": "Moduledoc",
+        "trigger": "mdoc",
+        "content": "@moduledoc \"\"\"\n$1\n\"\"\""
+    },
+    {
+        "name": "Moduledoc S",
+        "trigger": "mdocs",
+        "content": "@moduledoc ~S\"\"\"\n$1\n\"\"\""
+    },
+    {
+        "name": "Moduledoc False",
+        "trigger": "mdocf",
+        "content": "@moduledoc false"
+    },
+    {
+        "name": "Require",
+        "trigger": "req",
+        "content": "require ${1:Logger}"
+    },
+    {
+        "name": "Test",
+        "trigger": "test",
+        "content": "test \"${1:name}\" do\n  $2\nend"
+    },
+    {
+        "name": "Des",
+        "trigger": "desc",
+        "content": "describe \"${1:test group subject}\" do\n  $2\nend"
+    },
+    {
+        "name": "Iex.Pry",
+        "trigger": "pry",
+        "content": "require IEx; IEx.pry\n$1"
+    },
+    {
+        "name": "Pipe Char",
+        "trigger": "p",
+        "content": "|> $1"
+    },
+    {
+        "name": "Pipe Into Each",
+        "trigger": ">e",
+        "content": "|> Enum.each($1)"
+    },
+    {
+        "name": "Pipe Into Map",
+        "trigger": ">m",
+        "content": "|> Enum.map($1)"
+    },
+    {
+        "name": "Pipe Into Filter",
+        "trigger": ">f",
+        "content": "|> Enum.filter($1)"
+    },
+    {
+        "name": "Pipe Into Reduce",
+        "trigger": ">r",
+        "content": "|> Enum.reduce(${1:acc}, fn ${2}, ${3:acc} -> $4 end)"
+    },
+    {
+        "name": "Word List",
+        "trigger": "wl",
+        "content": "~w($1)"
+    },
+    {
+        "name": "Atom List",
+        "trigger": "al",
+        "content": "~w($1)a"
+    }
+]

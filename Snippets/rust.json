@@ -1,0 +1,347 @@
+[
+    {
+        "name": "Allow",
+        "trigger": "allow",
+        "content": "#![allow(${1})]"
+    },
+    {
+        "name": "Deny",
+        "trigger": "deny",
+        "content": "#![deny(${1})]"
+    },
+    {
+        "name": "Warn",
+        "trigger": "warn",
+        "content": "#![warn(${1})]"
+    },
+    {
+        "name": "No_Std",
+        "trigger": "no_std",
+        "content": "#![no_std]"
+    },
+    {
+        "name": "No_Core",
+        "trigger": "no_core",
+        "content": "#![no_core]"
+    },
+    {
+        "name": "Feature",
+        "trigger": "feature",
+        "content": "#![feature(${1})]"
+    },
+    {
+        "name": "Macro_Use",
+        "trigger": "macro_use",
+        "content": "#[macro_use(${1})]"
+    },
+    {
+        "name": "Repr",
+        "trigger": "repr",
+        "content": "#[repr(${1})]"
+    },
+    {
+        "name": "Cfg",
+        "trigger": "cfg",
+        "content": "#[cfg(${1})]"
+    },
+    {
+        "name": "Cfg_Attr",
+        "trigger": "cfg_attr",
+        "content": "#[cfg_attr(${1}, ${2})]"
+    },
+    {
+        "name": "Cfg!",
+        "trigger": "cfg!",
+        "content": "cfg!(${1})"
+    },
+    {
+        "name": "Column",
+        "trigger": "column",
+        "content": "column!()"
+    },
+    {
+        "name": "Concat",
+        "trigger": "concat",
+        "content": "concat!(${1})"
+    },
+    {
+        "name": "Concat_Idents",
+        "trigger": "concat_idents",
+        "content": "concat_idents!(${1})"
+    },
+    {
+        "name": "Debug_Assert",
+        "trigger": "debug_assert",
+        "content": "debug_assert!(${1});"
+    },
+    {
+        "name": "Debug_Assert_Eq",
+        "trigger": "debug_assert_eq",
+        "content": "debug_assert_eq!(${1}, ${2});"
+    },
+    {
+        "name": "Env",
+        "trigger": "env",
+        "content": "env!(\"${1}\")"
+    },
+    {
+        "name": "File",
+        "trigger": "file",
+        "content": "file!()"
+    },
+    {
+        "name": "Format",
+        "trigger": "format",
+        "content": "format!(\"${1}\")"
+    },
+    {
+        "name": "Format_Args",
+        "trigger": "format_args",
+        "content": "format_args!(\"${1}\")"
+    },
+    {
+        "name": "Include",
+        "trigger": "include",
+        "content": "include!(\"${1}\");"
+    },
+    {
+        "name": "Include_Bytes",
+        "trigger": "include_bytes",
+        "content": "include_bytes!(\"${1}\")"
+    },
+    {
+        "name": "Include_Str",
+        "trigger": "include_str",
+        "content": "include_str!(\"${1}\")"
+    },
+    {
+        "name": "Line",
+        "trigger": "line",
+        "content": "line!()"
+    },
+    {
+        "name": "Module_Path",
+        "trigger": "module_path",
+        "content": "module_path!()"
+    },
+    {
+        "name": "Option_Env",
+        "trigger": "option_env",
+        "content": "option_env!(\"${1}\")"
+    },
+    {
+        "name": "Panic",
+        "trigger": "panic",
+        "content": "panic!(\"${1}\");"
+    },
+    {
+        "name": "Print",
+        "trigger": "print",
+        "content": "print!(\"${1}\");"
+    },
+    {
+        "name": "Println",
+        "trigger": "println",
+        "content": "println!(\"${1}\");"
+    },
+    {
+        "name": "Stringify",
+        "trigger": "stringify",
+        "content": "stringify!(${1})"
+    },
+    {
+        "name": "Thread_Local",
+        "trigger": "thread_local",
+        "content": "thread_local!(static ${1:STATIC}: ${2:Type} = ${4:init});"
+    },
+    {
+        "name": "Try",
+        "trigger": "try",
+        "content": "try!(${1})"
+    },
+    {
+        "name": "Unimplemented",
+        "trigger": "unimplemented",
+        "content": "unimplemented!()"
+    },
+    {
+        "name": "Unreachable",
+        "trigger": "unreachable",
+        "content": "unreachable!(${1})"
+    },
+    {
+        "name": "Vec",
+        "trigger": "vec",
+        "content": "vec![${1}]"
+    },
+    {
+        "name": "Write",
+        "trigger": "write",
+        "content": "write!(${1}, \"${2}\")"
+    },
+    {
+        "name": "Writeln",
+        "trigger": "writeln",
+        "content": "writeln!(${1}, \"${2}\")"
+    },
+    {
+        "name": "Assert",
+        "trigger": "assert",
+        "content": "assert!(${1});"
+    },
+    {
+        "name": "Assert_Eq",
+        "trigger": "assert_eq",
+        "content": "assert_eq!(${1}, ${2});"
+    },
+    {
+        "name": "Bench",
+        "trigger": "bench",
+        "content": "#[bench]\nfn ${1:name}(b: &mut test::Bencher) {\n    ${2:b.iter(|| ${3:/* benchmark code */})}\n}"
+    },
+    {
+        "name": "Const",
+        "trigger": "const",
+        "content": "const ${1:CONST}: ${2:Type} = ${4:init};"
+    },
+    {
+        "name": "Derive",
+        "trigger": "derive",
+        "content": "#[derive(${1})]"
+    },
+    {
+        "name": "Enum",
+        "trigger": "enum",
+        "content": "#[derive(Debug)]\nenum ${1:Name} {\n    ${2:Variant1},\n    ${3:Variant2},\n}"
+    },
+    {
+        "name": "Extern-Crate",
+        "trigger": "extern-crate",
+        "content": "extern crate ${1:name};"
+    },
+    {
+        "name": "Extern-Fn",
+        "trigger": "extern-fn",
+        "content": "extern \"C\" fn ${1:name}(${2:arg}: ${3:Type}) -> ${4:RetType} {\n    ${5:// add code here}\n}"
+    },
+    {
+        "name": "Extern-Mod",
+        "trigger": "extern-mod",
+        "content": "extern \"C\" {\n    ${2:// add code here}\n}"
+    },
+    {
+        "name": "Pfn",
+        "trigger": "pfn",
+        "content": "pub fn ${1:name}(${2:arg}: ${3:Type}) -> ${4:RetType} {\n    ${5:todo!();}\n}"
+    },
+    {
+        "name": "Fn",
+        "trigger": "fn",
+        "content": "fn ${1:name}(${2:arg}: ${3:Type}) -> ${4:RetType} {\n    ${5:todo!();}\n}"
+    },
+    {
+        "name": "For",
+        "trigger": "for",
+        "content": "for ${1:pat} in ${2:expr} {\n    ${3:todo!();}\n}"
+    },
+    {
+        "name": "If-Let",
+        "trigger": "if-let",
+        "content": "if let ${1:Some(pat)} = ${2:expr} {\n    ${3:todo!();}\n}"
+    },
+    {
+        "name": "If",
+        "trigger": "if",
+        "content": "if ${1:condition} {\n    ${2:todo!();}\n}"
+    },
+    {
+        "name": "Impl-Trait",
+        "trigger": "impl-trait",
+        "content": "impl ${1:Trait} for ${2:Type} {\n    ${3:// add code here}\n}"
+    },
+    {
+        "name": "Inline-Fn",
+        "trigger": "inline-fn",
+        "content": "#[inline]\npub fn ${1:name}() {\n    ${2:todo!();}\n}"
+    },
+    {
+        "name": "Macro_Rules",
+        "trigger": "macro_rules",
+        "content": "macro_rules! ${1:name} {\n    (${2}) => (${3})\n}"
+    },
+    {
+        "name": "Main",
+        "trigger": "main",
+        "content": "fn main() {\n    ${1:todo!();}\n}"
+    },
+    {
+        "name": "Match",
+        "trigger": "match",
+        "content": "match ${1:expr} {}"
+    },
+    {
+        "name": "Mod-Block",
+        "trigger": "mod-block",
+        "content": "mod ${1:name} {\n    ${2:// add code here}\n}"
+    },
+    {
+        "name": "Static",
+        "trigger": "static",
+        "content": "static ${1:STATIC}: ${2:Type} = ${4:init};"
+    },
+    {
+        "name": "Struct-Tuple",
+        "trigger": "struct-tuple",
+        "content": "struct ${1:Name}(${2:Type});"
+    },
+    {
+        "name": "Struct-Unit",
+        "trigger": "struct-unit",
+        "content": "struct ${1:Name};"
+    },
+    {
+        "name": "Struct",
+        "trigger": "struct",
+        "content": "#[derive(Debug)]\nstruct ${1:Name} {\n    ${2:field}: ${3:Type}\n}"
+    },
+    {
+        "name": "Modtest",
+        "trigger": "modtest",
+        "content": "#[cfg(test)]\nmod test {\n    #[test]\n    fn ${1:name}() {\n        ${2:todo!();}\n    }\n}"
+    },
+    {
+        "name": "Test",
+        "trigger": "test",
+        "content": "#[test]\nfn ${1:name}() {\n    ${2:todo!();}\n}"
+    },
+    {
+        "name": "Trait",
+        "trigger": "trait",
+        "content": "trait ${1:Name} {\n    ${2:// add code here}\n}\n"
+    },
+    {
+        "name": "Type",
+        "trigger": "type",
+        "content": "type ${1:Alias} = ${2:Type};"
+    },
+    {
+        "name": "While-Let",
+        "trigger": "while-let",
+        "content": "while let ${1:Some(pat)} = ${2:expr} {\n    ${3:todo!();}\n}"
+    },
+    {
+        "name": "While",
+        "trigger": "while",
+        "content": "while ${1:condition} {\n    ${2:todo!();}\n}"
+    },
+    {
+        "name": "Pafn",
+        "trigger": "pafn",
+        "content": "pub async fn ${1:name}(${2:arg}: ${3:Type}) -> ${4:RetType} {\n    ${5:todo!();}\n}"
+    },
+    {
+        "name": "Afn",
+        "trigger": "afn",
+        "content": "async fn ${1:name}(${2:arg}: ${3:Type}) -> ${4:RetType} {\n    ${5:todo!();}\n}"
+    }
+]

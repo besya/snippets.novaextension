@@ -1,0 +1,122 @@
+[
+    {
+        "name": "Print Statement",
+        "trigger": "print",
+        "content": "print \"$1\\n\";"
+    },
+    {
+        "name": "If Statement",
+        "trigger": "if",
+        "content": "if ( ${1:condition} ) {\n\t${2:body}\n}"
+    },
+    {
+        "name": "If Else Statement",
+        "trigger": "ife",
+        "content": "if ( ${1:condition} ) {\n\t${2:body}\n} else {\n\t${3:body}\n}"
+    },
+    {
+        "name": "If Else If Statement",
+        "trigger": "iffe",
+        "content": "if ( ${1:condition} ) {\n\t${2:body}\n} elsif ( ${3:condition} ) {\n\t${3:body}\n}"
+    },
+    {
+        "name": "Else Statement",
+        "trigger": "else",
+        "content": "else {\n\t${1:body}\n}"
+    },
+    {
+        "name": "Elsif Statement",
+        "trigger": "elsif",
+        "content": "elsif ( ${1:condition} ) {\n\t${2:body}\n}"
+    },
+    {
+        "name": "Unless",
+        "trigger": "unless",
+        "content": "unless ( ${1:condition} ) {\n\t${2:body}\n}"
+    },
+    {
+        "name": "For Loop",
+        "trigger": "for",
+        "content": "for (my \\$${1:loop var} = 0; \\$$1 < ${2:count}; \\$$1++) {\n\t${3:body}\n}"
+    },
+    {
+        "name": "Foreach Loop",
+        "trigger": "foreach",
+        "content": "foreach my \\$${1:element} ( @${2:array} ) {\n\t${3:body}\n}"
+    },
+    {
+        "name": "While Loop",
+        "trigger": "while",
+        "content": "while ( ${1:condition} ) {\n\t${2:body}\n}"
+    },
+    {
+        "name": "Do While Loop",
+        "trigger": "dowhile",
+        "content": "do {\n\t${2:body}\n} while ( ${1:condition} );"
+    },
+    {
+        "name": "Subroutine",
+        "trigger": "sub",
+        "content": "sub ${1:sub_name} {\n\t${2:body}\n}"
+    },
+    {
+        "name": "Comment Block For Subroutine",
+        "trigger": "documentation",
+        "content": "################################################################################\n#\n# Author:      ${1:Author}\n# Date:        ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR}\n# Description: ${2:Description}\n#\n# Arguments:\n# * ${3:argument_name} - ${4:description}\n#\n################################################################################"
+    },
+    {
+        "name": "Open File To Read",
+        "trigger": "openr",
+        "content": "open(my \\$${1:fh}, '<', \"${2:file name}\") or die \"Cannot open file '$2' for reading: \\$!\";"
+    },
+    {
+        "name": "Open File To Write",
+        "trigger": "openw",
+        "content": "open(my \\$${1:fh}, '>', \"${2:file name}\") or die \"Cannot open file '$2' for writing: \\$!\";"
+    },
+    {
+        "name": "Print To File",
+        "trigger": "file print",
+        "content": "print \\$${1:fh} \"${2:string}\\n\";"
+    },
+    {
+        "name": "Read File Into A Scalar",
+        "trigger": "slurp",
+        "content": "use File::Slurp;\n\nmy \\$${1:contents} = read_file(\"${2:file_path}\")"
+    },
+    {
+        "name": "Read A Directory",
+        "trigger": "readdir",
+        "content": "opendir(my \\$${1:dir}, '$2') or die \"Cannot open directory '$2': \\$!\";\nmy @files = readdir(\\$$1);\nclosedir(\\$$1);"
+    },
+    {
+        "name": "Create A Directory",
+        "trigger": "mkdir",
+        "content": "mkdir \"${1:dir}\" or die \"Cannot create directory '$1': \\$!\";"
+    },
+    {
+        "name": "Split A String",
+        "trigger": "split",
+        "content": "my @${1:array var} = split(/${2:delimiter pattern}/, \"${3:string}\");"
+    },
+    {
+        "name": "Join Array",
+        "trigger": "join",
+        "content": "my \\$${1:string var} = join('${2:delimiter pattern}', @${3:array_var});"
+    },
+    {
+        "name": "Format Time",
+        "trigger": "strftime",
+        "content": "use POSIX qw(strftime);\nmy $formatted = strftime('%Y-%m-%d %H:%M:%S', localtime($1));"
+    },
+    {
+        "name": "Try Catch Block",
+        "trigger": "trycatch",
+        "content": "use Try::Tiny;\n\ntry {\n\t${1:body}\n} catch {\n\tmy \\$catch_error = shift;\n\tprint \"Error: \\$catch_error\\n\";\n} finally {\n\tif (@_) {\n\t\tprint \"The try block died with error: @_\\n\"\n\t} else {\n\t\tprint \"The try ran successfully.\\n\"\n\t}\n};"
+    },
+    {
+        "name": "Perl Module",
+        "trigger": "module package",
+        "content": "package ${1:ModuleName};\nuse strict;\nuse warnings;\n\nsub new {\n\tmy (\\$class, %args) = @_;\n\tmy \\$self = bless {%args}, \\$class;\n\treturn \\$self;\n}\n\n# Add more methods here\n$2\n\n1; # Return true to indicate successful module loading"
+    }
+]

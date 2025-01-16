@@ -1,0 +1,127 @@
+[
+    {
+        "name": "Library",
+        "trigger": "lib",
+        "content": "library(${1:package})"
+    },
+    {
+        "name": "Require",
+        "trigger": "req",
+        "content": "require(${1:package})"
+    },
+    {
+        "name": "Source",
+        "trigger": "src",
+        "content": "source(\"${1:file.R}\")"
+    },
+    {
+        "name": "Return",
+        "trigger": "ret",
+        "content": "return(${1:code})"
+    },
+    {
+        "name": "Matrix",
+        "trigger": "mat",
+        "content": "matrix(${1:data}, nrow = ${2:rows}, ncol = ${3:cols})"
+    },
+    {
+        "name": "Setgeneric",
+        "trigger": "sg",
+        "content": "setGeneric(\"${1:generic}\", function(${2:x, ...}) {\n    standardGeneric(\"${1:generic}\")\n})\n"
+    },
+    {
+        "name": "Setmethod",
+        "trigger": "sm",
+        "content": "setMethod(\"${1:generic}\", ${2:class}, function(${2:x, ...}) {\n    ${3}\n})\n"
+    },
+    {
+        "name": "Setclass",
+        "trigger": "sc",
+        "content": "setClass(\"${1:Class}\", slots = c(${2:name = \"type\"}))\n"
+    },
+    {
+        "name": "If",
+        "trigger": "if",
+        "content": "if (${1:condition}) {\n    ${2}\n}\n"
+    },
+    {
+        "name": "Else",
+        "trigger": "el",
+        "content": "else {\n    ${1}\n}\n"
+    },
+    {
+        "name": "Else If",
+        "trigger": "ei",
+        "content": "else if (${1:condition}) {\n    ${2}\n}\n"
+    },
+    {
+        "name": "Function",
+        "trigger": "fun",
+        "content": "${1:name} <- function(${2:variables}) {\n    ${3}\n}\n"
+    },
+    {
+        "name": "For",
+        "trigger": "for",
+        "content": "for (${1:variable} in ${2:vector}) {\n    ${3}\n}\n"
+    },
+    {
+        "name": "While",
+        "trigger": "while",
+        "content": "while (${1:condition}) {\n    ${2}\n}\n"
+    },
+    {
+        "name": "Switch",
+        "trigger": "switch",
+        "content": "switch (${1:object},\n    ${2:case} = ${3:action}\n)\n"
+    },
+    {
+        "name": "Apply",
+        "trigger": "apply",
+        "content": "apply(${1:array}, ${2:margin}, ${3:...})"
+    },
+    {
+        "name": "Lapply",
+        "trigger": "lapply",
+        "content": "lapply(${1:list}, ${2:function})"
+    },
+    {
+        "name": "Sapply",
+        "trigger": "sapply",
+        "content": "sapply(${1:list}, ${2:function})"
+    },
+    {
+        "name": "Mapply",
+        "trigger": "mapply",
+        "content": "mapply(${1:function}, ${2:...})"
+    },
+    {
+        "name": "Tapply",
+        "trigger": "tapply",
+        "content": "tapply(${1:vector}, ${2:index}, ${3:function})"
+    },
+    {
+        "name": "Vapply",
+        "trigger": "vapply",
+        "content": "vapply(${1:list}, ${2:function}, FUN.VALUE = ${3:type}, ${4:...})"
+    },
+    {
+        "name": "Rapply",
+        "trigger": "rapply",
+        "content": "rapply(${1:list}, ${2:function})"
+    },
+    {
+        "name": "Timestamp",
+        "trigger": "ts",
+        "content": "# ${CURRENT_DAY_NAME_SHORT} ${CURRENT_MONTH_NAME_SHORT} ${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND} ${CURRENT_YEAR} ------------------------------\n"
+    },
+    {
+        "name": "Shinyapp",
+        "trigger": "shinyapp",
+        "content": "library(shiny)\n\nui <- fluidPage(\n  ${1}\n)\n\nserver <- function(input, output, session) {\n  \n}\n\nshinyApp(ui, server)\n"
+    },
+    {
+        "name": "Shinymod",
+        "trigger": "shinymod",
+        "content": "${1:name}UI <- function(id) {\n  ns <- NS(id)\n  tagList(\n    ${2}\n  )\n}\n\n${1:name}Server <- function(id) {\n  moduleServer(id, function(input, output, session) {\n    ${3}\n  })\n}\n"
+    }
+]

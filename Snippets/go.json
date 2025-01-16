@@ -1,0 +1,297 @@
+[
+    {
+        "name": "Single Import",
+        "trigger": "im",
+        "content": "import \"${1:package}\""
+    },
+    {
+        "name": "Multiple Imports",
+        "trigger": "ims",
+        "content": "import (\n\t\"${1:package}\"\n)"
+    },
+    {
+        "name": "Single Constant",
+        "trigger": "co",
+        "content": "const ${1:name} = ${2:value}"
+    },
+    {
+        "name": "Multiple Constants",
+        "trigger": "cos",
+        "content": "const (\n\t${1:name} = ${2:value}\n)"
+    },
+    {
+        "name": "Type Function Declaration",
+        "trigger": "tyf",
+        "content": "type ${1:name} func($3) $4"
+    },
+    {
+        "name": "Type Interface Declaration",
+        "trigger": "tyi",
+        "content": "type ${1:name} interface {\n\t$2\n}"
+    },
+    {
+        "name": "Type Struct Declaration",
+        "trigger": "tys",
+        "content": "type ${1:name} struct {\n\t$2\n}"
+    },
+    {
+        "name": "Package Main And Main Function",
+        "trigger": "pkgm",
+        "content": "package main\n\nfunc main() {\n\t$1\n}"
+    },
+    {
+        "name": "Function Declaration",
+        "trigger": "func",
+        "content": "func $1($2) $3 {\n\t$4\n}"
+    },
+    {
+        "name": "Variable Declaration",
+        "trigger": "var",
+        "content": "var ${1:name} ${2:type}"
+    },
+    {
+        "name": "Variables Declaration",
+        "trigger": "vars",
+        "content": "var (\n\t${1:name} ${2:type} = ${3:value}\n)"
+    },
+    {
+        "name": "Switch Statement",
+        "trigger": "switch",
+        "content": "switch ${1:expression} {\ncase ${2:condition}:\n\t$3\n}"
+    },
+    {
+        "name": "Select Statement",
+        "trigger": "sel",
+        "content": "select {\ncase ${1:condition}:\n\t$2\n}"
+    },
+    {
+        "name": "Case Clause",
+        "trigger": "cs",
+        "content": "case ${1:condition}:$2"
+    },
+    {
+        "name": "For Statement",
+        "trigger": "for",
+        "content": "for ${1}{\n\t$2\n}"
+    },
+    {
+        "name": "For N Statement",
+        "trigger": "fori",
+        "content": "for ${1:i} := ${2:0}; $1 < ${3:count}; $1${4:++} {\n\t$5\n}"
+    },
+    {
+        "name": "For Range Statement",
+        "trigger": "forr",
+        "content": "for ${1:_, }${2:v} := range ${3:v} {\n\t$4\n}"
+    },
+    {
+        "name": "Channel Declaration",
+        "trigger": "ch",
+        "content": "chan ${1:type}"
+    },
+    {
+        "name": "Map Declaration",
+        "trigger": "map",
+        "content": "map[${1:type}]${2:type}"
+    },
+    {
+        "name": "Empty Interface",
+        "trigger": "in",
+        "content": "interface{}"
+    },
+    {
+        "name": "If Statement",
+        "trigger": "if",
+        "content": "if ${1:condition} {\n\t$2\n}"
+    },
+    {
+        "name": "Else Branch",
+        "trigger": "el",
+        "content": "else {\n\t$1\n}"
+    },
+    {
+        "name": "If Else Statement",
+        "trigger": "ife",
+        "content": "if ${1:condition} {\n\t$2\n} else {\n\t$3\n}"
+    },
+    {
+        "name": "If Err != Nil",
+        "trigger": "ir",
+        "content": "if err != nil {\n\treturn ${1:nil}, ${2:err}\n}"
+    },
+    {
+        "name": "Fmt.Println",
+        "trigger": "fp",
+        "content": "fmt.Println(\"$1\")"
+    },
+    {
+        "name": "Fmt.Printf",
+        "trigger": "ff",
+        "content": "fmt.Printf(\"$1\", ${2:var})"
+    },
+    {
+        "name": "Log.Println",
+        "trigger": "lp",
+        "content": "log.Println(\"$1\")"
+    },
+    {
+        "name": "Log.Printf",
+        "trigger": "lf",
+        "content": "log.Printf(\"$1\", ${2:var})"
+    },
+    {
+        "name": "Log Variable Content",
+        "trigger": "lv",
+        "content": "log.Printf(\"${1:var}: %#+v\\\\n\", ${1:var})"
+    },
+    {
+        "name": "T.Log",
+        "trigger": "tl",
+        "content": "t.Log(\"$1\")"
+    },
+    {
+        "name": "T.Logf",
+        "trigger": "tlf",
+        "content": "t.Logf(\"$1\", ${2:var})"
+    },
+    {
+        "name": "T.Logf Variable Content",
+        "trigger": "tlv",
+        "content": "t.Logf(\"${1:var}: %#+v\\\\n\", ${1:var})"
+    },
+    {
+        "name": "Make(...)",
+        "trigger": "make",
+        "content": "make(${1:type}, ${2:0})"
+    },
+    {
+        "name": "New(...)",
+        "trigger": "new",
+        "content": "new(${1:type})"
+    },
+    {
+        "name": "Panic(...)",
+        "trigger": "pn",
+        "content": "panic(\"$1\")"
+    },
+    {
+        "name": "Http Responsewriter *Request",
+        "trigger": "wr",
+        "content": "${1:w} http.ResponseWriter, ${2:r} *http.Request"
+    },
+    {
+        "name": "Http.Handlefunc",
+        "trigger": "hf",
+        "content": "${1:http}.HandleFunc(\"${2:/}\", ${3:handler})"
+    },
+    {
+        "name": "Http Handler Declaration",
+        "trigger": "hand",
+        "content": "func $1(${2:w} http.ResponseWriter, ${3:r} *http.Request) {\n\t$4\n}"
+    },
+    {
+        "name": "Http.Redirect",
+        "trigger": "rd",
+        "content": "http.Redirect(${1:w}, ${2:r}, \"${3:/}\", ${4:http.StatusFound})"
+    },
+    {
+        "name": "Http.Error",
+        "trigger": "herr",
+        "content": "http.Error(${1:w}, ${2:err}.Error(), ${3:http.StatusInternalServerError})"
+    },
+    {
+        "name": "Http.Listenandserve",
+        "trigger": "las",
+        "content": "http.ListenAndServe(\"${1::8080}\", ${2:nil})"
+    },
+    {
+        "name": "Http.Serve",
+        "trigger": "sv",
+        "content": "http.Serve(\"${1::8080}\", ${2:nil})"
+    },
+    {
+        "name": "Goroutine Anonymous Function",
+        "trigger": "go",
+        "content": "go func($1) {\n\t$3\n}($2)"
+    },
+    {
+        "name": "Goroutine Function",
+        "trigger": "gf",
+        "content": "go ${1:func}($2)"
+    },
+    {
+        "name": "Defer Statement",
+        "trigger": "df",
+        "content": "defer ${1:func}($2)"
+    },
+    {
+        "name": "Test Function",
+        "trigger": "tf",
+        "content": "func Test$1(t *testing.T) {\n\t$2\n}"
+    },
+    {
+        "name": "Test Main",
+        "trigger": "tm",
+        "content": "func TestMain(m *testing.M) {\n\t$1\n\n\tos.Exit(m.Run())\n}"
+    },
+    {
+        "name": "Benchmark Function",
+        "trigger": "bf",
+        "content": "func Benchmark$1(b *testing.B) {\n\tfor ${2:i} := 0; ${2:i} < b.N; ${2:i}++ {\n\t\t$3\n\t}\n}"
+    },
+    {
+        "name": "Example Function",
+        "trigger": "ef",
+        "content": "func Example$1() {\n\t$2\n\t//Output:\n\t$3\n}"
+    },
+    {
+        "name": "Table Driven Test",
+        "trigger": "tdt",
+        "content": "func Test$1(t *testing.T) {\n\ttestCases := []struct {\n\t\tdesc\tstring\n\t\t$2\n\t}{\n\t\t{\n\t\t\tdesc: \"$3\",\n\t\t\t$4\n\t\t},\n\t}\n\tfor _, tC := range testCases {\n\t\tt.Run(tC.desc, func(t *testing.T) {\n\t\t\t$5\n\t\t})\n\t}\n}"
+    },
+    {
+        "name": "Init Function",
+        "trigger": "finit",
+        "content": "func init() {\n\t$1\n}"
+    },
+    {
+        "name": "Main Function",
+        "trigger": "fmain",
+        "content": "func main() {\n\t$1\n}"
+    },
+    {
+        "name": "Method Declaration",
+        "trigger": "meth",
+        "content": "func (${1:receiver} ${2:type}) ${3:method}($4) $5 {\n\t$6\n}"
+    },
+    {
+        "name": "Method Declaration",
+        "trigger": "fum",
+        "content": "func (${1:receiver} ${2:type}) ${3:method}($4) $5 {\n\t$6\n}"
+    },
+    {
+        "name": "Hello World Web App",
+        "trigger": "helloweb",
+        "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"net/http\"\n\t\"time\"\n)\n\nfunc greet(w http.ResponseWriter, r *http.Request) {\n\tfmt.Fprintf(w, \"Hello World! %s\", time.Now())\n}\n\nfunc main() {\n\thttp.HandleFunc(\"/\", greet)\n\thttp.ListenAndServe(\":8080\", nil)\n}"
+    },
+    {
+        "name": "Sort Implementation",
+        "trigger": "sort",
+        "content": "type ${1:SortBy} []${2:Type}\n\nfunc (a $1) Len() int           { return len(a) }\nfunc (a $1) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }\nfunc (a $1) Less(i, j int) bool { ${3:return a[i] < a[j]} }"
+    },
+    {
+        "name": "Json Tag",
+        "trigger": "json",
+        "content": "`json:\"$1\"`"
+    },
+    {
+        "name": "Xml Tag",
+        "trigger": "xml",
+        "content": "`xml:\"$1\"`"
+    },
+    {
+        "name": "If Key In A Map",
+        "trigger": "om",
+        "content": "if ${1:value}, ok := ${2:map}[${3:key}]; ok {\n\t$4\n}"
+    }
+]

@@ -1,0 +1,82 @@
+[
+    {
+        "name": "From",
+        "trigger": "F",
+        "content": "FROM ${1:ubuntu}"
+    },
+    {
+        "name": "Label Maintainer",
+        "trigger": "m",
+        "content": "LABEL maintainer=\"${1:name}\""
+    },
+    {
+        "name": "Run",
+        "trigger": "R",
+        "content": "RUN ${1:command}"
+    },
+    {
+        "name": "Cmd",
+        "trigger": "C",
+        "content": "CMD ${1:command}"
+    },
+    {
+        "name": "Copy",
+        "trigger": "cp",
+        "content": "COPY ${1:src} ${2:dest}"
+    },
+    {
+        "name": "Expose",
+        "trigger": "exp",
+        "content": "EXPOSE ${1:port}"
+    },
+    {
+        "name": "Env",
+        "trigger": "env",
+        "content": "ENV ${1:key} ${2: value}"
+    },
+    {
+        "name": "Add",
+        "trigger": "a",
+        "content": "ADD ${1:src} ${2:dst}"
+    },
+    {
+        "name": "Entrypoint",
+        "trigger": "ent",
+        "content": "ENTRYPOINT ${1:command}"
+    },
+    {
+        "name": "Volume",
+        "trigger": "v",
+        "content": "VOLUME [\"${1:path}\"]"
+    },
+    {
+        "name": "User",
+        "trigger": "u",
+        "content": "USER ${1:name}"
+    },
+    {
+        "name": "Workdir",
+        "trigger": "w",
+        "content": "WORKDIR ${1:name}"
+    },
+    {
+        "name": "Update Packages",
+        "trigger": "upd",
+        "content": "RUN echo \"deb http://archive.ubuntu.com/ubuntu ${1:precise} main universe\" > /etc/apt/sources.list; \\\napt-get update && apt-get -y upgrade; \\ \n${2}; \\\nrm -rf /var/lib/apt/lists/*"
+    },
+    {
+        "name": "Head",
+        "trigger": "head",
+        "content": "# ${1:description}\n#  \n# VERSION ${2:0.1.0}\n${3}"
+    },
+    {
+        "name": "Onbuild",
+        "trigger": "o",
+        "content": "ONBUILD ${1}"
+    },
+    {
+        "name": "Label",
+        "trigger": "L",
+        "content": "LABEL ${1:label}=\"${2:value}\""
+    }
+]

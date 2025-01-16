@@ -1,0 +1,37 @@
+[
+    {
+        "name": "%",
+        "trigger": "%",
+        "content": "<% $1 %>"
+    },
+    {
+        "name": "=",
+        "trigger": "=",
+        "content": "<%= $1 %>"
+    },
+    {
+        "name": "Gettext",
+        "trigger": "gt",
+        "content": "<%= gettext(\"$1\") %>"
+    },
+    {
+        "name": "For",
+        "trigger": "for",
+        "content": "<%= for ${1:item} <- ${2:items} do %>\n  $3\n<% end %>"
+    },
+    {
+        "name": "If",
+        "trigger": "if",
+        "content": "<%= if ${1} do %>\n  $2\n<% end %>"
+    },
+    {
+        "name": "Ife",
+        "trigger": "ife",
+        "content": "<%= if ${1} do %>\n  $2\n<% else %>\n  $3\n<% end %>"
+    },
+    {
+        "name": "Lin",
+        "trigger": "lin",
+        "content": "<%= link \"${1:Submit}\", to: ${2:\"/users\"}, method: ${3::delete} %>"
+    }
+]

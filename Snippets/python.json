@@ -1,0 +1,337 @@
+[
+    {
+        "name": "List Comprehension",
+        "trigger": "lc",
+        "content": "[${3:value} for ${2:value} in ${1:iterable}]$4"
+    },
+    {
+        "name": "List Comprehension If Else",
+        "trigger": "lcie",
+        "content": "[${3:value} if ${4:condition} else ${5:condition} for ${2:value} in ${1:iterable}]$6"
+    },
+    {
+        "name": "List Comprehension If Filter",
+        "trigger": "lci",
+        "content": "[${3:value} for ${2:value} in ${1:iterable} if ${4:condition}$5]"
+    },
+    {
+        "name": "Dictionary Comprehension",
+        "trigger": "dc",
+        "content": "{${4:key}: ${5:value} for ${2:key}, ${3:value} in ${1:iterable}}$6"
+    },
+    {
+        "name": "Dictionary Comprehension If Filter",
+        "trigger": "dci",
+        "content": "{${4:key}: ${5:value} for ${2:key}, ${3:value} in ${1:iterable} if ${6:condition}}$7"
+    },
+    {
+        "name": "Set Comprehension",
+        "trigger": "sc",
+        "content": "{${3:value} for ${2:value} in ${1:iterable}}$4"
+    },
+    {
+        "name": "Set Comprehension If Filter",
+        "trigger": "sci",
+        "content": "{${3:value} for ${2:value} in ${1:iterable} if ${4:condition}}$5"
+    },
+    {
+        "name": "Generator Comprehension",
+        "trigger": "gc",
+        "content": "(${3:key} for ${2:value} in ${1:iterable})$4"
+    },
+    {
+        "name": "Generator Comprehension If Filter",
+        "trigger": "gci",
+        "content": "(${3:key} for ${2:value} in ${1:iterable} if ${4:condition})$5"
+    },
+    {
+        "name": "Pdb Set Trace",
+        "trigger": "pdb",
+        "content": "__import__('pdb').set_trace()$1"
+    },
+    {
+        "name": "Ipdb Set Trace",
+        "trigger": "ipdb",
+        "content": "__import__('ipdb').set_trace()$1"
+    },
+    {
+        "name": "Rpdb Set Trace",
+        "trigger": "rpdb",
+        "content": "import rpdb2; rpdb2.start_embedded_debugger('${1:debug_password}')$2"
+    },
+    {
+        "name": "Pudb Set Trace",
+        "trigger": "pudb",
+        "content": "import pudb; pudb.set_trace()$1"
+    },
+    {
+        "name": "Ipython Set Trace",
+        "trigger": "ipydb",
+        "content": "from IPython import embed; embed()$1"
+    },
+    {
+        "name": "Celery Set Trace",
+        "trigger": "rdb",
+        "content": "from celery.contrib import rdb; rdb.set_trace()$1"
+    },
+    {
+        "name": "Pretty Print",
+        "trigger": "pprint",
+        "content": "__import__('pprint').pprint(${1:expression})$2"
+    },
+    {
+        "name": "Debugpy Remote Attach",
+        "trigger": "debugpy",
+        "content": "import debugpy, platform\ndebugpy.listen((platform.node(), ${1:5678}))\nprint(f\"debugpy listening on {platform.node()}:$1\", flush=True)\ndebugpy.wait_for_client()$2"
+    },
+    {
+        "name": "#!/Usr/Bin/Env Pythonx",
+        "trigger": "#env",
+        "content": "#!/usr/bin/env python$1"
+    },
+    {
+        "name": "Pyright Ignore Line",
+        "trigger": "#ignore",
+        "content": "# pyright: ignore[$1]"
+    },
+    {
+        "name": "Multiline String",
+        "trigger": "#",
+        "content": "\"\"\"$1\n\"\"\""
+    },
+    {
+        "name": "One-Line Multiline String",
+        "trigger": "##",
+        "content": "\"\"\"$1\"\"\""
+    },
+    {
+        "name": "Self",
+        "trigger": "s",
+        "content": "self.$1"
+    },
+    {
+        "name": "__Magic__",
+        "trigger": "__",
+        "content": "__${1:init}__$2"
+    },
+    {
+        "name": "If __Name__ == __Main__",
+        "trigger": "ifmain",
+        "content": "if __name__ == \"__main__\":\n\t${1:main()}"
+    },
+    {
+        "name": "Import",
+        "trigger": "import",
+        "content": "import ${1:datetime}"
+    },
+    {
+        "name": "From ... Import ...",
+        "trigger": "fromim",
+        "content": "from ${1:pathlib} import ${2:Path}"
+    },
+    {
+        "name": "If",
+        "trigger": "if",
+        "content": "if ${1:condition}:\n\t${2:pass}"
+    },
+    {
+        "name": "Elif",
+        "trigger": "elif",
+        "content": "elif ${1:expression}:\n\t${2:pass}"
+    },
+    {
+        "name": "Else",
+        "trigger": "else",
+        "content": "else:\n\t${1:pass}"
+    },
+    {
+        "name": "If/Else",
+        "trigger": "ifelse",
+        "content": "if ${1:condition}:\n\t${2:pass}\nelse:\n\t${3:pass}"
+    },
+    {
+        "name": "Match/Case",
+        "trigger": "match",
+        "content": "match ${1:expression}:\n\tcase ${2:pattern}:\n\t\t${3:pass}"
+    },
+    {
+        "name": "Case",
+        "trigger": "case",
+        "content": "case ${2:pattern}:\n\t${3:pass}"
+    },
+    {
+        "name": "Case Wildcard",
+        "trigger": "casew",
+        "content": "case _:\n\t${1:pass}"
+    },
+    {
+        "name": "While",
+        "trigger": "while",
+        "content": "while ${1:condition}:\n\t${2:pass}"
+    },
+    {
+        "name": "For",
+        "trigger": "for",
+        "content": "for ${1:value} in ${2:iterable}:\n\t${3:pass}"
+    },
+    {
+        "name": "For W/ Range",
+        "trigger": "forr",
+        "content": "for ${1:value} in range($2):\n\t${3:pass}"
+    },
+    {
+        "name": "With",
+        "trigger": "with",
+        "content": "with ${1:expression} as ${2:target}:\n\t${3:pass}"
+    },
+    {
+        "name": "Lambda",
+        "trigger": "lambda",
+        "content": "lambda ${1:parameter_list}: ${2:expression}"
+    },
+    {
+        "name": "Function",
+        "trigger": "def",
+        "content": "def ${1:fname}($2):\n\t${3:pass}"
+    },
+    {
+        "name": "Function W/ Return Type",
+        "trigger": "deft",
+        "content": "def ${1:fname}($2) -> ${3:None}:\n\t${4:pass}"
+    },
+    {
+        "name": "Class",
+        "trigger": "class",
+        "content": "class ${1:classname}:\n\t${2:pass}"
+    },
+    {
+        "name": "Derived Class",
+        "trigger": "classd",
+        "content": "class ${1:classname}($2):\n\t${3:pass}"
+    },
+    {
+        "name": "Class Template",
+        "trigger": "classi",
+        "content": "class ${1:ClassName}($2):\n\t\"\"\"${3:docstring for $1.}\"\"\"\n\tdef __init__(self, ${4:arg}):\n\t\t${5:super($1, self).__init__()}\n\t\tself.$4 = $4$6"
+    },
+    {
+        "name": "Method",
+        "trigger": "defs",
+        "content": "def ${1:mname}(self$2):\n\t${3:pass}"
+    },
+    {
+        "name": "Method W/ Return Type",
+        "trigger": "defst",
+        "content": "def ${1:mname}(self$2) -> ${3:None}:\n\t${4:pass}"
+    },
+    {
+        "name": "Property Template",
+        "trigger": "property",
+        "content": "@property\ndef ${1:pname}(self):\n\t\"\"\"${2:The $1 property.}\"\"\"\n\t${3:return self._$1}\n\n@${4:$1}.setter\ndef ${5:$1}(self, value):\n\t${6:self._$1} = value"
+    },
+    {
+        "name": "Except",
+        "trigger": "except",
+        "content": "except$1:\n\t${2:pass}"
+    },
+    {
+        "name": "Except As",
+        "trigger": "exceptas",
+        "content": "except ${1:Exception} as ${2:e}:\n\t${3:raise $2}"
+    },
+    {
+        "name": "Try/Except",
+        "trigger": "try",
+        "content": "try:\n\t${1:pass}\nexcept ${2:Exception} as ${3:e}:\n\t${4:raise $3}"
+    },
+    {
+        "name": "Try/Except/Else",
+        "trigger": "trya",
+        "content": "try:\n\t${1:pass}\nexcept ${2:Exception} as ${3:e}:\n\t${4:raise $3}\nelse:\n\t${5:pass}"
+    },
+    {
+        "name": "Try/Except/Finally",
+        "trigger": "tryf",
+        "content": "try:\n\t${1:pass}\nexcept ${2:Exception} as ${3:e}:\n\t${4:raise $3}\nfinally:\n\t${5:pass}"
+    },
+    {
+        "name": "Try/Except/Else/Finally",
+        "trigger": "tryef",
+        "content": "try:\n\t${1:pass}\nexcept${2: ${3:Exception} as ${4:e}}:\n\t${5:raise}\nelse:\n\t${6:pass}\nfinally:\n\t${7:pass}"
+    },
+    {
+        "name": "Jupyter Cell",
+        "trigger": "#cell",
+        "content": "# %%"
+    },
+    {
+        "name": "Jupyter Markdown Cell",
+        "trigger": "#mark",
+        "content": "# %% [markdown]"
+    },
+    {
+        "name": "Assert Equal",
+        "trigger": "ase",
+        "content": "self.assertEqual(${1:expected}, ${2:actual}${3:, '${4:message}'})$5"
+    },
+    {
+        "name": "Assert Not Equal",
+        "trigger": "asne",
+        "content": "self.assertNotEqual(${1:expected}, ${2:actual}${3:, '${4:message}'})$5"
+    },
+    {
+        "name": "Assert Raises",
+        "trigger": "asr",
+        "content": "self.assertRaises(${1:exception}, ${2:callable}, ${3:args})$4"
+    },
+    {
+        "name": "Assert True",
+        "trigger": "ast",
+        "content": "self.assertTrue(${1:actual}${2:, '${3:message}'})$4"
+    },
+    {
+        "name": "Assert False",
+        "trigger": "asf",
+        "content": "self.assertFalse(${1:actual}${2:, '${3:message}'})$4"
+    },
+    {
+        "name": "Assert Is",
+        "trigger": "asi",
+        "content": "self.assertIs(${1:expected}, ${2:actual}${3:, '${4:message}'})$5"
+    },
+    {
+        "name": "Assert Is Not",
+        "trigger": "asint",
+        "content": "self.assertIsNot(${1:expected}, ${2:actual}${3:, '${4:message}'})$5"
+    },
+    {
+        "name": "Assert Is None",
+        "trigger": "asino",
+        "content": "self.assertIsNone(${1:actual}${2:, '${3:message}'})$4"
+    },
+    {
+        "name": "Assert Is Not None",
+        "trigger": "asinno",
+        "content": "self.assertIsNotNone(${1:actual}${2:, '${3:message}'})$4"
+    },
+    {
+        "name": "Assert In",
+        "trigger": "asin",
+        "content": "self.assertIn(${1:needle}, ${2:haystack}${3:, '${4:message}'})$5"
+    },
+    {
+        "name": "Assert Not In",
+        "trigger": "asni",
+        "content": "self.assertNotIn(${1:needle}, ${2:haystack}${3:, '${4:message}'})$5"
+    },
+    {
+        "name": "Assert",
+        "trigger": "as",
+        "content": "self.assert_(${1:boolean expression}${2:, '${3:message}'})$4"
+    },
+    {
+        "name": "Fail (A Test)",
+        "trigger": "fail",
+        "content": "self.fail('${1:message}')$2"
+    }
+]

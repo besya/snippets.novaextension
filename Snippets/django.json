@@ -1,0 +1,697 @@
+[
+    {
+        "name": "Adminview",
+        "trigger": "adminview",
+        "content": "@admin.register(${1})\nclass ${1}Admin(admin.ModelAdmin):\n\t'''Admin View for ${1}'''\n\n\tlist_display = ('${2}',)\n\tlist_filter = ('${3}',)\n\tinlines = [\n\t\t${4}Inline,\n\t]\n\traw_id_fields = ('${5}',)\n\treadonly_fields = ('${6}',)\n\tsearch_fields = ('${7}',)\n\tdate_hierarchy = '${8}'\n\tordering = ('${9}',)"
+    },
+    {
+        "name": "Stackedinline",
+        "trigger": "stackedinline",
+        "content": "class ${1}Inline(admin.StackedInline):\n\t'''Stacked Inline View for ${1}'''\n\n\tmodel = ${2:${1}}\n\tmin_num = ${3:3}\n\tmax_num = ${4:20}\n\textra = ${5:1}\n\traw_id_fields = (${6},)"
+    },
+    {
+        "name": "Tabularinline",
+        "trigger": "tabularinline",
+        "content": "class ${1}Inline(admin.TabularInline):\n\t'''Tabular Inline View for ${1}'''\n\n\tmodel = ${2:${1}}\n\tmin_num = ${3:3}\n\tmax_num = ${4:20}\n\textra = ${5:1}\n\traw_id_fields = (${6},)"
+    },
+    {
+        "name": "Simplelistfilter",
+        "trigger": "simplelistfilter",
+        "content": "class ${1:NAME}Filter(admin.SimpleListFilter):\n\n\ttitle = '$2'\n\tparameter_name = '$3'\n\n\tdef lookups(self, request, model_admin):\n\t\tpass\n\n\tdef queryset(self, request, queryset):\n\t\treturn queryset"
+    },
+    {
+        "name": "Iadmin",
+        "trigger": "iadmin",
+        "content": "from django.contrib import admin"
+    },
+    {
+        "name": "Iadminsite",
+        "trigger": "iadminsite",
+        "content": "from django.contrib.admin import AdminSite"
+    },
+    {
+        "name": "Register",
+        "trigger": "register",
+        "content": "admin.site.register($1)"
+    },
+    {
+        "name": "Registermadmin",
+        "trigger": "registermadmin",
+        "content": "admin.site.register($1, $1Admin)"
+    },
+    {
+        "name": "Fieldsets",
+        "trigger": "fieldsets",
+        "content": "fieldsets = (\n\t(None, {\n\t\t'fields': (\n\t\t\t$1\n\t\t),\n\t}),\n)"
+    },
+    {
+        "name": "Form",
+        "trigger": "Form",
+        "content": "class ${1:FORMNAME}(forms.Form):\n\t\"\"\"${2:$1 definition}.\"\"\"\n\n\t${3:# TODO: Define form fields here}\n"
+    },
+    {
+        "name": "Modelform",
+        "trigger": "ModelForm",
+        "content": "class ${1:MODELNAME}Form(forms.ModelForm):\n\t\"\"\"${2:Form definition for $1}.\"\"\"\n\n\tclass Meta:\n\t\t\"\"\"Meta definition for ${1}form.\"\"\"\n\n\t\tmodel = $1\n\t\tfields = ('$3',)\n"
+    },
+    {
+        "name": "Fbool",
+        "trigger": "fbool",
+        "content": "${1:FIELDNAME} = forms.BooleanField($2, required=${3:False})"
+    },
+    {
+        "name": "Fchar",
+        "trigger": "fchar",
+        "content": "${1:FIELDNAME} = forms.CharField($2,${3: max_length=$4,} required=${5:False})"
+    },
+    {
+        "name": "Fchoice",
+        "trigger": "fchoice",
+        "content": "${1:FIELDNAME} = forms.ChoiceField($2, choices=[${3:CHOICES}], required=${4:False})"
+    },
+    {
+        "name": "Fcombo",
+        "trigger": "fcombo",
+        "content": "${1:FIELDNAME} = forms.ComboField($2)"
+    },
+    {
+        "name": "Fdate",
+        "trigger": "fdate",
+        "content": "${1:FIELDNAME} = forms.DateField($2, required=${3:False})"
+    },
+    {
+        "name": "Fdatetime",
+        "trigger": "fdatetime",
+        "content": "${1:FIELDNAME} = forms.DateTimeField($2, required=${3:False})"
+    },
+    {
+        "name": "Fdecimal",
+        "trigger": "fdecimal",
+        "content": "${1:FIELDNAME} = forms.DecimalField($2, required=${3:False})"
+    },
+    {
+        "name": "Fduration",
+        "trigger": "fduration",
+        "content": "${1:FIELDNAME} = forms.DurationField($2, required=${3:False})"
+    },
+    {
+        "name": "Femail",
+        "trigger": "femail",
+        "content": "${1:FIELDNAME} = forms.EmailField($2, required=${3:False})"
+    },
+    {
+        "name": "Ffile",
+        "trigger": "ffile",
+        "content": "${1:FIELDNAME} = forms.FileField($2,${3: max_length=$4,} required=${5:False})"
+    },
+    {
+        "name": "Ffilepath",
+        "trigger": "ffilepath",
+        "content": "${1:FIELDNAME} = forms.FilePathField($2, path=${3:/absolute_path/}, required=${4:False})"
+    },
+    {
+        "name": "Ffloat",
+        "trigger": "ffloat",
+        "content": "${1:FIELDNAME} = forms.FloatField($2, required=${3:False})"
+    },
+    {
+        "name": "Fip",
+        "trigger": "fip",
+        "content": "${1:FIELDNAME} = forms.IPAddressField($2)"
+    },
+    {
+        "name": "Fgenericip",
+        "trigger": "fip",
+        "content": "${1:FIELDNAME} = forms.GenericIPAddressField($2)"
+    },
+    {
+        "name": "Fimg",
+        "trigger": "fimg",
+        "content": "${1:FIELDNAME} = forms.ImageField($2, required=${3:False})"
+    },
+    {
+        "name": "Fint",
+        "trigger": "fint",
+        "content": "${1:FIELDNAME} = forms.IntegerField($2, required=${3:False})"
+    },
+    {
+        "name": "Fmochoice",
+        "trigger": "fmochoice",
+        "content": "${1:FIELDNAME} = forms.ModelChoiceField($2)"
+    },
+    {
+        "name": "Fmomuchoice",
+        "trigger": "fmomuchoice",
+        "content": "${1:FIELDNAME} = forms.ModelMultipleChoiceField($2)"
+    },
+    {
+        "name": "Fmuval",
+        "trigger": "fmuval",
+        "content": "${1:FIELDNAME} = forms.MultiValueField($2)"
+    },
+    {
+        "name": "Fmuchoice",
+        "trigger": "fmuchoice",
+        "content": "${1:FIELDNAME} = forms.MultipleChoiceField($2, choices=[${3:CHOICES}], required=${4:False})"
+    },
+    {
+        "name": "Ftypedmuchoice",
+        "trigger": "ftypedmuchoice",
+        "content": "${1:FIELDNAME} = forms.TypedMultipleChoiceField($2, choices=[${3:CHOICES}], coerce=${4:TYPE}, required=${5:False})"
+    },
+    {
+        "name": "Fnullbool",
+        "trigger": "fnullbool",
+        "content": "${1:FIELDNAME} = forms.NullBooleanField($2, required=${3:False})"
+    },
+    {
+        "name": "Fregex",
+        "trigger": "fregex",
+        "content": "${1:FIELDNAME} = forms.RegexField($2, regex=${3:REGEX}, required=${4:False})"
+    },
+    {
+        "name": "Fslug",
+        "trigger": "fslug",
+        "content": "${1:FIELDNAME} = forms.SlugField($2, allow_unicode=${3:False}, required=${4:False})"
+    },
+    {
+        "name": "Fsdatetime",
+        "trigger": "fsdatetime",
+        "content": "${1:FIELDNAME} = forms.SplitDateTimeField($2)"
+    },
+    {
+        "name": "Ftime",
+        "trigger": "ftime",
+        "content": "${1:FIELDNAME} = forms.TimeField($2, required=${3:False})"
+    },
+    {
+        "name": "Ftchoice",
+        "trigger": "ftchoice",
+        "content": "${1:FIELDNAME} = forms.TypedChoiceField($2, required=${3:False})"
+    },
+    {
+        "name": "Ftmuchoice",
+        "trigger": "ftmuchoice",
+        "content": "${1:FIELDNAME} = forms.TypedMultipleChoiceField($2)"
+    },
+    {
+        "name": "Furl",
+        "trigger": "furl",
+        "content": "${1:FIELDNAME} = forms.URLField($2, required=${3:False})"
+    },
+    {
+        "name": "Fuuid",
+        "trigger": "fuuid",
+        "content": "${1:FIELDNAME} = forms.UUIDField($2, required=${3:False})"
+    },
+    {
+        "name": "Fsimplearray",
+        "trigger": "fsimplearray",
+        "content": "${1:FIELDNAME} = SimpleArrayField()"
+    },
+    {
+        "name": "Fsplitarray",
+        "trigger": "fsplitarray",
+        "content": "${1:FIELDNAME} = SplitArrayField()"
+    },
+    {
+        "name": "Fhstore",
+        "trigger": "fhstore",
+        "content": "${1:FIELDNAME} = HStoreField()"
+    },
+    {
+        "name": "Fjson",
+        "trigger": "fjson",
+        "content": "${1:FIELDNAME} = JSONField()"
+    },
+    {
+        "name": "Fintrange",
+        "trigger": "fintrange",
+        "content": "${1:FIELDNAME} = IntegerRangeField()"
+    },
+    {
+        "name": "Ffloatrange",
+        "trigger": "ffloatrange",
+        "content": "${1:FIELDNAME} = FloatRangeField()"
+    },
+    {
+        "name": "Fdatetimerange",
+        "trigger": "fdatetimerange",
+        "content": "${1:FIELDNAME} = DateTimeRangeField()"
+    },
+    {
+        "name": "Fdaterange",
+        "trigger": "fdaterange",
+        "content": "${1:FIELDNAME} = DateRangeField()"
+    },
+    {
+        "name": "Ffi",
+        "trigger": "ffi",
+        "content": "from .forms import $1"
+    },
+    {
+        "name": "Iforms",
+        "trigger": "iforms",
+        "content": "from django import forms"
+    },
+    {
+        "name": "Ipostgresff",
+        "trigger": "ipostgresff",
+        "content": "from django.contrib.postgres.forms import ${1|SimpleArrayField,SplitArrayField,HStoreField,JSONField,IntegerRangeField,FloatRangeField,DateTimeRangeField,DateRangeField|}"
+    },
+    {
+        "name": "Clean_Data",
+        "trigger": "clean_data",
+        "content": "def clean_${1:FIELD}(self):\n\t${1:FIELD} = self.cleaned_data.get('${1:FIELD}')\n\n\n\t # TODO Validation\n\n\treturn ${1:FIELD}"
+    },
+    {
+        "name": "Model_Full",
+        "trigger": "Model_full",
+        "content": "class ${1:MODELNAME}(models.Model):\n\t\"\"\"${2:Model definition for $1}.\"\"\"\n\n\t${3:# TODO: Define fields here}\n\n\tclass Meta:\n\t\t\"\"\"Meta definition for $1.\"\"\"\n\n\t\tverbose_name = '$1'\n\t\tverbose_name_plural = '$1s'\n\n\tdef ${4|__str__,__unicode__|}(self):\n\t\t\"\"\"Unicode representation of $1.\"\"\"\n\t\t${7|pass,return '{}'.format(self. ) # TODO,return f'{self. }' # TODO|}\n\n\tdef save(self):\n\t\t\"\"\"Save method for $1.\"\"\"\n\t\tpass\n\n\tdef get_absolute_url(self):\n\t\t\"\"\"Return absolute url for $1.\"\"\"\n\t\treturn ('')\n\n\t${6:# TODO: Define custom methods here}\n"
+    },
+    {
+        "name": "Model",
+        "trigger": "Model",
+        "content": "class ${1:MODELNAME}(models.Model):\n\t\"\"\"${2:Model definition for $1}.\"\"\"\n\n\t${3:# TODO: Define fields here}\n\n\tclass Meta:\n\t\t\"\"\"Meta definition for $1.\"\"\"\n\n\t\tverbose_name = '$1'\n\t\tverbose_name_plural = '$1s'\n\n\tdef ${4|__str__,__unicode__|}(self):\n\t\t\"\"\"Unicode representation of $1.\"\"\"\n\t\t${5|pass,return '{}'.format(self. ) # TODO,return f'{self. }' # TODO|}\n"
+    },
+    {
+        "name": "Modelmixin",
+        "trigger": "modelmixin",
+        "content": "class $1Mixin(models.Model):\n\t${2:# TODO}\r\n\n\tclass Meta:\n\t\tabstract = True"
+    },
+    {
+        "name": "Queryset",
+        "trigger": "qs",
+        "content": "class $1QuerySet(models.QuerySet):\n\tpass"
+    },
+    {
+        "name": "Manager",
+        "trigger": "mngr",
+        "content": "class $1Manager(models.Manager):\n\tdef get_queryset(self):\n\t\treturn super ($1Manager, self).get_queryset().${2|filter,exclude,order_by,distinct,reverse|}($3)"
+    },
+    {
+        "name": "Queryset_From_Manager",
+        "trigger": "qs_mngr",
+        "content": "class $1Manager(models.Manager):\n\tdef get_queryset(self):\n\t\treturn $1QuerySet(self.model, using=self._db)"
+    },
+    {
+        "name": "Mauto",
+        "trigger": "mauto",
+        "content": "${1:FIELDNAME} = models.AutoField($2)"
+    },
+    {
+        "name": "Mbigauto",
+        "trigger": "mbigauto",
+        "content": "${1:FIELDNAME} = models.BigAutoField($2)"
+    },
+    {
+        "name": "Mbigint",
+        "trigger": "mbigint",
+        "content": "${1:FIELDNAME} = models.BigIntegerField($2)"
+    },
+    {
+        "name": "Mbinary",
+        "trigger": "mbinary",
+        "content": "${1:FIELDNAME} = models.BinaryField($2)"
+    },
+    {
+        "name": "Mbool",
+        "trigger": "mbool",
+        "content": "${1:FIELDNAME} = models.BooleanField($2)"
+    },
+    {
+        "name": "Mchar",
+        "trigger": "mchar",
+        "content": "${1:FIELDNAME} = models.CharField($2, max_length=${3:50})"
+    },
+    {
+        "name": "Mcoseint",
+        "trigger": "mcoseint",
+        "content": "${1:FIELDNAME} = models.CommaSeparatedIntegerField($2)"
+    },
+    {
+        "name": "Mdate",
+        "trigger": "mdate",
+        "content": "${1:FIELDNAME} = models.DateField($2, auto_now=${3:False}, auto_now_add=${4:False})"
+    },
+    {
+        "name": "Mdatetime",
+        "trigger": "mdatetime",
+        "content": "${1:FIELDNAME} = models.DateTimeField($2, auto_now=${3:False}, auto_now_add=${4:False})"
+    },
+    {
+        "name": "Mdecimal",
+        "trigger": "mdecimal",
+        "content": "${1:FIELDNAME} = models.DecimalField($2, max_digits=${3:5}, decimal_places=${4:2})"
+    },
+    {
+        "name": "Mduration",
+        "trigger": "mduration",
+        "content": "${1:FIELDNAME} = models.DurationField($2)"
+    },
+    {
+        "name": "Memail",
+        "trigger": "memail",
+        "content": "${1:FIELDNAME} = models.EmailField($2, max_length=${3:254})"
+    },
+    {
+        "name": "Mfile",
+        "trigger": "mfile",
+        "content": "${1:FIELDNAME} = models.FileField($2, upload_to=${3:None}, max_length=${4:100})"
+    },
+    {
+        "name": "Mfilepath",
+        "trigger": "mfilepath",
+        "content": "${1:FIELDNAME} = models.FilePathField($2, path=${3:None}, match=${4:None}, recursive=${5:recursive}, max_length=${6:100})"
+    },
+    {
+        "name": "Mfloat",
+        "trigger": "mfloat",
+        "content": "${1:FIELDNAME} = models.FloatField($2)"
+    },
+    {
+        "name": "Fk",
+        "trigger": "fk",
+        "content": "${1:FIELDNAME} = models.ForeignKey(${2:OTHERMODEL}, on_delete=models.${3|CASCADE,PROTECT,SET_NULL,SET_DEFAULT,SET(),DO_NOTHING|})"
+    },
+    {
+        "name": "Mip",
+        "trigger": "mip",
+        "content": "${1:FIELDNAME} = models.IPAddressField($2)"
+    },
+    {
+        "name": "Mimg",
+        "trigger": "mimg",
+        "content": "${1:FIELDNAME} = models.ImageField($2, upload_to=${3:None}, height_field=${4:None}, width_field=${5:None}, max_length=${5:100})"
+    },
+    {
+        "name": "Mint",
+        "trigger": "mint",
+        "content": "${1:FIELDNAME} = models.IntegerField($2)"
+    },
+    {
+        "name": "Mgenericip",
+        "trigger": "mgenericip",
+        "content": "${1:FIELDNAME} = models.GenericIPAddressField($2, protocol=${3:'both'}, unpack_ipv4=${4:False})"
+    },
+    {
+        "name": "M2M",
+        "trigger": "m2m",
+        "content": "${1:FIELDNAME} = models.ManyToManyField(${2:OTHERMODEL})"
+    },
+    {
+        "name": "Mnullbool",
+        "trigger": "mnullbool",
+        "content": "${1:FIELDNAME} = models.NullBooleanField($2)"
+    },
+    {
+        "name": "O2O",
+        "trigger": "o2o",
+        "content": "${1:FIELDNAME} = models.OneToOneField(${2:OTHERMODEL}, on_delete=models.${3|CASCADE,PROTECT,SET_NULL,SET_DEFAULT,SET(),DO_NOTHING|})"
+    },
+    {
+        "name": "Mphone",
+        "trigger": "mphone",
+        "content": "${1:FIELDNAME} = models.PhoneNumberField($2)"
+    },
+    {
+        "name": "Mposint",
+        "trigger": "mposint",
+        "content": "${1:FIELDNAME} = models.PositiveIntegerField($2)"
+    },
+    {
+        "name": "Mpossmallint",
+        "trigger": "mpossmallint",
+        "content": "${1:FIELDNAME} = models.PositiveSmallIntegerField($2)"
+    },
+    {
+        "name": "Mslug",
+        "trigger": "mslug",
+        "content": "${1:FIELDNAME} = models.SlugField($2)"
+    },
+    {
+        "name": "Msmallint",
+        "trigger": "msmallint",
+        "content": "${1:FIELDNAME} = models.SmallIntegerField($2)"
+    },
+    {
+        "name": "Mtext",
+        "trigger": "mtext",
+        "content": "${1:FIELDNAME} = models.TextField($2)"
+    },
+    {
+        "name": "Mtime",
+        "trigger": "mtime",
+        "content": "${1:FIELDNAME} = models.TimeField($2, auto_now=${4:False}, auto_now_add=${5:False})"
+    },
+    {
+        "name": "Murl",
+        "trigger": "murl",
+        "content": "${1:FIELDNAME} = models.URLField($2, max_length=${3:200})"
+    },
+    {
+        "name": "Musstate",
+        "trigger": "musstate",
+        "content": "${1:FIELDNAME} = models.USStateField($2)"
+    },
+    {
+        "name": "Muuid",
+        "trigger": "muuid",
+        "content": "${1:FIELDNAME} = models.UUIDField($2)"
+    },
+    {
+        "name": "Mxml",
+        "trigger": "mxml",
+        "content": "${1:FIELDNAME} = models.XMLField($2)"
+    },
+    {
+        "name": "Mstore",
+        "trigger": "mstore",
+        "content": "${1:FIELDNAME} = HStoreField()"
+    },
+    {
+        "name": "Mjson",
+        "trigger": "mjson",
+        "content": "${1:FIELDNAME} = JSONField()"
+    },
+    {
+        "name": "Marray",
+        "trigger": "marray",
+        "content": "${1:FIELDNAME} = ArrayField()"
+    },
+    {
+        "name": "Fmai",
+        "trigger": "fmai",
+        "content": "from .managers import $1QuerySet"
+    },
+    {
+        "name": "Fmi",
+        "trigger": "fmi",
+        "content": "from .models import $1"
+    },
+    {
+        "name": "Imodels",
+        "trigger": "imodels",
+        "content": "from django.db import models"
+    },
+    {
+        "name": "Ipy2_Unicode_Compatible",
+        "trigger": "iuc",
+        "content": "from django.utils.encoding import python_2_unicode_compatible"
+    },
+    {
+        "name": "Ipostgresmf",
+        "trigger": "ipostgresmf",
+        "content": "from django.contrib.postgres.fields import ${1|ArrayField,JSONField,HStoreField|}"
+    },
+    {
+        "name": "Isignals",
+        "trigger": "isignals",
+        "content": "from django.db.models.signals import ${1|pre_init,post_init,pre_save,post_save,pre_delete,post_delete,m2m_changed,class_prepared,Management signals,pre_migrate,post_migrate|}"
+    },
+    {
+        "name": "__Str__",
+        "trigger": "str",
+        "content": "def __str__(self):\n\treturn self${1: # TODO}"
+    },
+    {
+        "name": "Get_Absolute_Url",
+        "trigger": "get_absolute_url",
+        "content": "def get_absolute_url(self):\n\tfrom django.core.urlresolvers import reverse\n\treturn reverse('$1', kwargs={'pk': self.pk})"
+    },
+    {
+        "name": "Receiver",
+        "trigger": "receiver",
+        "content": "def ${1:FUNCTIONNAME}_${2|pre_init,post_init,pre_save,post_save,pre_delete,post_delete,m2m_changed,class_prepared,Management signals,pre_migrate,post_migrate|}_receiver(sender, instance, *args, **kwargs):\n\tpass\n\n\n${2|pre_init,post_init,pre_save,post_save,pre_delete,post_delete,m2m_changed,class_prepared,Management signals,pre_migrate,post_migrate|}.connect(${1:name}_${2|pre_init,post_init,pre_save,post_save,pre_delete,post_delete,m2m_changed,class_prepared,Management signals,pre_migrate,post_migrate|}_receiver, sender=${3:MODELNAME})"
+    },
+    {
+        "name": "Ilib",
+        "trigger": "ilib",
+        "content": "from django import template\nregister = template.Library()"
+    },
+    {
+        "name": "Li18N",
+        "trigger": "li18n",
+        "content": "{% load i18n %}"
+    },
+    {
+        "name": "Lstatic",
+        "trigger": "lstatic",
+        "content": "{% load staticfiles %}"
+    },
+    {
+        "name": "Ltags",
+        "trigger": "ltags",
+        "content": "{% load $SELECTION$1_tags %}"
+    },
+    {
+        "name": "Register_Assignment_Tag",
+        "trigger": "register_assignment_tag",
+        "content": "def get_$1(context):\n\trequest = context.get('request')\n\t$1 = ${2:[]}\n\treturn ${3:$1}"
+    },
+    {
+        "name": "Register_Filter",
+        "trigger": "register_filter",
+        "content": "@register.filter\ndef $1(value):\n\treturn value$2"
+    },
+    {
+        "name": "Register_Inclusion_Tag",
+        "trigger": "register_inclusion_tag",
+        "content": "@register.inclusion_tag(${2:'$1.html'}, takes_context=True)\ndef $1(context):\n\trequest = context.get('request')\n\t$3\n\treturn {\n\t\t'request': request,\n\t\t$4\n\t}"
+    },
+    {
+        "name": "Register_Simple_Tag",
+        "trigger": "register_simple_tag",
+        "content": "@register.simple_tag(takes_context=True)\ndef $1(context):\n\trequest = context.get('request')\n\treturn ${2:'It Works!'}"
+    },
+    {
+        "name": "Urlresolvers",
+        "trigger": "iurlresolvers",
+        "content": "from django.core.urlresolvers import ${1|reverse,reverse_lazy,resolve,get_script_prefix|}"
+    },
+    {
+        "name": "Urls (\u22651.10 & \u22641.11)",
+        "trigger": "iurls",
+        "content": "from django.urls import ${1|reverse,reverse_lazy,resolve,get_script_prefix|}"
+    },
+    {
+        "name": "Conf.Urls (\u22641.11)",
+        "trigger": "iconf_urls",
+        "content": "from django.conf.urls import ${1|static,url,include,handler400,handler403,handler404,handler500|}"
+    },
+    {
+        "name": "Urls (\u22652.0)",
+        "trigger": "iurls",
+        "content": "from django.urls import ${1|path,re_path,include,reverse,reverse_lazy,register_converter|}"
+    },
+    {
+        "name": "Conf.Urls (\u22652.0)",
+        "trigger": "iconf_urls",
+        "content": "from django.conf.urls import ${1|static,url,handler400,handler403,handler404,handler500|}"
+    },
+    {
+        "name": "Url_Stack",
+        "trigger": "url_stack",
+        "content": "${1|url,re_path|}(\n\tr'^${2:REGEX}/$',\n\t${3:VIEW}${4:.as_view()},\n\tname='$5'\n),"
+    },
+    {
+        "name": "Url_Inline",
+        "trigger": "url_inline",
+        "content": "${1|url,re_path|}(r'^${2:REGEX}/$', ${3:VIEW}${4:.as_view()}, name='$5'),"
+    },
+    {
+        "name": "Path_Stack",
+        "trigger": "path_stack",
+        "content": "path(\n\t'${1:ROUTE}/',\n\t${2:VIEW}${3:.as_view()},\n\tname='$4'\n),"
+    },
+    {
+        "name": "Path_Inline",
+        "trigger": "path_inline",
+        "content": "path('${1:ROUTE}/', ${2:VIEW}${3:.as_view()}, name='$4'),"
+    },
+    {
+        "name": "Urlpatterns",
+        "trigger": "urlpatterns",
+        "content": "urlpatterns = [\n\t$1\n]"
+    },
+    {
+        "name": "Repk",
+        "trigger": "repk",
+        "content": "r'^(?P<${1:pk}>d+)/$'"
+    },
+    {
+        "name": "Reslug",
+        "trigger": "reslug",
+        "content": "r'^(?P<${1:slug}>[-w]+)/$'"
+    },
+    {
+        "name": "Reusername",
+        "trigger": "reusername",
+        "content": "r'^(?P<username>[w.@+-]+)/$'"
+    },
+    {
+        "name": "Createview",
+        "trigger": "createview",
+        "content": "\r\nclass ${1:MODEL_NAME}CreateView(CreateView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n"
+    },
+    {
+        "name": "Deleteview",
+        "trigger": "deleteview",
+        "content": "\r\nclass ${1:MODEL_NAME}DeleteView(DeleteView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n"
+    },
+    {
+        "name": "Detailview",
+        "trigger": "detailview",
+        "content": "\r\nclass ${1:MODEL_NAME}DetailView(DetailView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n"
+    },
+    {
+        "name": "Listview",
+        "trigger": "listview",
+        "content": "\r\nclass ${1:MODEL_NAME}ListView(ListView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n"
+    },
+    {
+        "name": "Templateview",
+        "trigger": "templateview",
+        "content": "\r\nclass ${1:CLASS_NAME}(TemplateView):\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n"
+    },
+    {
+        "name": "Updateview",
+        "trigger": "updateview",
+        "content": "\r\nclass ${1:MODEL_NAME}UpdateView(UpdateView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n"
+    },
+    {
+        "name": "From Views Import",
+        "trigger": "fvi",
+        "content": "from .views import $1"
+    },
+    {
+        "name": "Igenericviews",
+        "trigger": "igenericviews",
+        "content": "from django.views.generic import ${1|CreateView,DetailView,FormView,ListView,TemplateView,UpdateView|}"
+    },
+    {
+        "name": "Isettings",
+        "trigger": "isettings",
+        "content": "from django.conf import settings"
+    },
+    {
+        "name": "View",
+        "trigger": "view",
+        "content": "def ${1:VIEWNAME}(request):"
+    },
+    {
+        "name": "Dispatch",
+        "trigger": "dispatch",
+        "content": "\r\ndef dispatch(self, request, *args, **kwargs):\r\n    return super(${1:CLASS_NAME}, self).dispatch(request, *args, **kwargs)\r\n"
+    },
+    {
+        "name": "Context",
+        "trigger": "get_context_data",
+        "content": "\r\ndef get_context_data(self, **kwargs):\r\n    context = super(${1:CLASS_NAME}, self).get_context_data(**kwargs)\r\n    return context\r\n"
+    },
+    {
+        "name": "Get_Queryset",
+        "trigger": "get_queryset",
+        "content": "def get_queryset(self):\n\tqueryset = super(${1:CLASS_NAME}, self).get_queryset()\n\tqueryset = queryset${3: # TODO}\n\treturn queryset"
+    }
+]

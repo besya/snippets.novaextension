@@ -1,0 +1,62 @@
+[
+    {
+        "name": "If",
+        "trigger": "if",
+        "content": "<% if ${1:truevalue} %>\n  $2\n<% end %>"
+    },
+    {
+        "name": "Else",
+        "trigger": "else",
+        "content": "<% else %>"
+    },
+    {
+        "name": "Elsif",
+        "trigger": "elsif",
+        "content": "<% elsif ${1:truevalue} %>"
+    },
+    {
+        "name": "End",
+        "trigger": "end",
+        "content": "<% end %>"
+    },
+    {
+        "name": "Ife",
+        "trigger": "ife",
+        "content": "<% if ${1:truevalue} %>\n  $2\n<% else %>\n  $3\n<% end %>"
+    },
+    {
+        "name": "Unless",
+        "trigger": "unless",
+        "content": "<% unless ${1:falsevalue} %>\n  $2\n<% end %>"
+    },
+    {
+        "name": "Unlesse",
+        "trigger": "unlesse",
+        "content": "<% unless ${1:falsevalue} %>\n  $2\n<% else %>\n  $3\n<% end %>"
+    },
+    {
+        "name": "Each",
+        "trigger": "each",
+        "content": "<% ${1:items}.each do |${2:item}| %>\n  $3\n<% end %>"
+    },
+    {
+        "name": "Render",
+        "trigger": "pe",
+        "content": "<%= $1 %>"
+    },
+    {
+        "name": "Render",
+        "trigger": "=",
+        "content": "<%= $1 %>"
+    },
+    {
+        "name": "Exec",
+        "trigger": "er",
+        "content": "<% $1 %>"
+    },
+    {
+        "name": "Exec",
+        "trigger": "%",
+        "content": "<% $1 %>"
+    }
+]

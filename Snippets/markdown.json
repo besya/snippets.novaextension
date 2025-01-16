@@ -1,0 +1,312 @@
+[
+    {
+        "name": "Header 1",
+        "trigger": "h1",
+        "content": "# ${1}"
+    },
+    {
+        "name": "Header 2",
+        "trigger": "h2",
+        "content": "## ${1}"
+    },
+    {
+        "name": "Header 3",
+        "trigger": "h3",
+        "content": "### ${1}"
+    },
+    {
+        "name": "Header 4",
+        "trigger": "h4",
+        "content": "#### ${1}"
+    },
+    {
+        "name": "Header 5",
+        "trigger": "h5",
+        "content": "##### ${1}"
+    },
+    {
+        "name": "Header 6",
+        "trigger": "h6",
+        "content": "###### ${1}"
+    },
+    {
+        "name": "Links",
+        "trigger": "l",
+        "content": "[${1:text}](${2:url}) ${3}"
+    },
+    {
+        "name": "Links",
+        "trigger": "link",
+        "content": "[${1:text}](${2:url}) ${3}"
+    },
+    {
+        "name": "Urls",
+        "trigger": "u",
+        "content": "<${1}> ${2}"
+    },
+    {
+        "name": "Urls",
+        "trigger": "url",
+        "content": "<${1}> ${2}"
+    },
+    {
+        "name": "Images",
+        "trigger": "img",
+        "content": "![${1:alt text}](${2:path}) ${3}"
+    },
+    {
+        "name": "Insert Strikethrough",
+        "trigger": "strikethrough",
+        "content": "~~${1}~~ ${2}"
+    },
+    {
+        "name": "Insert Bold Text",
+        "trigger": "bold",
+        "content": "**${1}** $2"
+    },
+    {
+        "name": "Insert Bold Text",
+        "trigger": "b",
+        "content": "**${1}** $2"
+    },
+    {
+        "name": "Insert Italic Text",
+        "trigger": "i",
+        "content": "*${1}* $2"
+    },
+    {
+        "name": "Insert Italic Text",
+        "trigger": "italic",
+        "content": "*${1}* $2"
+    },
+    {
+        "name": "Insert Bold And Italic Text",
+        "trigger": "bold and italic",
+        "content": "***${1}*** $2"
+    },
+    {
+        "name": "Insert Bold And Italic Text",
+        "trigger": "bi",
+        "content": "***${1}*** $2"
+    },
+    {
+        "name": "Insert Quoted Text",
+        "trigger": "quote",
+        "content": "> ${1}"
+    },
+    {
+        "name": "Insert Code",
+        "trigger": "code",
+        "content": "`${1}` $2"
+    },
+    {
+        "name": "Insert Code Block",
+        "trigger": "codeblock",
+        "content": "```${1:language}\n$2\n```"
+    },
+    {
+        "name": "Insert Unordered List",
+        "trigger": "unordered list",
+        "content": "- ${1:first}\n- ${2:second}\n- ${3:third}\n$4"
+    },
+    {
+        "name": "Insert Ordered List",
+        "trigger": "ordered list",
+        "content": "1. ${1:first}\n2. ${2:second}\n3. ${3:third}\n$4"
+    },
+    {
+        "name": "Insert Horizontal Rule",
+        "trigger": "horizontal rule",
+        "content": "----------\n"
+    },
+    {
+        "name": "Insert Task List",
+        "trigger": "task",
+        "content": "- [${1| ,x|}] ${2:text}\n${3}"
+    },
+    {
+        "name": "Insert Task List 2",
+        "trigger": "task2",
+        "content": "- [${1| ,x|}] ${2:text}\n- [${3| ,x|}] ${4:text}\n${5}"
+    },
+    {
+        "name": "Insert Task List 3",
+        "trigger": "task3",
+        "content": "- [${1| ,x|}] ${2:text}\n- [${3| ,x|}] ${4:text}\n- [${5| ,x|}] ${6:text}\n${7}"
+    },
+    {
+        "name": "Insert Task List 4",
+        "trigger": "task4",
+        "content": "- [${1| ,x|}] ${2:text}\n- [${3| ,x|}] ${4:text}\n- [${5| ,x|}] ${6:text}\n- [${7| ,x|}] ${8:text}\n${9}"
+    },
+    {
+        "name": "Insert Task List 5",
+        "trigger": "task5",
+        "content": "- [${1| ,x|}] ${2:text}\n- [${3| ,x|}] ${4:text}\n- [${5| ,x|}] ${6:text}\n- [${7| ,x|}] ${8:text}\n- [${9| ,x|}] ${10:text}\n${11}"
+    },
+    {
+        "name": "Insert Table",
+        "trigger": "table",
+        "content": "| ${1:Column1} | ${2:Column2} | ${3:Column3} |\n| ------------- | -------------- | -------------- |\n| ${4:Item1} | ${5:Item1} | ${6:Item1} |\n${7}"
+    },
+    {
+        "name": "Insert 2X1 Table",
+        "trigger": "2x1table",
+        "content": "| ${1:Column1} |\n| ------------- |\n| ${2:Item1} |\n${3}"
+    },
+    {
+        "name": "Insert 3X1 Table",
+        "trigger": "3x1table",
+        "content": "| ${1:Column1} |\n| ------------- |\n| ${2:Item1} |\n| ${3:Item2} |\n${4}"
+    },
+    {
+        "name": "Insert 4X1 Table",
+        "trigger": "4x1table",
+        "content": "| ${1:Column1} |\n| ------------- |\n| ${2:Item1} |\n| ${3:Item2} |\n| ${4:Item3} |\n${5}"
+    },
+    {
+        "name": "Insert 5X1 Table",
+        "trigger": "5x1table",
+        "content": "| ${1:Column1} |\n| ------------- |\n| ${2:Item1} |\n| ${3:Item2} |\n| ${4:Item3} |\n| ${5:Item4} |\n${6}"
+    },
+    {
+        "name": "Insert 2X2 Table",
+        "trigger": "2x2table",
+        "content": "| ${1:Column1} | ${2:Column2} |\n| -------------- | --------------- |\n| ${3:Item1.1} | ${4:Item2.1} |\n${5}"
+    },
+    {
+        "name": "Insert 3X2 Table",
+        "trigger": "3x2table",
+        "content": "| ${1:Column1} | ${2:Column2} |\n| -------------- | --------------- |\n| ${3:Item1.1} | ${4:Item2.1} |\n| ${5:Item1.2} | ${6:Item2.2} |\n${7}"
+    },
+    {
+        "name": "Insert 4X2 Table",
+        "trigger": "4x2table",
+        "content": "| ${1:Column1} | ${2:Column2} |\n| -------------- | --------------- |\n| ${3:Item1.1} | ${4:Item2.1} |\n| ${5:Item1.2} | ${6:Item2.2} |\n| ${7:Item1.3} | ${8:Item2.3} |\n${9}"
+    },
+    {
+        "name": "Insert 5X2 Table",
+        "trigger": "5x2table",
+        "content": "| ${1:Column1}   | ${2:Column2}    |\n|--------------- | --------------- |\n| ${3:Item1.1}   | ${4:Item2.1}   |\n| ${5:Item1.2}   | ${6:Item2.2}   |\n| ${7:Item1.3}   | ${8:Item2.3}   |\n| ${9:Item1.4}   | ${10:Item2.4}   |\n${11}"
+    },
+    {
+        "name": "Insert 2X3 Table",
+        "trigger": "2x3table",
+        "content": "| ${1:Column1} | ${2:Column2} | ${3:Column3} |\n| --------------- | --------------- | --------------- |\n| ${4:Item1.1} | ${5:Item2.1} | ${6:Item3.1} |\n${7}"
+    },
+    {
+        "name": "Insert 3X3 Table",
+        "trigger": "3x3table",
+        "content": "| ${1:Column1} | ${2:Column2} | ${3:Column3} |\n| --------------- | --------------- | --------------- |\n| ${4:Item1.1} | ${5:Item2.1} | ${6:Item3.1} |\n| ${7:Item1.2} | ${8:Item2.2} | ${9:Item3.2} |\n${10}"
+    },
+    {
+        "name": "Insert 4X3 Table",
+        "trigger": "4x3table",
+        "content": "| ${1:Column1} | ${2:Column2} | ${3:Column3} |\n| --------------- | --------------- | --------------- |\n| ${4:Item1.1} | ${5:Item2.1} | ${6:Item3.1} |\n| ${7:Item1.2} | ${8:Item2.2} | ${9:Item3.2} |\n| ${10:Item1.3} | ${11:Item2.3} | ${12:Item3.3} |\n${13}"
+    },
+    {
+        "name": "Insert 5X3 Table",
+        "trigger": "5x3table",
+        "content": "| ${1:Column1} | ${2:Column2} | ${3:Column3} |\n| --------------- | --------------- | --------------- |\n| ${4:Item1.1} | ${5:Item2.1} | ${6:Item3.1} |\n| ${7:Item1.2} | ${8:Item2.2} | ${9:Item3.2} |\n| ${10:Item1.3} | ${11:Item2.3} | ${12:Item3.3} |\n| ${13:Item1.4} | ${14:Item2.4} | ${15:Item3.4} |\n${16}"
+    },
+    {
+        "name": "Insert 2X4 Table",
+        "trigger": "2x4table",
+        "content": "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} |\n| --------------- | --------------- | --------------- | --------------- |\n| ${5:Item1.1} | ${6:Item2.1} | ${7:Item3.1} | ${8:Item4.1} |\n${9}"
+    },
+    {
+        "name": "Insert 3X4 Table",
+        "trigger": "3x4table",
+        "content": "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} |\n| --------------- | --------------- | --------------- | --------------- |\n| ${5:Item1.1} | ${6:Item2.1} | ${7:Item3.1} | ${8:Item4.1} |\n| ${9:Item1.2} | ${10:Item2.2} | ${11:Item3.2} | ${12:Item4.2} |\n${13}"
+    },
+    {
+        "name": "Insert 4X4 Table",
+        "trigger": "4x4table",
+        "content": "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} |\n| --------------- | --------------- | --------------- | --------------- |\n| ${5:Item1.1} | ${6:Item2.1} | ${7:Item3.1} | ${8:Item4.1} |\n| ${9:Item1.2} | ${10:Item2.2} | ${11:Item3.2} | ${12:Item4.2} |\n| ${13:Item1.3} | ${14:Item2.3} | ${15:Item3.3} | ${16:Item4.3} |\n${17}"
+    },
+    {
+        "name": "Insert 5X4 Table",
+        "trigger": "5x4table",
+        "content": "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} |\n| --------------- | --------------- | --------------- | --------------- |\n| ${5:Item1.1} | ${6:Item2.1} | ${7:Item3.1} | ${8:Item4.1} |\n| ${9:Item1.2} | ${10:Item2.2} | ${11:Item3.2} | ${12:Item4.2} |\n| ${13:Item1.3} | ${14:Item2.3} | ${15:Item3.3} | ${16:Item4.3} |\n| ${17:Item1.4} | ${18:Item2.4} | ${19:Item3.4} | ${20:Item4.4} |\n${21}"
+    },
+    {
+        "name": "Insert 2X5 Table",
+        "trigger": "2x5table",
+        "content": "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} | ${5:Column5} |\n| --------------- | --------------- | --------------- | --------------- | --------------- |\n| ${6:Item1.1} | ${7:Item2.1} | ${8:Item3.1} | ${9:Item4.1} | ${10:Item5.1} |\n${11}"
+    },
+    {
+        "name": "Insert 3X5 Table",
+        "trigger": "3x5table",
+        "content": "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} | ${5:Column5} |\n| --------------- | --------------- | --------------- | --------------- | --------------- |\n| ${6:Item1.1} | ${7:Item2.1} | ${8:Item3.1} | ${9:Item4.1} | ${10:Item5.1} |\n| ${11:Item1.2} | ${12:Item2.2} | ${13:Item3.2} | ${14:Item4.2} | ${15:Item5.2} |\n${16}"
+    },
+    {
+        "name": "Insert 4X5 Table",
+        "trigger": "4x5table",
+        "content": "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} | ${5:Column5} |\n| --------------- | --------------- | --------------- | --------------- | --------------- |\n| ${6:Item1.1} | ${7:Item2.1} | ${8:Item3.1} | ${9:Item4.1} | ${10:Item5.1} |\n| ${11:Item1.2} | ${12:Item2.2} | ${13:Item3.2} | ${14:Item4.2} | ${15:Item5.2} |\n| ${16:Item1.3} | ${17:Item2.3} | ${18:Item3.3} | ${19:Item4.3} | ${20:Item5.3} |\n${21}"
+    },
+    {
+        "name": "Insert 5X5 Table",
+        "trigger": "5x5table",
+        "content": "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} | ${5:Column5} |\n| --------------- | --------------- | --------------- | --------------- | --------------- |\n| ${6:Item1.1} | ${7:Item2.1} | ${8:Item3.1} | ${9:Item4.1} | ${10:Item5.1} |\n| ${11:Item1.2} | ${12:Item2.2} | ${13:Item3.2} | ${14:Item4.2} | ${15:Item5.2} |\n| ${16:Item1.3} | ${17:Item2.3} | ${18:Item3.3} | ${19:Item4.3} | ${20:Item5.3} |\n| ${21:Item1.4} | ${22:Item2.4} | ${23:Item3.4} | ${24:Item4.4} | ${25:Item5.4} |\n${26}"
+    },
+    {
+        "name": "Insert Subscript",
+        "trigger": "sub",
+        "content": "${1}<sub>${2}"
+    },
+    {
+        "name": "Insert Superscript",
+        "trigger": "sup",
+        "content": "${1}<sup>${2}"
+    },
+    {
+        "name": "Insert Note",
+        "trigger": "note",
+        "content": "> [!NOTE]\n> "
+    },
+    {
+        "name": "Insert Note",
+        "trigger": "n",
+        "content": "> [!NOTE]\n> "
+    },
+    {
+        "name": "Insert Tip",
+        "trigger": "tip",
+        "content": "> [!TIP]\n> "
+    },
+    {
+        "name": "Insert Tip",
+        "trigger": "t",
+        "content": "> [!TIP]\n> "
+    },
+    {
+        "name": "Insert Important",
+        "trigger": "important",
+        "content": "> [!IMPORTANT]\n> "
+    },
+    {
+        "name": "Insert Important",
+        "trigger": "imp",
+        "content": "> [!IMPORTANT]\n> "
+    },
+    {
+        "name": "Insert Warning",
+        "trigger": "warning",
+        "content": "> [!WARNING]\n> "
+    },
+    {
+        "name": "Insert Warning",
+        "trigger": "w",
+        "content": "> [!WARNING]\n> "
+    },
+    {
+        "name": "Insert Caution",
+        "trigger": "caution",
+        "content": "> [!CAUTION]\n> "
+    },
+    {
+        "name": "Insert Caution",
+        "trigger": "c",
+        "content": "> [!CAUTION]\n> "
+    }
+]

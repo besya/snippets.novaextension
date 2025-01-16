@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Ifelse",
+        "trigger": "if",
+        "content": "if $1 then\n  $2\nelse$3"
+    },
+    {
+        "name": "Letin",
+        "trigger": "let",
+        "content": "let\n  $1\nin $2"
+    },
+    {
+        "name": "Hash",
+        "trigger": "hash",
+        "content": "\"${1:sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=}\";"
+    },
+    {
+        "name": "Fetchfrom",
+        "trigger": "fetchFrom",
+        "content": "fetchFrom${1|GitHub,GitLab,Gitea,Gitiles,BitBucket,Savannah,RepoOrCz,SourceHut|} {\n  owner = \"$2\";\n  repo = \"$3\";\n  rev = \"${4:v\\${version\\}}\";\n  hash = \"${5:sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=}\";\n};"
+    },
+    {
+        "name": "Fetchurl",
+        "trigger": "fetchurl",
+        "content": "fetchurl {\n  url = \"$1\";\n  hash = \"${2:sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=}\";\n};"
+    },
+    {
+        "name": "Package-Arguments",
+        "trigger": "pkg",
+        "content": "{ lib\n, ${1:stdenv}\n, $2\n}:\n\n$3"
+    },
+    {
+        "name": "Stdenv.Mkderivation",
+        "trigger": "mkd",
+        "content": "stdenv.mkDerivation (finalAttrs: {\n  pname = \"$1\";\n  version = \"$2\";\n\n  src = $3\n\n  nativeBuildInputs = [\n    $4\n  ];\n  buildInputs = [\n    $9\n  ];\n\n  meta = {\n    description = \"$5\";\n    homepage = \"$6\";\n    license = lib.licenses.$7;\n    maintainers = with lib.maintainers; [ $8 ];\n  };\n})"
+    },
+    {
+        "name": "Meta",
+        "trigger": "meta",
+        "content": "meta = {\n  description = \"$1\";\n  homepage = \"$2\";\n  license = lib.licenses.$3;\n  maintainers = with lib.maintainers; [ $4 ];\n};"
+    },
+    {
+        "name": "With",
+        "trigger": "with",
+        "content": "with $1; $2;"
+    },
+    {
+        "name": "Inherit",
+        "trigger": "inherit",
+        "content": "inherit $1;"
+    }
+]

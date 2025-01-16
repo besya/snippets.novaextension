@@ -1,0 +1,157 @@
+[
+    {
+        "name": "Case",
+        "trigger": "case",
+        "content": "case ${1:expression} of\n\t${2:case1} -> ${3:result}\n\t${4:case2} -> ${5:result}$6"
+    },
+    {
+        "name": "Block_Comment",
+        "trigger": "--",
+        "content": "{- $1 -}"
+    },
+    {
+        "name": "Block_Comment",
+        "trigger": "comment",
+        "content": "{- $1 -}"
+    },
+    {
+        "name": "Block_Comment",
+        "trigger": "block_comment",
+        "content": "{- $1 -}"
+    },
+    {
+        "name": "Data_Inline",
+        "trigger": "data inline",
+        "content": "data ${1:type} = ${2:data}$5 ${3:deriving (${4:Show, Eq})}"
+    },
+    {
+        "name": "Data_Record",
+        "trigger": "data record",
+        "content": "data ${1:Type} = $1\n\t{ ${2:field} :: ${3:Type}\n\t, ${4:field} :: ${5:Type}$8\n\t} ${6:deriving (${7:Show, Eq})}"
+    },
+    {
+        "name": "Fn",
+        "trigger": "fns",
+        "content": "${1:f} :: ${2:a} ${3:-> ${4:b}}\n$1 ${5:x} = ${6:undefined}$7 "
+    },
+    {
+        "name": "Fn",
+        "trigger": "simple function",
+        "content": "${1:f} :: ${2:a} ${3:-> ${4:b}}\n$1 ${5:x} = ${6:undefined}$7 "
+    },
+    {
+        "name": "Fn_Clause",
+        "trigger": "fnc",
+        "content": "${1:f} :: ${2:a} ${3:-> ${4:b}}\n$1 ${5:pattern} = ${7:undefined}\n$1 ${6:pattern} = ${8:undefined}$9"
+    },
+    {
+        "name": "Fn_Clause",
+        "trigger": "clause function",
+        "content": "${1:f} :: ${2:a} ${3:-> ${4:b}}\n$1 ${5:pattern} = ${7:undefined}\n$1 ${6:pattern} = ${8:undefined}$9"
+    },
+    {
+        "name": "Fn_Guarded",
+        "trigger": "fng",
+        "content": "${1:f} :: ${2:a} ${3:-> ${4:b}}\n$1 ${5:x}\n\t| ${6:condition} = ${8:undefined}\n\t| ${7:condition} = ${9:undefined}$10"
+    },
+    {
+        "name": "Fn_Guarded",
+        "trigger": "guarded function",
+        "content": "${1:f} :: ${2:a} ${3:-> ${4:b}}\n$1 ${5:x}\n\t| ${6:condition} = ${8:undefined}\n\t| ${7:condition} = ${9:undefined}$10"
+    },
+    {
+        "name": "Fn_Where",
+        "trigger": "fnw",
+        "content": "${1:f} :: ${2:a} ${3:-> ${4:b}}\n$1 ${5:x} = ${6:undefined}$8\n\twhere\n\t\t${7:exprs}"
+    },
+    {
+        "name": "Fn_Where",
+        "trigger": "where function",
+        "content": "${1:f} :: ${2:a} ${3:-> ${4:b}}\n$1 ${5:x} = ${6:undefined}$8\n\twhere\n\t\t${7:exprs}"
+    },
+    {
+        "name": "Get",
+        "trigger": "get",
+        "content": "${1:x} <- ${2:undefined}$3"
+    },
+    {
+        "name": "If_Inline",
+        "trigger": "if inline",
+        "content": "if ${1:condition} then ${2:undefined} else ${3:undefined}$4,"
+    },
+    {
+        "name": "If",
+        "trigger": "if simple",
+        "content": "if ${1:condition}\n\tthen ${2:undefined}\n\telse ${3:undefined}$4"
+    },
+    {
+        "name": "Import",
+        "trigger": "import simple",
+        "content": "import ${1:module} ${2:(${3:f})}$4"
+    },
+    {
+        "name": "Import_Qualified",
+        "trigger": "import qual",
+        "content": "import qualified ${1:module} as ${2:name}"
+    },
+    {
+        "name": "Instance",
+        "trigger": "inst",
+        "content": "instance ${1:Class} ${2:Data} where\n\t${3:f} = ${4:undefined}$5"
+    },
+    {
+        "name": "Lambda",
+        "trigger": "\\",
+        "content": "\\${1:x} -> ${2:undefined}$3"
+    },
+    {
+        "name": "Lambda",
+        "trigger": "lambda",
+        "content": "\\${1:x} -> ${2:undefined}$3"
+    },
+    {
+        "name": "Pragma",
+        "trigger": "lang",
+        "content": "{-# LANGUAGE ${1:extension} #-}$2"
+    },
+    {
+        "name": "Let",
+        "trigger": "let",
+        "content": "let ${1:x} = ${2:undefined}$3"
+    },
+    {
+        "name": "Main",
+        "trigger": "main",
+        "content": "module Main where\n\n\nmain :: IO ()\nmain = do\n\t${1:undefined}$2\nreturn ()"
+    },
+    {
+        "name": "Module",
+        "trigger": "mods",
+        "content": "module ${1:mod} where$2"
+    },
+    {
+        "name": "Module",
+        "trigger": "mod simple",
+        "content": "module ${1:mod} where$2"
+    },
+    {
+        "name": "Module Exports",
+        "trigger": "modu",
+        "content": "module ${1:mod} (\n\t\t${2:export}\n\t${3:, ${4:export}}\n) where$5"
+    },
+    {
+        "name": "Module Exports",
+        "trigger": "mod exports",
+        "content": "module ${1:mod} (\n\t\t${2:export}\n\t${3:, ${4:export}}\n) where$5"
+    },
+    {
+        "name": "Newtype",
+        "trigger": "new",
+        "content": "newtype ${1:Type} ${2:a} = $1 { un$1 :: ${3:a} } ${4:deriving (${5:Show, Eq})}$6"
+    },
+    {
+        "name": "Opt Pragma",
+        "trigger": "opt",
+        "content": "{-# OPTIONS_GHC ${1:opt} #-}$2"
+    }
+]

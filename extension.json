@@ -1,0 +1,22 @@
+{
+    "identifier": "besya.snippets",
+    "name": "Snippets",
+    "organization": "Besya",
+    "description": "Snippets for languages and frameworks",
+    "version": "1.0",
+    "categories": ["completions"],
+    "license": "MIT",
+    "repository": "https://github.com/besya/snippets.novaextension",
+    "bugs": "https://github.com/besya/snippets.novaextension/issues",
+
+    "main": "main.js",
+    "config": "config.json",
+
+    "activationEvents": [
+        "*"
+    ],
+
+    "entitlements": {
+
+    }
+}

@@ -1,0 +1,627 @@
+[
+    {
+        "name": "Doctype",
+        "trigger": "doctype",
+        "content": "<!DOCTYPE>\n$1"
+    },
+    {
+        "name": "A",
+        "trigger": "a",
+        "content": "<a href=\"$1\">$2</a>$3"
+    },
+    {
+        "name": "Abbr",
+        "trigger": "abbr",
+        "content": "<abbr title=\"$1\">$2</abbr>$3"
+    },
+    {
+        "name": "Address",
+        "trigger": "address",
+        "content": "<address>\n$1\n</address>"
+    },
+    {
+        "name": "Area",
+        "trigger": "area",
+        "content": "<area shape=\"$1\" coords=\"$2\" href=\"$3\" alt=\"$4\">$5"
+    },
+    {
+        "name": "Article",
+        "trigger": "article",
+        "content": "<article>\n\t$1\n</article>"
+    },
+    {
+        "name": "Aside",
+        "trigger": "aside",
+        "content": "<aside>\n\t$1\n</aside>$2"
+    },
+    {
+        "name": "Audio",
+        "trigger": "audio",
+        "content": "<audio controls>\n\t$1\n</audio>"
+    },
+    {
+        "name": "B",
+        "trigger": "b",
+        "content": "<b>$1</b>$2"
+    },
+    {
+        "name": "Base",
+        "trigger": "base",
+        "content": "<base href=\"$1\" target=\"$2\">$3"
+    },
+    {
+        "name": "Bdi",
+        "trigger": "bdi",
+        "content": "<bdi>$1</bdi>$2"
+    },
+    {
+        "name": "Bdo",
+        "trigger": "bdo",
+        "content": "<bdo dir=\"$1\">\n$2\n</bdo>"
+    },
+    {
+        "name": "Big",
+        "trigger": "big",
+        "content": "<big>$1</big>$2"
+    },
+    {
+        "name": "Blockquote",
+        "trigger": "blockquote",
+        "content": "<blockquote cite=\"$2\">\n\t$1\n</blockquote>"
+    },
+    {
+        "name": "Body",
+        "trigger": "body",
+        "content": "<body>\n\t$1\n</body>"
+    },
+    {
+        "name": "Br",
+        "trigger": "br",
+        "content": "<br>"
+    },
+    {
+        "name": "Button",
+        "trigger": "button",
+        "content": "<button type=\"$1\">$2</button>$3"
+    },
+    {
+        "name": "Canvas",
+        "trigger": "canvas",
+        "content": "<canvas id=\"$1\">$2</canvas>$3"
+    },
+    {
+        "name": "Caption",
+        "trigger": "caption",
+        "content": "<caption>$1</caption>$2"
+    },
+    {
+        "name": "Cite",
+        "trigger": "cite",
+        "content": "<cite>$1</cite>$2"
+    },
+    {
+        "name": "Code",
+        "trigger": "code",
+        "content": "<code>$1</code>$2"
+    },
+    {
+        "name": "Col",
+        "trigger": "col",
+        "content": "<col>$2"
+    },
+    {
+        "name": "Colgroup",
+        "trigger": "colgroup",
+        "content": "<colgroup>\n\t$1\n</colgroup>"
+    },
+    {
+        "name": "Command",
+        "trigger": "command",
+        "content": "<command>$1</command>$2"
+    },
+    {
+        "name": "Datalist",
+        "trigger": "datalist",
+        "content": "<datalist>\n\t$1\n</datalist>"
+    },
+    {
+        "name": "Dd",
+        "trigger": "dd",
+        "content": "<dd>$1</dd>$2"
+    },
+    {
+        "name": "Del",
+        "trigger": "del",
+        "content": "<del>$1</del>$2"
+    },
+    {
+        "name": "Details",
+        "trigger": "details",
+        "content": "<details>\n\t$1\n</details>"
+    },
+    {
+        "name": "Dialog",
+        "trigger": "dialog",
+        "content": "<dialog>$1</dialog>$2"
+    },
+    {
+        "name": "Dfn",
+        "trigger": "dfn",
+        "content": "<dfn>$1</dfn>$2"
+    },
+    {
+        "name": "Div",
+        "trigger": "div",
+        "content": "<div>\n\t$1\n</div>"
+    },
+    {
+        "name": "Dl",
+        "trigger": "dl",
+        "content": "<dl>\n\t$1\n</dl>"
+    },
+    {
+        "name": "Dt",
+        "trigger": "dt",
+        "content": "<dt>$1</dt>$2"
+    },
+    {
+        "name": "Em",
+        "trigger": "em",
+        "content": "<em>$1</em>$2"
+    },
+    {
+        "name": "Embed",
+        "trigger": "embed",
+        "content": "<embed src=\"$1\">$2"
+    },
+    {
+        "name": "Fieldset",
+        "trigger": "fieldset",
+        "content": "<fieldset>\n\t$1\n</fieldset>"
+    },
+    {
+        "name": "Figcaption",
+        "trigger": "figcaption",
+        "content": "<figcaption>$1</figcaption>$2"
+    },
+    {
+        "name": "Figure",
+        "trigger": "figure",
+        "content": "<figure>\n\t$1\n</figure>"
+    },
+    {
+        "name": "Footer",
+        "trigger": "footer",
+        "content": "<footer>\n\t$1\n</footer>"
+    },
+    {
+        "name": "Form",
+        "trigger": "form",
+        "content": "<form>\n\t$1\n</form>"
+    },
+    {
+        "name": "H1",
+        "trigger": "h1",
+        "content": "<h1>$1</h1>$2"
+    },
+    {
+        "name": "H2",
+        "trigger": "h2",
+        "content": "<h2>$1</h2>$2"
+    },
+    {
+        "name": "H3",
+        "trigger": "h3",
+        "content": "<h3>$1</h3>$2"
+    },
+    {
+        "name": "H4",
+        "trigger": "h4",
+        "content": "<h4>$1</h4>$2"
+    },
+    {
+        "name": "H5",
+        "trigger": "h5",
+        "content": "<h5>$1</h5>$2"
+    },
+    {
+        "name": "H6",
+        "trigger": "h6",
+        "content": "<h6>$1</h6>$2"
+    },
+    {
+        "name": "Head",
+        "trigger": "head",
+        "content": "<head>\n\t$1\n</head>"
+    },
+    {
+        "name": "Header",
+        "trigger": "header",
+        "content": "<header>\n\t$1\n</header>"
+    },
+    {
+        "name": "Hgroup",
+        "trigger": "hgroup",
+        "content": "<hgroup>\n\t$1\n</hgroup>"
+    },
+    {
+        "name": "Hr",
+        "trigger": "hr",
+        "content": "<hr>"
+    },
+    {
+        "name": "Html",
+        "trigger": "html",
+        "content": "<html>\n\t$1\n</html>"
+    },
+    {
+        "name": "Html5",
+        "trigger": "html5",
+        "content": "<!DOCTYPE html>\n<html lang=\"$1en\">\n\t<head>\n\t\t<meta charset=\"UTF-8\">\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\t\t<title>$2</title>\n\t\t<link href=\"$3css/style.css\" rel=\"stylesheet\">\n\t</head>\n\t<body>\n\t$4\n\t</body>\n</html>"
+    },
+    {
+        "name": "I",
+        "trigger": "i",
+        "content": "<i>$1</i>$2"
+    },
+    {
+        "name": "Iframe",
+        "trigger": "iframe",
+        "content": "<iframe src=\"$1\">$2</iframe>$3"
+    },
+    {
+        "name": "Img",
+        "trigger": "img",
+        "content": "<img src=\"$1\" alt=\"$2\">$3"
+    },
+    {
+        "name": "Input",
+        "trigger": "input",
+        "content": "<input type=\"$1\" name=\"$2\" value=\"$3\">$4"
+    },
+    {
+        "name": "Ins",
+        "trigger": "ins",
+        "content": "<ins>$1</ins>$2"
+    },
+    {
+        "name": "Keygen",
+        "trigger": "keygen",
+        "content": "<keygen name=\"$1\">$2"
+    },
+    {
+        "name": "Kbd",
+        "trigger": "kbd",
+        "content": "<kbd>$1</kbd>$2"
+    },
+    {
+        "name": "Label",
+        "trigger": "label",
+        "content": "<label for=\"$1\">$2</label>$3"
+    },
+    {
+        "name": "Legend",
+        "trigger": "legend",
+        "content": "<legend>$1</legend>$2"
+    },
+    {
+        "name": "Li",
+        "trigger": "li",
+        "content": "<li>$1</li>$2"
+    },
+    {
+        "name": "Link",
+        "trigger": "link",
+        "content": "<link rel=\"$1\" type=\"$2\" href=\"$3\">$4"
+    },
+    {
+        "name": "Main",
+        "trigger": "main",
+        "content": "<main>\n\t$1\n</main>"
+    },
+    {
+        "name": "Map",
+        "trigger": "map",
+        "content": "<map name=\"$1\">\n\t$2\n</map>"
+    },
+    {
+        "name": "Mark",
+        "trigger": "mark",
+        "content": "<mark>$1</mark>$2"
+    },
+    {
+        "name": "Menu",
+        "trigger": "menu",
+        "content": "<menu>\n\t$1\n</menu>"
+    },
+    {
+        "name": "Menuitem",
+        "trigger": "menuitem",
+        "content": "<menuitem>$1</menuitem>$2"
+    },
+    {
+        "name": "Meta",
+        "trigger": "meta",
+        "content": "<meta name=\"$1\" content=\"$2\">$3"
+    },
+    {
+        "name": "Meter",
+        "trigger": "meter",
+        "content": "<meter value=\"$1\">$2</meter>$3"
+    },
+    {
+        "name": "Nav",
+        "trigger": "nav",
+        "content": "<nav>\n\t$1\n</nav>"
+    },
+    {
+        "name": "Noscript",
+        "trigger": "noscript",
+        "content": "<noscript>\n$1\n</noscript>"
+    },
+    {
+        "name": "Object",
+        "trigger": "object",
+        "content": "<object width=\"$1\" height=\"$2\" data=\"$3\">$4</object>$5"
+    },
+    {
+        "name": "Ol",
+        "trigger": "ol",
+        "content": "<ol>\n\t$1\n</ol>"
+    },
+    {
+        "name": "Optgroup",
+        "trigger": "optgroup",
+        "content": "<optgroup>\n\t$1\n</optgroup>"
+    },
+    {
+        "name": "Option",
+        "trigger": "option",
+        "content": "<option value=\"$1\">$2</option>$3"
+    },
+    {
+        "name": "Output",
+        "trigger": "output",
+        "content": "<output name=\"$1\" for=\"$2\">$3</output>$4"
+    },
+    {
+        "name": "P",
+        "trigger": "p",
+        "content": "<p>$1</p>$2"
+    },
+    {
+        "name": "Param",
+        "trigger": "param",
+        "content": "<param name=\"$1\" value=\"$2\">$3"
+    },
+    {
+        "name": "Pre",
+        "trigger": "pre",
+        "content": "<pre>$1</pre>"
+    },
+    {
+        "name": "Progress",
+        "trigger": "progress",
+        "content": "<progress value=\"$1\" max=\"$2\">$3</progress>$4"
+    },
+    {
+        "name": "Q",
+        "trigger": "q",
+        "content": "<q>$1</q>$2"
+    },
+    {
+        "name": "Rp",
+        "trigger": "rp",
+        "content": "<rp>$1</rp>$2"
+    },
+    {
+        "name": "Rt",
+        "trigger": "rt",
+        "content": "<rt>$1</rt>$2"
+    },
+    {
+        "name": "Ruby",
+        "trigger": "ruby",
+        "content": "<ruby>\n$1\n</ruby>"
+    },
+    {
+        "name": "S",
+        "trigger": "s",
+        "content": "<s>$1</s>$2"
+    },
+    {
+        "name": "Samp",
+        "trigger": "samp",
+        "content": "<samp>$1</samp>$2"
+    },
+    {
+        "name": "Script",
+        "trigger": "script",
+        "content": "<script>\n\t$1\n</script>"
+    },
+    {
+        "name": "Section",
+        "trigger": "section",
+        "content": "<section>\n\t$1\n</section>"
+    },
+    {
+        "name": "Select",
+        "trigger": "select",
+        "content": "<select>\n\t$1\n</select>"
+    },
+    {
+        "name": "Small",
+        "trigger": "small",
+        "content": "<small>$1</small>$2"
+    },
+    {
+        "name": "Source",
+        "trigger": "source",
+        "content": "<source src=\"$1\" type=\"$2\">$3"
+    },
+    {
+        "name": "Span",
+        "trigger": "span",
+        "content": "<span>$1</span>$2"
+    },
+    {
+        "name": "Strong",
+        "trigger": "strong",
+        "content": "<strong>$1</strong>$2"
+    },
+    {
+        "name": "Style",
+        "trigger": "style",
+        "content": "<style>\n$1\n</style>"
+    },
+    {
+        "name": "Sub",
+        "trigger": "sub",
+        "content": "<sub>$1</sub>$2"
+    },
+    {
+        "name": "Sup",
+        "trigger": "sup",
+        "content": "<sup>$1</sup>$2"
+    },
+    {
+        "name": "Summary",
+        "trigger": "summary",
+        "content": "<summary>$1</summary>$2"
+    },
+    {
+        "name": "Table",
+        "trigger": "table",
+        "content": "<table>\n\t$1\n</table>"
+    },
+    {
+        "name": "Tbody",
+        "trigger": "tbody",
+        "content": "<tbody>\n\t$1\n</tbody>"
+    },
+    {
+        "name": "Td",
+        "trigger": "td",
+        "content": "<td>$1</td>$2"
+    },
+    {
+        "name": "Textarea",
+        "trigger": "textarea",
+        "content": "<textarea rows=\"$1\" cols=\"$2\">$3</textarea>$4"
+    },
+    {
+        "name": "Tfoot",
+        "trigger": "tfoot",
+        "content": "<tfoot>\n\t$1\n</tfoot>"
+    },
+    {
+        "name": "Thead",
+        "trigger": "thead",
+        "content": "<thead>\n$1\n</thead>"
+    },
+    {
+        "name": "Th",
+        "trigger": "th",
+        "content": "<th>$1</th>$2"
+    },
+    {
+        "name": "Time",
+        "trigger": "time",
+        "content": "<time datetime=\"$1\">$2</time>$3"
+    },
+    {
+        "name": "Title",
+        "trigger": "title",
+        "content": "<title>$1</title>$2"
+    },
+    {
+        "name": "Tr",
+        "trigger": "tr",
+        "content": "<tr>$1</tr>$2"
+    },
+    {
+        "name": "Track",
+        "trigger": "track",
+        "content": "<track src=\"$1\" kind=\"$2\" srclang=\"$3\" label=\"$4\">$5"
+    },
+    {
+        "name": "U",
+        "trigger": "u",
+        "content": "<u>$1</u>$2"
+    },
+    {
+        "name": "Ul",
+        "trigger": "ul",
+        "content": "<ul>\n\t$1\n</ul>"
+    },
+    {
+        "name": "Var",
+        "trigger": "var",
+        "content": "<var>$1</var>$2"
+    },
+    {
+        "name": "Video",
+        "trigger": "video",
+        "content": "<video width=\"$1\" height=\"$2\" controls>\n\t$3\n</video>"
+    },
+    {
+        "name": "Div.",
+        "trigger": "div.",
+        "content": "<div class=\"$1\">\n\t$2\n</div>"
+    },
+    {
+        "name": "Div#",
+        "trigger": "div#",
+        "content": "<div id=\"$1\">\n\t$2\n</div>"
+    },
+    {
+        "name": "Div.#",
+        "trigger": "div.#",
+        "content": "<div class=\"$1\" id=\"$2\">\n\t$3\n</div>"
+    },
+    {
+        "name": "P.",
+        "trigger": "p.",
+        "content": "<p class=\"$1\">$2</p>"
+    },
+    {
+        "name": "P#",
+        "trigger": "p#",
+        "content": "<p id=\"$1\">$2</p>"
+    },
+    {
+        "name": "P.#",
+        "trigger": "p.#",
+        "content": "<p class=\"$1\" id=\"$2\">$3</p>"
+    },
+    {
+        "name": "Ul.",
+        "trigger": "ul.",
+        "content": "<ul class=\"$1\">\n\t$2\n</ul>"
+    },
+    {
+        "name": "Ul#",
+        "trigger": "ul#",
+        "content": "<ul id=\"$1\">\n\t$2\n</ul>"
+    },
+    {
+        "name": "Ul.#",
+        "trigger": "ul.#",
+        "content": "<ul class=\"$1\" id=\"$2\">\n\t$3\n</ul>"
+    },
+    {
+        "name": "Ol.",
+        "trigger": "ol.",
+        "content": "<ol class=\"$1\">\n\t$2\n</ol>"
+    },
+    {
+        "name": "Ol#",
+        "trigger": "ol#",
+        "content": "<ol id=\"$1\">\n\t$2\n</ol>"
+    },
+    {
+        "name": "Ol.#",
+        "trigger": "ol.#",
+        "content": "<ol class=\"$1\" id=\"$2\">\n\t$3\n</ol>"
+    }
+]

@@ -1,0 +1,212 @@
+[
+    {
+        "name": "Starter Template",
+        "trigger": "st",
+        "content": "#include <iostream>\n\nint main (int argc, char *argv[]) {\n\t$1\n\n\treturn 0;\n}"
+    },
+    {
+        "name": "For",
+        "trigger": "for",
+        "content": "for (${1:size_t} ${2:i} = ${3:0}; $2 < ${4:length}; $2++) {\n\t$5\n}"
+    },
+    {
+        "name": "Forr",
+        "trigger": "forr",
+        "content": "for (${1:size_t} ${2:i} = ${3:length} - 1; $2 >= ${4:0}; $2--) {\n\t$5\n}"
+    },
+    {
+        "name": "Do",
+        "trigger": "do",
+        "content": "do {\n\t$2\n} while($1);"
+    },
+    {
+        "name": "While",
+        "trigger": "while",
+        "content": "while ($1) {\n\t$2\n}"
+    },
+    {
+        "name": "Foreach",
+        "trigger": "foreach",
+        "content": "for(${1:auto} ${2:var} : ${3:collection_to_loop}) {\n\t$4\n}"
+    },
+    {
+        "name": "If",
+        "trigger": "if",
+        "content": "if ($1) {\n\t$2\n}"
+    },
+    {
+        "name": "Else",
+        "trigger": "else",
+        "content": "else {\n\t$1\n}"
+    },
+    {
+        "name": "Else If",
+        "trigger": "else if",
+        "content": "else if ($1) {\n\t$2\n}"
+    },
+    {
+        "name": "Enum",
+        "trigger": "enum",
+        "content": "enum ${1:MyEnum} {\n\t$2\n};"
+    },
+    {
+        "name": "Enum Class",
+        "trigger": "enum class",
+        "content": "enum class ${1:MyClass} {$2};"
+    },
+    {
+        "name": "Class",
+        "trigger": "class",
+        "content": "class ${1:MyClass} {\npublic:\n\t$1();\n\t$1($1 &&) = default;\n\t$1(const $1 &) = default;\n\t$1 &operator=($1 &&) = default;\n\t$1 &operator=(const $1 &) = default;\n\t~$1();\n\nprivate:\n\t$2\n};\n\n$1::$1() {\n}\n\n$1::~$1() {\n}"
+    },
+    {
+        "name": "Eclass",
+        "trigger": "eclass",
+        "content": "class ${1:MyClass} {\npublic:\n\t$2\nprivate:\n\t$3\n};\n"
+    },
+    {
+        "name": "Qclass",
+        "trigger": "qclass",
+        "content": "class ${1:MyClass} : public QObject {\n\tQ_OBJECT;\npublic:\n\nexplicit $1(QObject *parent = nullptr);\n\t$2\nsignals:\n\npublic slots:\n};\n"
+    },
+    {
+        "name": "Classi",
+        "trigger": "classi",
+        "content": "class ${1:MyClass} {\npublic:\n\t$1() = default;\n\t$1($1 &&) = default;\n\t$1(const $1 &) = default;\n\t$1 &operator=($1 &&) = default;\n\t$1 &operator=(const $1 &) = default;\n\t~$1() = default;\n\nprivate:\n\t$2\n};"
+    },
+    {
+        "name": "Interface",
+        "trigger": "interface",
+        "content": "__interface I${1:Interface} {\n\t$2\n};"
+    },
+    {
+        "name": "Namespace",
+        "trigger": "namespace",
+        "content": "namespace ${1:MyNamespace} {\n\t$2\n}"
+    },
+    {
+        "name": "#Ifdef",
+        "trigger": "#ifdef",
+        "content": "#ifdef ${1:DEBUG}\n$2\n#endif // $1"
+    },
+    {
+        "name": "#Ifndef",
+        "trigger": "#ifndef",
+        "content": "#ifndef ${1:DEBUG}\n$2\n#endif // !$1"
+    },
+    {
+        "name": "#If",
+        "trigger": "#if",
+        "content": "#if ${1:0}\n$2\n#endif // $1"
+    },
+    {
+        "name": "Struct",
+        "trigger": "struct",
+        "content": "struct ${1:MyStruct} {\n\t$2\n};"
+    },
+    {
+        "name": "Switch",
+        "trigger": "switch",
+        "content": "switch (${1:switch_on}) {\n\tdefault:\n\t\t$2\n\t\tbreak;\n}"
+    },
+    {
+        "name": "Try",
+        "trigger": "try",
+        "content": "try {\n\t$2\n}\ncatch (${1:const std::exception&}) {\n}"
+    },
+    {
+        "name": "Union",
+        "trigger": "union",
+        "content": "union ${1:MyUnion} {\n\t$2\n};"
+    },
+    {
+        "name": "Cout",
+        "trigger": "cout",
+        "content": "std::cout << ${1:message};"
+    },
+    {
+        "name": "Cin",
+        "trigger": "cin",
+        "content": "std::cin >> $1;"
+    },
+    {
+        "name": "Printf",
+        "trigger": "printf",
+        "content": "printf(\"$1\\n\"$2);"
+    },
+    {
+        "name": "Sprintf",
+        "trigger": "sprintf",
+        "content": "sprintf($1, \"$2\\n\"$3);"
+    },
+    {
+        "name": "Fprintf",
+        "trigger": "fprintf",
+        "content": "fprintf(${1:stderr}, \"$2\\n\"$3);"
+    },
+    {
+        "name": "Scanf",
+        "trigger": "scanf",
+        "content": "scanf(\"$1\"$2);"
+    },
+    {
+        "name": "Sscanf",
+        "trigger": "sscanf",
+        "content": "sscanf($1, \"$2\"$3);"
+    },
+    {
+        "name": "Fscanf",
+        "trigger": "fscanf",
+        "content": "fscanf($1, \"$2\"$3);"
+    },
+    {
+        "name": "#Inc",
+        "trigger": "#inc",
+        "content": "#include \"$1\"$2"
+    },
+    {
+        "name": "#Inc<",
+        "trigger": "#inc<",
+        "content": "#include <$1>$2"
+    },
+    {
+        "name": "#Def",
+        "trigger": "def",
+        "content": "#define $1"
+    },
+    {
+        "name": "Main Function Template",
+        "trigger": "main",
+        "content": "int main (int argc, char *argv[]) {\n\t$1\n\treturn 0;\n}"
+    },
+    {
+        "name": "#Guard",
+        "trigger": "#guard",
+        "content": "#ifndef INCLUDE${TM_DIRECTORY/.*[\\/](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_\n#define INCLUDE${TM_DIRECTORY/.*[\\/](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_\n\n$2\n\n#endif  // INCLUDE${TM_DIRECTORY/.*[\\/](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_"
+    },
+    {
+        "name": "Sca",
+        "trigger": "sca",
+        "content": "static_cast<${1:unsigned}>(${2:expr})$3"
+    },
+    {
+        "name": "Dca",
+        "trigger": "dca",
+        "content": "dynamic_cast<${1:unsigned}>(${2:expr})$3"
+    },
+    {
+        "name": "Rca",
+        "trigger": "rca",
+        "content": "reinterpret_cast<${1:unsigned}>(${2:expr})$3"
+    },
+    {
+        "name": "Cca",
+        "trigger": "cca",
+        "content": "const_cast<${1:unsigned}>(${2:expr})$3"
+    },
+    {
+        "name": "Af",
+        "trigger": "af",
+        "content": "auto ${1:name}( ${2:void} ) -> ${3:auto} {\n\t${5}\n}"
+    }
+]

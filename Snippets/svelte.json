@@ -1,0 +1,432 @@
+[
+    {
+        "name": "Svelte-Component-Format",
+        "trigger": "s-component-format",
+        "content": "<script>\n\t${1:// your script goes here}\n</script>\n\n<style>\n\t${2:/* your styles go here */}\n</style>\n\n${3:<!-- markup (zero or more items) goes here -->}"
+    },
+    {
+        "name": "Svelte-Script-Tag",
+        "trigger": "s-script",
+        "content": "<script>\n\t${1:// your script goes here}\n</script>"
+    },
+    {
+        "name": "Svelte-Script-Context",
+        "trigger": "s-script-context",
+        "content": "<script context=\"module\">\n\t${1:// your script goes here}\n</script>"
+    },
+    {
+        "name": "Svelte-Style-Tag",
+        "trigger": "s-style",
+        "content": "<style>\n\t${1:/* your styles go here */}\n</style>"
+    },
+    {
+        "name": "Svelte-Expression",
+        "trigger": "s-expression",
+        "content": "{${1:expression}}"
+    },
+    {
+        "name": "Svelte-Expression-Html",
+        "trigger": "s-expression-html",
+        "content": "{@html ${1:expression}}"
+    },
+    {
+        "name": "Svelte-Expression-Debug",
+        "trigger": "s-expression-debug",
+        "content": "{@debug ${1:var1}${2:,var2}}"
+    },
+    {
+        "name": "Svelte-If-Block",
+        "trigger": "s-if-block",
+        "content": "{#if ${1:condition}}\n\t${2: <!-- content here -->}\n{/if}"
+    },
+    {
+        "name": "Svelte-If-Else-Block",
+        "trigger": "s-if-else-block",
+        "content": "{#if ${1:condition}}\n\t${2: <!-- content here -->}\n{:else}\n\t${3: <!-- else content here -->}\n{/if}"
+    },
+    {
+        "name": "Svelte-Else-Block",
+        "trigger": "s-else-block",
+        "content": "{:else}\n\t${1: <!-- else content here -->}"
+    },
+    {
+        "name": "Svelte-If-Else-If-Block",
+        "trigger": "s-if-else-if-block",
+        "content": "{#if ${1:condition}}\n\t${2: <!-- content here -->}\n{:else if ${3: otherCondition}}\n\t${4: <!-- else if content here -->}\n{:else}\n\t${5: <!-- else content here -->}\n{/if}"
+    },
+    {
+        "name": "Svelte-Else-If-Block",
+        "trigger": "s-else-if-block",
+        "content": "{:else if ${1: otherCondition}}\n\t${2: <!-- else if content here -->}"
+    },
+    {
+        "name": "Svelte-Each-Block",
+        "trigger": "s-each-block",
+        "content": "{#each ${1:items} as ${2:item}}\n\t${3: <!-- content here -->}\n{/each}"
+    },
+    {
+        "name": "Svelte-Each-Else-Block",
+        "trigger": "s-each-else-block",
+        "content": "{#each ${1:items} as ${2:item}}\n\t${3: <!-- content here -->}\n{:else}\n\t${4: <!-- empty list -->}\n{/each}"
+    },
+    {
+        "name": "Svelte-Each-Index-Block",
+        "trigger": "s-each-index-block",
+        "content": "{#each ${1:items} as ${2:item},${3:i}}\n\t${4: <!-- content here -->}\n{/each}"
+    },
+    {
+        "name": "Svelte-Each-Key-Block",
+        "trigger": "s-each-key-block",
+        "content": "{#each ${1:items} as ${2:item},(${3:key})}\n\t${4: <!-- content here -->}\n{/each}"
+    },
+    {
+        "name": "Svelte-Each-Index-Key-Block",
+        "trigger": "s-each-index-key-block",
+        "content": "{#each ${1:items} as ${2:item},i (${3:key})}\n\t${4: <!-- content here -->}\n{/each}"
+    },
+    {
+        "name": "Svelte-Await-Then-Block",
+        "trigger": "s-await-then-block",
+        "content": "{#await ${1:promise}}\n\t<!-- promise is pending -->\n{:then ${2:value}}\n\t<!-- promise was fulfilled -->\n{/await}"
+    },
+    {
+        "name": "Svelte-Then-Block",
+        "trigger": "s-then-block",
+        "content": "{:then ${1:value}}\n\t<!-- promise was fulfilled -->"
+    },
+    {
+        "name": "Svelte-Await-Short-Block",
+        "trigger": "s-await-short-block",
+        "content": "{#await ${1:promise} then ${2:value}}\n\t<!-- promise was fulfilled -->\n{/await}"
+    },
+    {
+        "name": "Svelte-Await-Catch-Block",
+        "trigger": "s-await-catch-block",
+        "content": "{#await ${1:promise}}\n\t<!-- ${1:promise} is pending -->\n{:then ${value}}\n\t<!-- ${1:promise} was fulfilled -->\n{:catch error}\n\t<!-- ${1:promise} was rejected -->\n{/await}"
+    },
+    {
+        "name": "Svelte-Catch-Block",
+        "trigger": "s-catch-block",
+        "content": "{:catch error}\n\t<!-- promise was rejected -->"
+    },
+    {
+        "name": "Svelte-On-Event",
+        "trigger": "s-on-event",
+        "content": "on:${1:eventname}={${2:handler}}"
+    },
+    {
+        "name": "Svelte-On-Event-Forward",
+        "trigger": "s-on-event-foward",
+        "content": "on:${1:eventname}"
+    },
+    {
+        "name": "Svelte-On-Event-Modifiers",
+        "trigger": "s-on-event-modifiers",
+        "content": "on:${1:eventname}|${2|preventDefault,stopPropagation,passive,capture,once|}={${3:handler}}"
+    },
+    {
+        "name": "Svelte-On-Event-Inline",
+        "trigger": "s-on-event-inline",
+        "content": "on:${1:click}=\"{() => ${2:count += 1}}\""
+    },
+    {
+        "name": "Svelte-Modifiers",
+        "trigger": "s-modifier",
+        "content": "|${1|preventDefault,stopPropagation,passive,capture,once|}"
+    },
+    {
+        "name": "Svelte-Bind",
+        "trigger": "s-bind",
+        "content": "bind:${1:property}"
+    },
+    {
+        "name": "Svelte-Bind-Property",
+        "trigger": "s-bind-property",
+        "content": "bind:${1:property}={${2:variable}}"
+    },
+    {
+        "name": "Svelte-Bind-Video",
+        "trigger": "s-bind-video",
+        "content": "<video\nsrc={${1:clip}}\nbind:${2:duration}\nbind:${3:buffered}\nbind:${4:played}\nbind:${5:seekable}\nbind:${6:seeking}\nbind:${7:ended}\nbind:${8:currentTime}\nbind:${9:playbackRate}\nbind:${10:paused}\nbind:${11:volume}\nbind:${12:muted}\nbind:${13:videoWidth}\nbind:${14:videoHeight}\n></video>"
+    },
+    {
+        "name": "Svelte-Bind-Audio",
+        "trigger": "s-bind-audio",
+        "content": "<audio\nsrc={${1:clip}}\nbind:${2:duration}\nbind:${3:buffered}\nbind:${4:played}\nbind:${5:seekable}\nbind:${6:seeking}\nbind:${7:ended}\nbind:${8:currentTime}\nbind:${9:playbackRate}\nbind:${10:paused}\nbind:${11:volume}\nbind:${12:muted}\n></audio>"
+    },
+    {
+        "name": "Svelte-Bind-Media-Elements",
+        "trigger": "s-bind-media-elements",
+        "content": "bind:${1|duration,buffered,played,seekable,seeking,ended,currentTime,playbackRate,paused,volume,muted,videoWidth,videoHeight|}"
+    },
+    {
+        "name": "Svelte-Bind-Block-Level",
+        "trigger": "s-bind-block-level",
+        "content": "bind:${1|clientWidth,clientHeight,offsetWidth,offsetHeight|}={${2:variable}}"
+    },
+    {
+        "name": "Svelte-Bind-Group",
+        "trigger": "s-bind-group",
+        "content": "bind:group={${1:variable}}"
+    },
+    {
+        "name": "Svelte-Bind-This",
+        "trigger": "s-bind-this",
+        "content": "bind:this={${1:dom_node}}"
+    },
+    {
+        "name": "Svelte-Class",
+        "trigger": "s-class",
+        "content": "class:${1:name}={${2:condition}}"
+    },
+    {
+        "name": "Svelte-Class-Short",
+        "trigger": "s-class-short",
+        "content": "class:${1:name}}"
+    },
+    {
+        "name": "Svelte-Use",
+        "trigger": "s-use",
+        "content": "use:action"
+    },
+    {
+        "name": "Svelte-Use-Parameters",
+        "trigger": "s-use-parameters",
+        "content": "use:action={${1:parameters}}"
+    },
+    {
+        "name": "Svelte-Transition",
+        "trigger": "s-transition",
+        "content": "${1|transition,in,out|}:${2:name}"
+    },
+    {
+        "name": "Svelte-Transition-Params",
+        "trigger": "s-transition-params",
+        "content": "${1|transition,in,out|}:${2:name}={${3:params}}"
+    },
+    {
+        "name": "Svelte-Transition-Events",
+        "trigger": "s-transition-events",
+        "content": "on:${1|introstart,introend,outrostart,outroend|}=\"{() => status = '${1|introstart,introend,outrostart,outroend|}'}\""
+    },
+    {
+        "name": "Svelte-Transition-Local",
+        "trigger": "s-transition-local",
+        "content": "${1|transition,in,out|}:${2:name}|${3:local}"
+    },
+    {
+        "name": "Svelte-Transition-All",
+        "trigger": "s-transition-all",
+        "content": "${1|transition,in,out|}:${2:name}|${3:local}={${4:params}}"
+    },
+    {
+        "name": "Svelte-Animate",
+        "trigger": "s-animate",
+        "content": "animate:${1:name}={${2:params}}"
+    },
+    {
+        "name": "Svelte-Slot",
+        "trigger": "s-slot",
+        "content": "<slot>${1:<!-- optional fallback -->}</slot>"
+    },
+    {
+        "name": "Svelte-Slot-Name",
+        "trigger": "s-slot-name",
+        "content": "<slot name=\"${1:x}\">${2:<!-- optional fallback -->}</slot>"
+    },
+    {
+        "name": "Svelte-Slot-Prop",
+        "trigger": "s-slot-prop",
+        "content": "<slot ${1:prop}={${2:value}}>${3:<!-- optional fallback -->}</slot>"
+    },
+    {
+        "name": "Svelte-Self",
+        "trigger": "s-self",
+        "content": "<svelte:self />"
+    },
+    {
+        "name": "Svelte-Self-Prop",
+        "trigger": "s-self-prop",
+        "content": "<svelte:self ${1:prop}={${2:value}} />"
+    },
+    {
+        "name": "Svelte-Component",
+        "trigger": "s-component",
+        "content": "<svelte:component this={${1:component}} />"
+    },
+    {
+        "name": "Svelte-Window",
+        "trigger": "s-window",
+        "content": "<svelte:window />"
+    },
+    {
+        "name": "Svelte-Window-Bind",
+        "trigger": "s-window-bind",
+        "content": "bind:${1|innerWidth,innerHeight,outerWidth,outerHeight,scrollX,scrollY,online|}={${2:variable}}"
+    },
+    {
+        "name": "Svelte-Body",
+        "trigger": "s-body",
+        "content": "<svelte:body />"
+    },
+    {
+        "name": "Svelte-Head",
+        "trigger": "s-head",
+        "content": "<svelte:head>\n\t${1:<!-- head content -->}\n</svelte:head>"
+    },
+    {
+        "name": "Svelte-Options",
+        "trigger": "s-options",
+        "content": "<svelte:options ${1|immutable,accessors,namespace,tag|}={${2:value}}/>"
+    },
+    {
+        "name": "Svelte-Create-Component",
+        "trigger": "s-create-component",
+        "content": "const component = new ${1:App}({\n\ttarget: ${2|target,document.body|},\n\tprops: ${3:props},\n\tanchor: ${4:anchor},\n\thydrate: ${5|false,true|},\n\tintro: ${5|false,true|}\n})"
+    },
+    {
+        "name": "Svelte-Reactive-Statement",
+        "trigger": "s-reactive-statement",
+        "content": "$: ${1:variable} = ${2:prop}"
+    },
+    {
+        "name": "Svelte-Reactive-Block",
+        "trigger": "s-reactive-block",
+        "content": "$: { ${1:console.log(${2:prop});}}"
+    },
+    {
+        "name": "Svelte-Action",
+        "trigger": "s-action",
+        "content": "function ${1:foo}(node) {\n\t// the node has been mounted in the DOM\n\treturn {\n\t\tdestroy() {\n\t\t\t// the node has been removed from the DOM\n\t\t}\n\t};\n}"
+    },
+    {
+        "name": "Svelte-Action-Parameters",
+        "trigger": "s-action-parameters",
+        "content": "function ${1:foo}(node, ${2:parameters}) {\n\t// the node has been mounted in the DOM\n\treturn {\n\t\tdestroy() {\n\t\t\t// the node has been removed from the DOM\n\t\t}\n\t};\n}"
+    },
+    {
+        "name": "Svelte-Action-Update",
+        "trigger": "s-action-update",
+        "content": "function ${1:foo}(node, ${2:parameters}) {\n\t// the node has been mounted in the DOM\n\treturn {\n\t\tupdate(${2:parameters}) {\n\t\t\t// the value of `${2:parameters}` has changed\n\t\t}\n\t\tdestroy() {\n\t\t\t// the node has been removed from the DOM\n\t\t}\n\t};\n}"
+    },
+    {
+        "name": "Svelte-On-Mount",
+        "trigger": "s-lifecycle-mount",
+        "content": "onMount(() => {\n\t${1:// content here}\n});"
+    },
+    {
+        "name": "Svelte-Before-Update",
+        "trigger": "s-lifecycle-before-update",
+        "content": "beforeUpdate(() => {\n\t${1:// content here}\n});"
+    },
+    {
+        "name": "Svelte-After-Update",
+        "trigger": "s-lifecycle-after-update",
+        "content": "afterUpdate(() => {\n\t${1:// content here}\n});"
+    },
+    {
+        "name": "Svelte-On-Destroy",
+        "trigger": "s-lifecycle-destroy",
+        "content": "onDestroy(() => {\n\t${1:// content here}\n});"
+    },
+    {
+        "name": "Svelte-Tick",
+        "trigger": "s-tick",
+        "content": "await tick()"
+    },
+    {
+        "name": "Svelte-Set-Context",
+        "trigger": "s-set-content",
+        "content": "setContext(${1:key}, ${2:context})"
+    },
+    {
+        "name": "Svelte-Get-Context",
+        "trigger": "s-get-content",
+        "content": "getContext(${1:key})"
+    },
+    {
+        "name": "Svelte-Dispatch",
+        "trigger": "s-dispatch",
+        "content": "const dispatch = createEventDispatcher();"
+    },
+    {
+        "name": "Svelte-Dispatch-Event",
+        "trigger": "s-dispatch-event",
+        "content": "dispatch(${1:key},${2:data})"
+    },
+    {
+        "name": "Svelte-Writeable",
+        "trigger": "s-writeable",
+        "content": "const ${1:store} = writable(${2:initialValue});"
+    },
+    {
+        "name": "Svelte-Writeable-Set",
+        "trigger": "s-writeable-set",
+        "content": "const ${1:store} = writable(${2:initialValue}, () => {\n\t${3:console.log('got a subscriber');}\n\treturn () => ${4:console.log('no more subscribers');}\n});"
+    },
+    {
+        "name": "Svelte-Readable",
+        "trigger": "s-readable",
+        "content": "const ${1:store} = readable(${2:initialValue}, () => {\n\t${3:console.log('got a subscriber');}\n\treturn () => ${4:console.log('no more subscribers');}\n});"
+    },
+    {
+        "name": "Svelte-Derived",
+        "trigger": "s-derived",
+        "content": "const ${1:derivedStore} = derived(${2:storeA}, $${2:storeA} => $${2:storeA} * 2);"
+    },
+    {
+        "name": "Svelte-Derived-Multiple",
+        "trigger": "s-derived-multiple",
+        "content": "const ${1:derivedStore} = derived([${2:storeA}, ${3:storeB}], ([$${2:storeA}, $${3:storeB}]) => $${2:storeA} + $${3:storeB});"
+    },
+    {
+        "name": "Svelte-Derived-Set",
+        "trigger": "s-derived-set",
+        "content": "const ${1:derivedStore} = derived(${2:storeA}, ($${2:storeA}, set) => {\n\tsetTimeout(() => set($${2:storeA}), 1000);\n}, 'one moment...');"
+    },
+    {
+        "name": "Svelte-Derived-Multiple-Set",
+        "trigger": "s-derived-multiple-set",
+        "content": "const ${1:derivedStore} = derived([${2:storeA}, ${3:storeB}], ([$${2:storeA}, $${3:storeB}], set) => {\n\tsetTimeout(() => set($${2:storeA} + $${3:storeB}), 1000);\n}, 'one moment...');"
+    },
+    {
+        "name": "Svelte-Store-Get",
+        "trigger": "s-store-get-value",
+        "content": "const ${1:value} = get(${2:store});"
+    },
+    {
+        "name": "Svelte-Component-Set",
+        "trigger": "s-component-set",
+        "content": "${1:component}.$set(${2: params});"
+    },
+    {
+        "name": "Svelte-Component-On",
+        "trigger": "s-component-on",
+        "content": "${1:component}.$on(${2:eventname}, ${3:handler});"
+    },
+    {
+        "name": "Svelte-Component-Destroy",
+        "trigger": "s-component-destroy",
+        "content": "${1:component}.$destroy();"
+    },
+    {
+        "name": "Svelte-Render-Component",
+        "trigger": "s-render-component",
+        "content": "const { head, html, css } = ${1:App}.render({\n\tprops: ${3:props},\n})"
+    },
+    {
+        "name": "Svelte-Tweened",
+        "trigger": "s-tweened",
+        "content": "const ${1:store} = tweened(${2:value}, ${3:options});"
+    },
+    {
+        "name": "Svelte-Spring",
+        "trigger": "s-spring",
+        "content": "const ${1:store} = spring(${2:value}, ${3:options});"
+    },
+    {
+        "name": "Svelte-Register",
+        "trigger": "s-register",
+        "content": "require('svelte/register');\nconst ${1:App} = require('${2:./App.svelte}').default;"
+    }
+]

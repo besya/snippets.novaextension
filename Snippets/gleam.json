@@ -1,0 +1,197 @@
+[
+    {
+        "name": "Public Function",
+        "trigger": "pub",
+        "content": "pub fn ${1:function_name}(${2}) -> ${3:Nil} {\n\t${4:todo}\n}"
+    },
+    {
+        "name": "Public Function",
+        "trigger": "pub fn",
+        "content": "pub fn ${1:function_name}(${2}) -> ${3:Nil} {\n\t${4:todo}\n}"
+    },
+    {
+        "name": "Private Function",
+        "trigger": "fn",
+        "content": "fn ${1:function_name}(${2}) -> ${3:Nil} {\n\t${4:todo}\n}"
+    },
+    {
+        "name": "Test Function",
+        "trigger": "test",
+        "content": "pub fn ${1:name}_test() {\n\t${2}\n}"
+    },
+    {
+        "name": "Anonymous Function",
+        "trigger": "af",
+        "content": "fn(${1}) { ${2} }"
+    },
+    {
+        "name": "Anonymous Function",
+        "trigger": "fn",
+        "content": "fn(${1}) { ${2} }"
+    },
+    {
+        "name": "Let Assignment",
+        "trigger": "let",
+        "content": "let ${1} = ${2}"
+    },
+    {
+        "name": "Let Assert Assignment",
+        "trigger": "leta",
+        "content": "let assert ${1} = ${2}"
+    },
+    {
+        "name": "Use Expression",
+        "trigger": "use",
+        "content": "use ${1} <- ${2}"
+    },
+    {
+        "name": "Case Expression",
+        "trigger": "case",
+        "content": "case ${1} {\n\t${2} -> ${3}\n}"
+    },
+    {
+        "name": "Type",
+        "trigger": "type",
+        "content": "type ${1:Name} {\n\t${2:$1}\n}"
+    },
+    {
+        "name": "Public Type",
+        "trigger": "pty",
+        "content": "pub type ${1:Name} {\n\t${2:$1}\n}"
+    },
+    {
+        "name": "Public Type",
+        "trigger": "pub",
+        "content": "pub type ${1:Name} {\n\t${2:$1}\n}"
+    },
+    {
+        "name": "Public Type",
+        "trigger": "pub type",
+        "content": "pub type ${1:Name} {\n\t${2:$1}\n}"
+    },
+    {
+        "name": "External Attribute",
+        "trigger": "external",
+        "content": "@external(${1:erlang}, \"${2}\", \"${3}\")"
+    },
+    {
+        "name": "Public External Function",
+        "trigger": "pexfn",
+        "content": "pub external fn ${1:function_name}(${2}) -> ${3:Nil} = \"${4}\" \"${5}\""
+    },
+    {
+        "name": "Public External Function",
+        "trigger": "pub",
+        "content": "pub external fn ${1:function_name}(${2}) -> ${3:Nil} = \"${4}\" \"${5}\""
+    },
+    {
+        "name": "Public External Function",
+        "trigger": "pub external",
+        "content": "pub external fn ${1:function_name}(${2}) -> ${3:Nil} = \"${4}\" \"${5}\""
+    },
+    {
+        "name": "Public External Function",
+        "trigger": "pub external fn",
+        "content": "pub external fn ${1:function_name}(${2}) -> ${3:Nil} = \"${4}\" \"${5}\""
+    },
+    {
+        "name": "Import",
+        "trigger": "im",
+        "content": "import ${1:gleam/result}"
+    },
+    {
+        "name": "Import",
+        "trigger": "import",
+        "content": "import ${1:gleam/result}"
+    },
+    {
+        "name": "Import Unqualified",
+        "trigger": "im.",
+        "content": "import ${1:gleam/result}.{${2}}"
+    },
+    {
+        "name": "Import Unqualified",
+        "trigger": "import",
+        "content": "import ${1:gleam/result}.{${2}}"
+    },
+    {
+        "name": "Pipe",
+        "trigger": "p",
+        "content": "|> ${1}"
+    },
+    {
+        "name": "Pipe",
+        "trigger": "|>",
+        "content": "|> ${1}"
+    },
+    {
+        "name": "Tuple",
+        "trigger": "#",
+        "content": "#(${1})"
+    },
+    {
+        "name": "Tuple",
+        "trigger": "tuple",
+        "content": "#(${1})"
+    },
+    {
+        "name": "Block",
+        "trigger": "bl",
+        "content": "{\n\t${1}\n}"
+    },
+    {
+        "name": "Should Equal",
+        "trigger": "seq",
+        "content": "should.equal(${1})"
+    },
+    {
+        "name": "Should Equal",
+        "trigger": "should",
+        "content": "should.equal(${1})"
+    },
+    {
+        "name": "Should Be True",
+        "trigger": "strue",
+        "content": "should.be_true(${1})"
+    },
+    {
+        "name": "Should Be True",
+        "trigger": "should",
+        "content": "should.be_true(${1})"
+    },
+    {
+        "name": "Should Be True",
+        "trigger": "should.b",
+        "content": "should.be_true(${1})"
+    },
+    {
+        "name": "Should Be False",
+        "trigger": "sfalse",
+        "content": "should.be_false(${1})"
+    },
+    {
+        "name": "Should Be False",
+        "trigger": "should",
+        "content": "should.be_false(${1})"
+    },
+    {
+        "name": "Should Be False",
+        "trigger": "should.b",
+        "content": "should.be_false(${1})"
+    },
+    {
+        "name": "Public Constant",
+        "trigger": "pub",
+        "content": "pub const ${1} = ${2}"
+    },
+    {
+        "name": "Public Constant",
+        "trigger": "pub const",
+        "content": "pub const ${1} = ${2}"
+    },
+    {
+        "name": "Constant",
+        "trigger": "const",
+        "content": "const ${1} = ${2}"
+    }
+]

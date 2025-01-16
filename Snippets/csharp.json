@@ -1,0 +1,212 @@
+[
+    {
+        "name": "Attribute Using Recommended Pattern",
+        "trigger": "attribute",
+        "content": "[System.AttributeUsage(System.AttributeTargets.${1:All}, Inherited = ${2:false}, AllowMultiple = ${3:true})]\nsealed class ${4:My}Attribute : System.Attribute\n{\n    // See the attribute guidelines at\n    //  http://go.microsoft.com/fwlink/?LinkId=85236\n    readonly string positionalString;\n    \n    // This is a positional argument\n    public ${4:My}Attribute(string positionalString)\n    {\n        this.positionalString = positionalString;\n        \n        // TODO: Implement code here\n        ${5:throw new System.NotImplementedException();}\n    }\n    \n    public string PositionalString\n    {\n        get { return positionalString; }\n    }\n    \n    // This is a named argument\n    public int NamedInt { get; set; }\n}"
+    },
+    {
+        "name": "Checked Block",
+        "trigger": "checked",
+        "content": "checked\n{\n    $1\n}"
+    },
+    {
+        "name": "Class",
+        "trigger": "class",
+        "content": "class ${1:Name}\n{\n    $2\n}"
+    },
+    {
+        "name": "Console.Writeline",
+        "trigger": "cw",
+        "content": "System.Console.WriteLine($1);"
+    },
+    {
+        "name": "Do...While Loop",
+        "trigger": "do",
+        "content": "do\n{\n    $2\n} while (${1:true});"
+    },
+    {
+        "name": "Else Statement",
+        "trigger": "else",
+        "content": "else\n{\n    $1\n}"
+    },
+    {
+        "name": "Enum",
+        "trigger": "enum",
+        "content": "enum ${1:Name}\n{\n    $2\n}"
+    },
+    {
+        "name": "Implementing Equals() According To Guidelines",
+        "trigger": "equals",
+        "content": "// override object.Equals\npublic override bool Equals(object obj)\n{\n    //\n    // See the full list of guidelines at\n    //   http://go.microsoft.com/fwlink/?LinkID=85237\n    // and also the guidance for operator== at\n    //   http://go.microsoft.com/fwlink/?LinkId=85238\n    //\n    \n    if (obj == null || GetType() != obj.GetType())\n    {\n        return false;\n    }\n    \n    // TODO: write your implementation of Equals() here\n    ${1:throw new System.NotImplementedException();}\n    return base.Equals (obj);\n}\n\n// override object.GetHashCode\npublic override int GetHashCode()\n{\n    // TODO: write your implementation of GetHashCode() here\n    ${2:throw new System.NotImplementedException();}\n    return base.GetHashCode();\n}"
+    },
+    {
+        "name": "Exception",
+        "trigger": "exception",
+        "content": "[System.Serializable]\npublic class ${1:My}Exception : ${2:System.Exception}\n{\n    public ${1:My}Exception() { }\n    public ${1:My}Exception(string message) : base(message) { }\n    public ${1:My}Exception(string message, System.Exception inner) : base(message, inner) { }\n    protected ${1:My}Exception(\n        System.Runtime.Serialization.SerializationInfo info,\n        System.Runtime.Serialization.StreamingContext context) : base(info, context) { }\n}"
+    },
+    {
+        "name": "Foreach Statement",
+        "trigger": "foreach",
+        "content": "foreach (${1:var} ${2:item} in ${3:collection})\n{\n    $4\n}"
+    },
+    {
+        "name": "Reverse For Loop",
+        "trigger": "forr",
+        "content": "for (int ${1:i} = ${2:length} - 1; ${1:i} >= 0 ; ${1:i}--)\n{\n    $3\n}"
+    },
+    {
+        "name": "For Loop",
+        "trigger": "for",
+        "content": "for (int ${1:i} = 0; ${1:i} < ${2:length}; ${1:i}++)\n{\n    $3\n}"
+    },
+    {
+        "name": "If Statement",
+        "trigger": "if",
+        "content": "if (${1:true})\n{\n    $2\n}"
+    },
+    {
+        "name": "Else-If Statement",
+        "trigger": "else if",
+        "content": "else if (${1:true})\n{\n    $2\n}"
+    },
+    {
+        "name": "Indexer",
+        "trigger": "indexer",
+        "content": "${1:public} ${2:object} this[${3:int} index]\n{\n    get { $4 }\n    set { $5 }\n}"
+    },
+    {
+        "name": "Interface",
+        "trigger": "interface",
+        "content": "interface I${1:Name}\n{\n    $2\n}"
+    },
+    {
+        "name": "Safely Invoking An Event",
+        "trigger": "invoke",
+        "content": "${1:EventHandler} temp = ${2:MyEvent};\nif (temp != null)\n{\n    temp($3);\n}"
+    },
+    {
+        "name": "Simple Iterator",
+        "trigger": "iterator",
+        "content": "public System.Collections.Generic.IEnumerator<${1:ElementType}> GetEnumerator()\n{\n    $2throw new System.NotImplementedException();\n    yield return default(${1:ElementType});\n}"
+    },
+    {
+        "name": "Named Iterator/Indexer Pair Using A Nested Class",
+        "trigger": "iterindex",
+        "content": "public ${1:Name}Iterator ${1:Name}\n{\n    get\n    {\n        return new ${1:Name}Iterator(this);\n    }\n}\n\npublic class ${1:Name}Iterator\n{\n    readonly ${2:ClassName} outer;\n    \n    internal ${1:Name}Iterator(${2:ClassName} outer)\n    {\n        this.outer = outer;\n    }\n    \n    // TODO: provide an appropriate implementation here\n    public int Length { get { return 1; } }\n    \n    public ${3:ElementType} this[int index]\n    {\n        get\n        {\n            //\n            // TODO: implement indexer here\n            //\n            // you have full access to ${2:ClassName} privates\n            //\n            ${4:throw new System.NotImplementedException();}\n            return default(${3:ElementType});\n        }\n    }\n    \n    public System.Collections.Generic.IEnumerator<${3:ElementType}> GetEnumerator()\n    {\n        for (int i = 0; i < this.Length; i++)\n        {\n            yield return this[i];\n        }\n    }\n}"
+    },
+    {
+        "name": "Lock Statement",
+        "trigger": "lock",
+        "content": "lock (${1:this})\n{\n    $2\n}"
+    },
+    {
+        "name": "Messagebox.Show",
+        "trigger": "mbox",
+        "content": "System.Windows.Forms.MessageBox.Show(\"${1:Text}\");$2"
+    },
+    {
+        "name": "Namespace",
+        "trigger": "namespace",
+        "content": "namespace ${1:Name}\n{\n    $2\n}"
+    },
+    {
+        "name": "#If",
+        "trigger": "ifd",
+        "content": "#if ${1:true}\n    $2\n#endif"
+    },
+    {
+        "name": "#Region",
+        "trigger": "region",
+        "content": "#region ${1:Name}\n    $2\n#endregion"
+    },
+    {
+        "name": "Property And Backing Field",
+        "trigger": "propfull",
+        "content": "private ${1:int} ${2:myVar};\npublic ${1:int} ${3:MyProperty}\n{\n    get { return ${2:myVar}; }\n    set { ${2:myVar} = value; }\n}\n$4"
+    },
+    {
+        "name": "Propg",
+        "trigger": "propg",
+        "content": "public ${1:int} ${2:MyProperty} { get; private set; }$3"
+    },
+    {
+        "name": "Prop",
+        "trigger": "prop",
+        "content": "public ${1:int} ${2:MyProperty} { get; set; }$3"
+    },
+    {
+        "name": "Sim",
+        "trigger": "sim",
+        "content": "static int Main(string[] args)\n{\n    $1\n    return 0;\n}"
+    },
+    {
+        "name": "Struct",
+        "trigger": "struct",
+        "content": "struct ${1:Name}\n{\n    $2\n}"
+    },
+    {
+        "name": "Svm",
+        "trigger": "svm",
+        "content": "static void Main(string[] args)\n{\n    $1\n}"
+    },
+    {
+        "name": "Switch Statement",
+        "trigger": "switch",
+        "content": "switch (${1:switch_on})\n{\n    $2\n    default:\n}"
+    },
+    {
+        "name": "Try Finally",
+        "trigger": "tryf",
+        "content": "try\n{\n    $1\n}\nfinally\n{\n    $2\n}"
+    },
+    {
+        "name": "Try Catch",
+        "trigger": "try",
+        "content": "try\n{\n    $1\n}\ncatch (${2:System.Exception})\n{\n    $3\n    throw;\n}"
+    },
+    {
+        "name": "Unchecked Block",
+        "trigger": "unchecked",
+        "content": "unchecked\n{\n    $1\n}"
+    },
+    {
+        "name": "Unsafe Statement",
+        "trigger": "unsafe",
+        "content": "unsafe\n{\n    $1\n}"
+    },
+    {
+        "name": "Using Statement",
+        "trigger": "using",
+        "content": "using (${1:resource})\n{\n    $2\n}"
+    },
+    {
+        "name": "While Loop",
+        "trigger": "while",
+        "content": "while (${1:true})\n{\n    $2\n}"
+    },
+    {
+        "name": "Constructor",
+        "trigger": "ctor",
+        "content": "${1:public} ${2:$TM_FILENAME_BASE}(${3:Parameters})\n{\n    $4\n}"
+    },
+    {
+        "name": "Xunit Test",
+        "trigger": "fact",
+        "content": "[Fact]\npublic void ${1:TestName}()\n{\n//Given\n\n//When\n\n//Then\n}$2"
+    },
+    {
+        "name": "Creates A Method Structure",
+        "trigger": "method",
+        "content": "${1:public} ${2:void} ${3:MyMethod}(${4:string} ${5:parameter})\n{\n\t$6\n}"
+    },
+    {
+        "name": "Creates An Async Method Structure",
+        "trigger": "method_async",
+        "content": "${1:public} async ${2:Task}<${3:object}> ${4:MyMethodAsync}(${5:string} ${6:parameter})\n{\n\t$7\n}"
+    },
+    {
+        "name": "Cls",
+        "trigger": "cls",
+        "content": "${1:public} class ${2:$TM_FILENAME_BASE}\n{\n\t$3\n}"
+    }
+]

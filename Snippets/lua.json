@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Require",
+        "trigger": "req",
+        "content": "require(${1:module})"
+    },
+    {
+        "name": "Return",
+        "trigger": "rt",
+        "content": "return $1"
+    },
+    {
+        "name": "Assigment",
+        "trigger": "ll",
+        "content": "local ${1:varName} = ${2:value}"
+    },
+    {
+        "name": "Local",
+        "trigger": "l",
+        "content": "local ${1}"
+    },
+    {
+        "name": "Locreq",
+        "trigger": "lreq",
+        "content": "local ${1:var} = require(${2:module})"
+    },
+    {
+        "name": "Class",
+        "trigger": "cl",
+        "content": "${1:M} = {}\n\n$1.${2:new} = function($3)\n\t${6}\nend"
+    },
+    {
+        "name": "If",
+        "trigger": "if",
+        "content": "if ${1:true} then\n\t$2\nend"
+    },
+    {
+        "name": "Elseif",
+        "trigger": "elseif",
+        "content": "elseif ${1:true} then\n\t$2"
+    },
+    {
+        "name": "For",
+        "trigger": "for",
+        "content": "for ${1:i}=${2:1},${3:10} do\n\t$4\nend"
+    },
+    {
+        "name": "Foreach",
+        "trigger": "foreach",
+        "content": "for i, ${1:x} in pairs(${2:table}) do\n\t$3\nend"
+    },
+    {
+        "name": "Forline",
+        "trigger": "forline",
+        "content": "local f = io.open(${1:${2:filename}}, \"${3:r}\")\n\nwhile true do\n\tline = f:read()\n\tif line == nil then break end\n\n\t${4}\nend"
+    },
+    {
+        "name": "Function",
+        "trigger": "fu",
+        "content": "function ${1:name}($2)\n\t${3}\nend"
+    },
+    {
+        "name": "Inline-Function",
+        "trigger": "f=",
+        "content": "local ${1:name} = function($2)\n\t${3}\nend"
+    },
+    {
+        "name": "Print",
+        "trigger": "p",
+        "content": "print(${1})"
+    },
+    {
+        "name": "Self",
+        "trigger": "self:",
+        "content": "function self:${1:methodName}($2)\n\t$3\nend"
+    },
+    {
+        "name": "While",
+        "trigger": "while",
+        "content": "while ${1:true} do\n\t$2\nend"
+    },
+    {
+        "name": "Pcall",
+        "trigger": "pca",
+        "content": "pcall(${1:function})"
+    },
+    {
+        "name": "Locpcall",
+        "trigger": "lpca",
+        "content": "local ${1:status}, ${2:err_or_value} = pcall(${3:function})"
+    }
+]

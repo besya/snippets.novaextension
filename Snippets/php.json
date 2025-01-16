@@ -1,0 +1,167 @@
+[
+    {
+        "name": "Class \u2026",
+        "trigger": "class",
+        "content": "class ${1:ClassName} ${2:extends ${3:AnotherClass}} ${4:implements ${5:Interface}} {\n\t$6\n}\n"
+    },
+    {
+        "name": "Phpdoc Class \u2026",
+        "trigger": "doc_class",
+        "content": "/**\n * ${6:undocumented class}\n */\nclass ${1:ClassName} ${2:extends ${3:AnotherClass}} ${4:implements ${5:Interface}} {\n\t$7\n}\n"
+    },
+    {
+        "name": "Function __Construct",
+        "trigger": "con",
+        "content": "public function __construct(${1: priarg}) {\n}"
+    },
+    {
+        "name": "Private Argument",
+        "trigger": "priarg",
+        "content": "${1:private} ${2:${3:Type} \\$${4:var}${5: = ${6:null}}}"
+    },
+    {
+        "name": "Function __Construct (Php 7 Or Lower)",
+        "trigger": "con7",
+        "content": "public function __construct(${1:${2:Type} \\$${3:var}${4: = ${5:null}}}) {\n\t\\$this->${3:var} = \\$${3:var};$6\n}"
+    },
+    {
+        "name": "Phpdoc Property",
+        "trigger": "doc_v",
+        "content": "/** @var ${1:Type} \\$${2:var} ${3:description} */\n${4:protected} \\$${2:var}${5: = ${6:null}};$7"
+    },
+    {
+        "name": "Phpdoc Function \u2026",
+        "trigger": "doc_f",
+        "content": "/**\n * ${1:undocumented function summary}\n *\n * ${2:Undocumented function long description}\n *\n${3: * @param ${4:Type} \\$${5:var} ${6:Description}}\n${7: * @return ${8:type}}\n${9: * @throws ${10:conditon}}\n **/\n${11:public }function ${12:FunctionName}(${13:${14:${4:Type} }\\$${5:var}${15: = ${16:null}}}) {\n\t${17:# code...}\n}"
+    },
+    {
+        "name": "Phpdoc Param \u2026",
+        "trigger": "param",
+        "content": "* @param ${1:Type} ${2:var} ${3:Description}$4"
+    },
+    {
+        "name": "Function \u2026",
+        "trigger": "fun",
+        "content": "${1:public }function ${2:FunctionName}(${3:${4:${5:Type} }\\$${6:var}${7: = ${8:null}}}) {\n\t${9:# code...}\n}"
+    },
+    {
+        "name": "Trait \u2026",
+        "trigger": "trait",
+        "content": "/**\n * $1\n */\ntrait ${2:TraitName}\n{\n\t$3\n}\n"
+    },
+    {
+        "name": "Define(\u2026, \u2026)",
+        "trigger": "def",
+        "content": "define('$1', ${2:'$3'});\n$4"
+    },
+    {
+        "name": "Do \u2026 While \u2026",
+        "trigger": "do",
+        "content": "do {\n\t${4:# code...}\n} while (${1:\\$${2:a} <= ${3:10}});"
+    },
+    {
+        "name": "While \u2026",
+        "trigger": "while",
+        "content": "while (${1:\\$${2:a} <= ${3:10}}) {\n\t${4:# code...}\n}"
+    },
+    {
+        "name": "If \u2026",
+        "trigger": "if",
+        "content": "if (${1:condition}) {\n\t${2:# code...}\n}"
+    },
+    {
+        "name": "If \u2026 Else \u2026",
+        "trigger": "ifelse",
+        "content": "if (${1:condition}) {\n\t${2:# code...}\n} else {\n\t${3:# code...}\n}\n$4"
+    },
+    {
+        "name": "$\u2026 = ( \u2026 ) ? \u2026 : \u2026",
+        "trigger": "if?",
+        "content": "\\$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b} ;"
+    },
+    {
+        "name": "Else \u2026",
+        "trigger": "else",
+        "content": "else {\n\t${1:# code...}\n}"
+    },
+    {
+        "name": "Elseif \u2026",
+        "trigger": "elseif",
+        "content": "elseif (${1:condition}) {\n\t${2:# code...}\n}"
+    },
+    {
+        "name": "For \u2026",
+        "trigger": "for",
+        "content": "for (\\$${1:i}=${2:0}; \\$${1:i} < $3; \\$${1:i}++) { \n\t${4:# code...}\n}"
+    },
+    {
+        "name": "Foreach \u2026",
+        "trigger": "foreach",
+        "content": "foreach (\\$${1:variable} as \\$${2:key} ${3:=> \\$${4:value}}) {\n\t${5:# code...}\n}"
+    },
+    {
+        "name": "$\u2026 = Array (\u2026)",
+        "trigger": "array",
+        "content": "\\$${1:arrayName} = array('$2' => $3${4:,} $5);"
+    },
+    {
+        "name": "$\u2026 = [\u2026]",
+        "trigger": "shorray",
+        "content": "\\$${1:arrayName} = ['$2' => $3${4:,} $5];"
+    },
+    {
+        "name": "\u2026 => \u2026",
+        "trigger": "keyval",
+        "content": "'$1' => $2${3:,} $4"
+    },
+    {
+        "name": "Switch \u2026",
+        "trigger": "switch",
+        "content": "switch (\\$${1:variable}) {\n\tcase '${2:value}':\n\t\t${3:# code...}\n\t\tbreak;\n\t$5\n\tdefault:\n\t\t${4:# code...}\n\t\tbreak;\n}"
+    },
+    {
+        "name": "Case \u2026",
+        "trigger": "case",
+        "content": "case '${1:value}':\n\t${2:# code...}\n\tbreak;"
+    },
+    {
+        "name": "$This->\u2026",
+        "trigger": "this",
+        "content": "\\$this->$1;"
+    },
+    {
+        "name": "Echo $This->\u2026",
+        "trigger": "ethis",
+        "content": "echo \\$this->$1;"
+    },
+    {
+        "name": "Throw Exception",
+        "trigger": "throw",
+        "content": "throw new $1Exception(${2:\"${3:Error Processing Request}\"}${4:, ${5:1}});\n$6"
+    },
+    {
+        "name": "Region Start",
+        "trigger": "#region",
+        "content": "#region"
+    },
+    {
+        "name": "Region End",
+        "trigger": "#endregion",
+        "content": "#endregion"
+    },
+    {
+        "name": "Try Catch Block",
+        "trigger": "try",
+        "content": "try {\n\t${1://code...}\n} catch (${2:\\Throwable} ${3:\\$th}) {\n\t${4://throw \\$th;}\n}"
+    },
+    {
+        "name": "Variable Dump",
+        "trigger": "vd",
+        "content": "var_dump($1);"
+    },
+    {
+        "name": "Enum \u2026",
+        "trigger": "enum",
+        "content": "enum ${1:EnumName}\n{\n\tcase $2;\n}\n"
+    }
+]

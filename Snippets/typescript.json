@@ -1,0 +1,152 @@
+[
+    {
+        "name": "Constructor",
+        "trigger": "ctor",
+        "content": "/**\n *\n */\nconstructor() {\n\tsuper();\n\t$1\n}"
+    },
+    {
+        "name": "Class Definition",
+        "trigger": "class",
+        "content": "class ${1:name} {\n\tconstructor(${2:parameters}) {\n\t\t$3\n\t}\n}"
+    },
+    {
+        "name": "Interface Definition",
+        "trigger": "iface",
+        "content": "interface ${1:name} {\n\t$2\n}"
+    },
+    {
+        "name": "Public Method Definition",
+        "trigger": "public method",
+        "content": "/**\n * ${1:name}\n */\npublic ${1:name}() {\n\t$2\n}"
+    },
+    {
+        "name": "Private Method Definition",
+        "trigger": "private method",
+        "content": "private ${1:name}() {\n\t$2\n}"
+    },
+    {
+        "name": "Import External Module.",
+        "trigger": "import statement",
+        "content": "import { $2 } from \"${1:module}\";"
+    },
+    {
+        "name": "Property Getter",
+        "trigger": "get",
+        "content": "\npublic get ${1:value}() : ${2:string} {\n\t${3:return $4}\n}\n"
+    },
+    {
+        "name": "Log To The Console",
+        "trigger": "log",
+        "content": "console.log($1);\n$2"
+    },
+    {
+        "name": "Log Warning To Console",
+        "trigger": "warn",
+        "content": "console.warn($1);\n$2"
+    },
+    {
+        "name": "Log Error To Console",
+        "trigger": "error",
+        "content": "console.error($1);\n$2"
+    },
+    {
+        "name": "Define A Full Property",
+        "trigger": "prop",
+        "content": "\nprivate _${1:value} : ${2:string};\npublic get ${1:value}() : ${2:string} {\n\treturn this._${1:value};\n}\npublic set ${1:value}(v : ${2:string}) {\n\tthis._${1:value} = v;\n}\n"
+    },
+    {
+        "name": "Triple-Slash Reference",
+        "trigger": "ref",
+        "content": "/// <reference path=\"$1\" />\n$2"
+    },
+    {
+        "name": "Property Setter",
+        "trigger": "set",
+        "content": "\npublic set ${1:value}(v : ${2:string}) {\n\tthis.$3 = v;\n}\n"
+    },
+    {
+        "name": "Throw Exception",
+        "trigger": "throw",
+        "content": "throw \"$1\";\n$2"
+    },
+    {
+        "name": "For Loop",
+        "trigger": "for",
+        "content": "for (let ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {\n\tconst ${3:element} = ${2:array}[${1:index}];\n\t$4\n}"
+    },
+    {
+        "name": "For-Each Loop Using =>",
+        "trigger": "foreach =>",
+        "content": "${1:array}.forEach(${2:element} => {\n\t$3\n});"
+    },
+    {
+        "name": "For-In Loop",
+        "trigger": "forin",
+        "content": "for (const ${1:key} in ${2:object}) {\n\tif (${2:object}.hasOwnProperty(${1:key})) {\n\t\tconst ${3:element} = ${2:object}[${1:key}];\n\t\t$4\n\t}\n}"
+    },
+    {
+        "name": "For-Of Loop",
+        "trigger": "forof",
+        "content": "for (const ${1:iterator} of ${2:object}) {\n\t$3\n}"
+    },
+    {
+        "name": "For-Await-Of Loop",
+        "trigger": "forawaitof",
+        "content": "for await (const ${1:iterator} of ${2:object}) {\n\t$3\n}"
+    },
+    {
+        "name": "Function Statement",
+        "trigger": "function",
+        "content": "function ${1:name}(${2:params}:${3:type}) {\n\t$4\n}"
+    },
+    {
+        "name": "If Statement",
+        "trigger": "if",
+        "content": "if (${1:condition}) {\n\t$2\n}"
+    },
+    {
+        "name": "If-Else Statement",
+        "trigger": "ifelse",
+        "content": "if (${1:condition}) {\n\t$2\n} else {\n\t$3\n}"
+    },
+    {
+        "name": "New Statement",
+        "trigger": "new",
+        "content": "const ${1:name} = new ${2:type}(${3:arguments});$4"
+    },
+    {
+        "name": "Switch Statement",
+        "trigger": "switch",
+        "content": "switch (${1:key}) {\n\tcase ${2:value}:\n\t\t$3\n\t\tbreak;\n\n\tdefault:\n\t\tbreak;\n}"
+    },
+    {
+        "name": "While Statement",
+        "trigger": "while",
+        "content": "while (${1:condition}) {\n\t$2\n}"
+    },
+    {
+        "name": "Do-While Statement",
+        "trigger": "dowhile",
+        "content": "do {\n\t$2\n} while (${1:condition});"
+    },
+    {
+        "name": "Try-Catch Statement",
+        "trigger": "trycatch",
+        "content": "try {\n\t$2\n} catch (${1:error}) {\n\t\n}"
+    },
+    {
+        "name": "Set Timeout Function",
+        "trigger": "settimeout",
+        "content": "setTimeout(() => {\n\t$2\n}, ${1:timeout});"
+    },
+    {
+        "name": "Region Start",
+        "trigger": "#region",
+        "content": "//#region $1"
+    },
+    {
+        "name": "Region End",
+        "trigger": "#endregion",
+        "content": "//#endregion"
+    }
+]
