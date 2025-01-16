@@ -3,7 +3,7 @@
     "name": "Snippets",
     "organization": "Besya",
     "description": "Snippets for languages and frameworks",
-    "version": "1.0",
+    "version": "1.0.1",
     "categories": ["completions"],
     "license": "MIT",
     "repository": "https://github.com/besya/snippets.novaextension",
